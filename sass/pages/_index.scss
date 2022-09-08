@@ -1,0 +1,33 @@
+.cards-container {
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+
+.main-title {
+    font-size: 2.5em;
+    font-weight: 800;
+    color: #252525;
+    margin-left: 20px;
+    // margin-bottom: 25px;
+
+    &__span {
+        display: inline-block;
+        font-family: 'Ms Madi', cursive;
+        color: #064E61;
+    }
+}
+
+.our-products {
+    font-size: 2em;
+    margin-left: 20px;
+    color: black;
+}
+
+.cards-separator {
+    border-top: 2px dotted #0AB5D7;
+    margin: 0 16px;
+}
+

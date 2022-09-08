@@ -1,0 +1,130 @@
+.card {
+    box-shadow: 0 6px 6px rgba(#000, 0.3);
+    background-color: #e5e5e5;
+    margin-bottom: 16px;
+    transition: all .2s;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        padding: 30px 16px;
+    }
+
+    &__separator {
+        flex: 1 0 10px;
+        background: #0AB5D7;
+        padding: 16px 60px;
+    }
+    
+    &__title {
+        margin: 0;
+        padding: 0;
+        font-weight: 800;
+        font-size: 2em;
+        line-height: 50px;
+        color: #181e28;
+    }
+
+    &__subtitle {
+        flex: 0 1 200px;
+        text-align: right;
+        margin: 0;
+        color: #252525;
+        font-weight: 600;
+        font-size: 1em;
+        text-transform: uppercase;
+    }
+
+    &__body {
+        padding: 0 5px;
+        display: flex;
+        flex-flow: row no-wrap;
+        margin-bottom: 25px;
+    }
+
+    & p {
+        font-weight: 300;
+        line-height: 16px;
+        font-size: 0.7em;
+        color: #555;
+    }
+
+    &__sub {
+        font-size: 1.5em;
+        text-transform: uppercase;
+        color: #686e77;
+        font-weight: 300;
+        margin-bottom: 5px;
+    }
+
+    &__price {
+        color: #252525;
+        font-size: 1.5em;
+    }
+
+    &__half {
+        padding: 0 15px;
+        flex: 1 1 50%;
+    }
+
+    &__image-container {
+        padding-top: 15px;
+        min-width: 50%;
+    }
+    
+    &__image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    &__description {
+        margin-bottom: 25px;
+    }
+
+    &__stock {
+        font-weight: 600;
+        color: #a1cc16;
+    }
+
+    &__footer {
+        padding: 30px 40px;
+        display: flex;
+        flex-flow: row no-wrap;
+        align-items: center;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 20px;
+            width: calc(100% - 40px);
+            height: 3px;
+            background: #0AB5D7;
+            background: linear-gradient(to right, #0AB5D7 0%, #0AB5D7 20%, #ddd 20%, #ddd 100%);
+        }
+    }
+
+    &__button {
+        cursor: pointer;
+        border: 1px solid #87B06D;
+        padding: 14px 30px;
+        border-radius: 200px;
+        color: #E5E5E5;
+        background: #A8C695;
+        font-size: 1em;
+        transition: 200ms;
+        
+        &:hover {
+            background: #E5E5E5;
+            color: #729F56;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.05);
+        transform-origin: bottom;
+    }
+}
