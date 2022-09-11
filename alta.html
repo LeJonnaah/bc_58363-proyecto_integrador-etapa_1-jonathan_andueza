@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <a href="#" class="whatsapp-btn" target="_blank"> 
+        <i class="fa fa-whatsapp whatsapp-btn__icon"></i>
+    </a>
     <input type="checkbox" class="main-nav-toggle" id="main-nav-toggle" />
     <header class="main-header">
         <div class="main-header__logo-container">Logo</div>
@@ -49,61 +52,73 @@
         
         <div class="form-container">
             <form action="post">
-                <div class="group-container">
-                    <label class="group-container__label" for="name">Nombre
-                        <input class="group-container__input" type="text">
-                    </label>
+                <div class="form-container__group">
+                    <div class="group-container">
+                        <label class="group-container__label" for="name">Nombre
+                            <input class="group-container__input" type="text">
+                        </label>
+                    </div>
+                    <div class="group-container">
+                        <label class="group-container__label" for="price">Precio
+                            <input class="group-container__input" type="number">
+                        </label>
+                    </div>
                 </div>
-                <div class="group-container">
-                    <label class="group-container__label" for="price">Precio
-                        <input class="group-container__input" type="text">
-                    </label>
-                </div>
-                <div class="group-container">
-                    <label class="group-container__label" for="stock">Stock
-                        <input class="group-container__input" type="text">
-                    </label>
-                </div>
-                <div class="group-container">
-                    <label class="group-container__label" for="brand">Marca
-                        <input class="group-container__input" type="text">
-                    </label>
+                <div class="form-container__group">
+                    <div class="group-container">
+                        <label class="group-container__label" for="stock">Stock
+                            <input class="group-container__input" type="text">
+                        </label>
+                    </div>
+                    <div class="group-container">
+                        <label class="group-container__label" for="brand">Marca
+                            <input class="group-container__input" type="text">
+                        </label>
+                    </div>
                 </div>
                 <div class="group-container">
                     <label class="group-container__label" for="category">Categoría
                         <input class="group-container__input" type="text">
                     </label>
                 </div>
-                <div class="group-container">
-                    <label class="group-container__label" for="short-description">Descripción corta
-                        <input class="group-container__input" type="text">
-                    </label>
-                </div>
-                <div class="group-container">
-                    <label class="group-container__label" for="long-description">Descripción larga
-                        <input class="group-container__input" type="text">
-                    </label>
+                <div class="form-container__group">
+                    <div class="group-container">
+                        <label class="group-container__label" for="short-description">Descripción corta
+                            <input class="group-container__input" type="text">
+                        </label>
+                    </div>
+                    <div class="group-container">
+                        <label class="group-container__label" for="long-description">Descripción larga
+                            <input class="group-container__input" type="text">
+                        </label>
+                    </div>
                 </div>
                 <div class="group-container">
                     <label class="group-container__label" for="free-ship">Envío sin cargo
-                        <input class="group-container__input" type="text">
+                        <select name="free-ship" id="free-ship">
+                            <option value="0">No</option>
+                            <option value="1">Si</option>
+                        </select>
                     </label>
                 </div>
-                <div class="group-container">
-                    <label class="group-container__label" for="min-age">Edad desde
-                        <input class="group-container__input" type="text">
-                    </label>
-                </div>
-                <div class="group-container">
-                    <label class="group-container__label" for="max-age">Edad hasta
-                        <input class="group-container__input" type="text">
-                    </label>
+                <div class="form-container__group">
+                    <div class="group-container">
+                        <label class="group-container__label-age" for="min-age">Edad desde
+                            <input class="group-container__input-age" type="number">
+                        </label>
+                    </div>
+                    <div class="group-container">
+                        <label class="group-container__label-age" for="max-age">Edad hasta
+                            <input class="group-container__input-age" type="number">
+                        </label>
+                    </div>
                 </div>
                 <div class="group-container">
                     <label class="group-container__label" for="image">Imagen
-                        <input class="group-container__input" type="text">
+                        <input class="group-container__input" type="file">
                     </label>
                 </div>
+                <input type="submit" class="form-container__submit-btn">
             </form>
         </div>
     </main>

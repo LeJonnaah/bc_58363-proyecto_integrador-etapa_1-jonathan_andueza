@@ -1,21 +1,28 @@
 .main-footer {
     background-color: #8B89B1;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-	width: 100%;
-	text-align: left;
-	padding: 20px 0px;
-	// padding: 55px 50px;
-    
+    font-size: 0.9em;
+    width: 100%;
+    text-align: left;
+    padding: 20px 0px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #fff;
+    // padding: 55px 50px;
+
     &__left,
     &__center,
-    &__right{
-        display: inline-block;
-        vertical-align: top;
+    &__right {
+        display: block;
+        width: 100%;
+        // margin-bottom: 40px;
+        text-align: center;
+        // display: inline-block;
+        // vertical-align: top;
     }
 
-    &__left {
-        width: 40%;
-    }
+    // &__left {
+    //     width: 40%;
+    // }
 
     &__company {
         // color:  #e5e5e5;
@@ -23,13 +30,13 @@
     }
 
     &__company-copyright {
-        color:  #e5e5e5;
+        color: #e5e5e5;
         font-size: 0.8em;
         font-weight: normal;
     }
 
-    &__company &__company-span{
-        color:  #8B89B1
+    &__company &__company-span {
+        color: #8B89B1
     }
 
     &__links-container {
@@ -39,11 +46,11 @@
     }
 
     &__link {
-        display:inline-block;
+        display: inline-block;
         line-height: 1.8;
-        font-weight:400;
+        font-weight: 400;
         text-decoration: none;
-        color:  inherit;
+        color: inherit;
 
         &--first::before {
             content: none;
@@ -51,7 +58,7 @@
 
         &::before {
             content: "|";
-            font-weight:300;
+            font-weight: 300;
             font-size: 1.2em;
             left: 0;
             // color: #e5e5e5;
@@ -60,12 +67,12 @@
         }
     }
 
-    &__center {
-        width: 35%;
-    }
+    // &__center {
+    //     width: 35%;
+    // }
 
     &__center &__i {
-        background-color:  #6CA3D8;
+        background-color: #6CA3D8;
         // color: #e5e5e5;
         font-size: 1.5em;
         width: 38px;
@@ -78,21 +85,22 @@
 
         &--envelope {
             font-size: 1.4em;
-            line-height: 38px; 
+            line-height: 38px;
         }
     }
 
     &__center-paragraph {
         display: inline-block;
         // color: #e5e5e5;
-        font-weight:400;
+        font-weight: 400;
         vertical-align: middle;
-        margin:0;
+        margin: 0;
     }
 
     &__center-link {
-        color:  #e5e5e5;
-        text-decoration: none;;
+        color: #e5e5e5;
+        text-decoration: none;
+        ;
     }
 
     &__center-span {
@@ -102,13 +110,13 @@
         line-height: 2;
     }
 
-    &__right {
-        width: 20%;
-    }
-    
+    // &__right {
+    //     width: 20%;
+    // }
+
     &__company-about {
         line-height: 20px;
-        color:  #e5e5e5;
+        color: #e5e5e5;
         font-size: 0.8em;
         margin: 0 16px 20px;
         font-weight: normal;
@@ -116,7 +124,6 @@
         &-span {
             display: block;
             // margin: 0 16px 20px;
-            color:  #e5e5e5;
             font-size: 1em;
             font-weight: bold;
             margin-bottom: 20px;
@@ -132,7 +139,7 @@
         width: 35px;
         height: 35px;
         cursor: pointer;
-        background-color:  #6CA3D8;
+        background-color: #6CA3D8;
         border-radius: 2px;
         font-size: 1.2em;
         color: #e5e5e5;
@@ -141,25 +148,41 @@
         margin-right: 3px;
         margin-bottom: 5px;
     }
-}
 
-@media (max-width: 768px) {
+    @media (min-width: 768px) {
 
-	.main-footer{
-		font: bold 14px sans-serif;
-	}
+        .main-footer {
+            font-size: 1em;
+            padding: 20px 5px;
+            
+            &__left,
+            &__center,
+            &__right {
+                // display: block;
+                // width: 100%;
+                // margin-bottom: 40px;
+                // text-align: center;
+                display: inline-block;
+                vertical-align: top;
+            }
+            
+            &__left {
+                width: 40%;
+            }
+            
+            &__center {
+                width: 35%;
+                text-align: left;
+            }   
+            
+            &__right {
+                width: 20%;
+            }
 
-	.main-footer .main-footer__left,
-	.main-footer .main-footer__center,
-	.main-footer .main-footer__right{
-		display: block;
-		width: 100%;
-		margin-bottom: 40px;
-		text-align: center;
-	}
+            &__center i {
+                margin-left: 0;
+            }
 
-	.main-footer__center i{
-		margin-left: 0;
-	}
-
+        }
+    }
 }

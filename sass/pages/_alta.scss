@@ -2,18 +2,63 @@
     border-radius: 10px;
     color: black;
     margin: 16px;
-    padding: 1em;
+    padding: 16px 16px 32px;
     background-color: #fff;
+    position: relative;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+
+    &__submit-btn {
+        position: absolute;
+        right: 70px;
+    }
+
+    @media (min-width: 768px) {
+        margin: 16px 7%; 
+
+        &__group {
+            display: flex;
+        }
+    }
+    @media (min-width: 1024px) {
+        margin: 16px 10%;
+    }
+
 }
 
 .group-container {
     display: flex;
+    margin: 20px;
+    width: 100%;
 
-    &__label {
-        flex-basis: auto;
+    @media (min-width: 768px) {
+        // gap: 10px;
     }
+    // &__label {
+    //     // line-height: 20px;
+    //     // &-age {
+
+    //     // }
+    // }
 
     &__input {
-        flex-basis: 50%;
+        margin-top: 5px;
+        display: flex;
+        width: 200px;
+        padding: 5px;
+
+        &-age {
+            display: inline;
+            width: 32px;
+        }
+
+        @media (min-width: 480px) {
+            width: 300px;
+        }
+        
+        @media (min-width: 1024px) {
+            width: 400px;
+        }
     }
 }

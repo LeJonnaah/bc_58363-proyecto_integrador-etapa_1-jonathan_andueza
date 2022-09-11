@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contacto</title>
     <link rel="stylesheet" href="css/main.css" />
     <script src="https://kit.fontawesome.com/48ddd1a14a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <a href="#" class="whatsapp-btn" target="_blank"> 
+        <i class="fa fa-whatsapp whatsapp-btn__icon"></i>
+    </a>
     <input type="checkbox" class="main-nav-toggle" id="main-nav-toggle" />
     <header class="main-header">
         <div class="main-header__logo-container">Logo</div>
@@ -43,5 +46,26 @@
             </nav>
         </div>
     </header>
+
+    <main>
+        <div class="form-container">
+            <form action="post">
+                <div class="group-container">
+                    <label class="group-container__label" for="name">Nombre
+                        <input class="group-container__input" name="name" type="text">
+                    </label>
+                </div>
+                <div class="group-container">
+                    <label class="group-container__label" for="mail">E-mail
+                        <input class="group-container__input" name="mail" type="email">
+                    </label>
+                </div>
+                <div class="group-container">
+                    <label class="group-container__label" for="comments">¡Dejanos tu comentario!
+                    </label>
+                    <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+            </form>
+        </div>
+    </main>
 </body>
 </html>

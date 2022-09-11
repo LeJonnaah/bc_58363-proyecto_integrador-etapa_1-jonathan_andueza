@@ -4,7 +4,7 @@
     color: #E5E5E5;
     // position: fixed;
     font-family: 'Poppins', sans-serif;
-
+    background-color: #8B89B1;
 
     &__logo-container {
         display: flex;
@@ -59,7 +59,12 @@
     &__cart {
         align-self: center;
         justify-self: center;
+        cursor: pointer;
         color: #fff;
+
+        &:hover {
+            color: #E5E5E5;
+        }
     }
 
     &__main-nav-container {
@@ -69,6 +74,8 @@
         flex-grow: 1;
 
         @media (min-width: 768px) {
+            display: flex;
+            align-self: center;
             flex-basis: auto;
             order: 1;
             display: block;

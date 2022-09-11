@@ -1,7 +1,7 @@
 .cards-container {
     padding: 1em;
 
-    @media (min-width: 478px) {
+    @media (min-width: 480px) {
         gap: 16px;
         display: flex;
         flex-wrap: wrap;
@@ -13,11 +13,10 @@
     font-size: 2.5em;
     font-weight: 800;
     color: #252525;
-    border-radius: 10px;
+    text-align: center;
     background-color: #fff;
-    padding: 10px;
-    margin: 20px;
-    // margin-bottom: 25px;
+    margin: 0;
+    padding: 50px;
 
     &__span {
         display: inline-block;
@@ -29,13 +28,13 @@
 .our-products {
     font-size: 2em;
     color: black;
-    border-radius: 10px;
+    // border-radius: 10px;
+    box-shadow: 0 6px 6px rgba(#000, 0.3);
     background-color: #fff;
     padding: 10px;
-    margin: 20px;
+    // margin: 20px;
 }
 
 .cards-separator {
     border-top: 2px solid #6CA3D8;
-    margin: 0 16px;
 }

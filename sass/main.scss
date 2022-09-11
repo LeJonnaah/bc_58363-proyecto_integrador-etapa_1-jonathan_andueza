@@ -10,11 +10,14 @@
 @use 'base/utilities';
 
 //Layout
+@use 'layout/background';
 @use 'layout/hamburger-button';
 @use 'layout/main-header';
 @use 'layout/main-nav';
 @use 'layout/main-nav-toggle';
 @use 'layout/main-footer';
+@use 'layout/form';
+@use 'layout/whatsapp-btn';
 
 //Components
 @use 'components/card';
