@@ -1,10 +1,10 @@
 .main-nav {
-    background-color: #222;
+    background-color: #8B89B1;
     
     &__list {
         margin: 0;
         padding: 0;
-        background-color: #14213D;
+        background-color: #8B89B1;
         list-style-type: none;
         display: flex;
         flex-direction: column;
@@ -24,16 +24,16 @@
 
     &__link {
         display: block;
-        background-color: #14213D;
+        background-color: #8B89B1;
         padding: 1em .7em;
-        color: #E5E5E5;
-        font-size: 1.2em;
+        color: #fff;
+        // font-size: 1.2em;
         text-decoration: none;
-
-
+        
+        
         &:hover,
         &:focus {
-            background-color: orangered;
+            color: #E5E5E5;
             outline: none;
         }
 

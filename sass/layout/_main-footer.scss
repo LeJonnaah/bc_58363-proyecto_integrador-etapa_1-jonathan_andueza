@@ -1,5 +1,5 @@
 .main-footer {
-    background-color: #064E61;
+    background-color: #8B89B1;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	width: 100%;
 	text-align: left;
@@ -18,7 +18,7 @@
     }
 
     &__company {
-        color:  #e5e5e5;
+        // color:  #e5e5e5;
         font-size: 2em;
     }
 
@@ -33,7 +33,7 @@
     }
 
     &__links-container {
-        color:  #e5e5e5;
+        // color:  #e5e5e5;
         margin: 20px 0 12px;
         padding: 0;
     }
@@ -54,7 +54,7 @@
             font-weight:300;
             font-size: 1.2em;
             left: 0;
-            color: #e5e5e5;
+            // color: #e5e5e5;
             display: inline-block;
             padding-right: 5px;
         }
@@ -66,7 +66,7 @@
 
     &__center &__i {
         background-color:  #6CA3D8;
-        color: #e5e5e5;
+        // color: #e5e5e5;
         font-size: 1.5em;
         width: 38px;
         height: 38px;
@@ -84,14 +84,14 @@
 
     &__center-paragraph {
         display: inline-block;
-        color: #e5e5e5;
+        // color: #e5e5e5;
         font-weight:400;
         vertical-align: middle;
         margin:0;
     }
 
     &__center-link {
-        color:  #8B89B1;
+        color:  #e5e5e5;
         text-decoration: none;;
     }
 
@@ -108,12 +108,14 @@
     
     &__company-about {
         line-height: 20px;
-        color:  #92999f;
+        color:  #e5e5e5;
         font-size: 0.8em;
+        margin: 0 16px 20px;
         font-weight: normal;
 
         &-span {
             display: block;
+            // margin: 0 16px 20px;
             color:  #e5e5e5;
             font-size: 1em;
             font-weight: bold;

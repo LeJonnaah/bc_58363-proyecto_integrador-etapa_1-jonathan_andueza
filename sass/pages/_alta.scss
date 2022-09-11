@@ -1,0 +1,19 @@
+.form-container {
+    border-radius: 10px;
+    color: black;
+    margin: 16px;
+    padding: 1em;
+    background-color: #fff;
+}
+
+.group-container {
+    display: flex;
+
+    &__label {
+        flex-basis: auto;
+    }
+
+    &__input {
+        flex-basis: 50%;
+    }
+}

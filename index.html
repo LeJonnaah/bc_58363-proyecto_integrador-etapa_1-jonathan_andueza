@@ -13,7 +13,11 @@
 <body>
     <input type="checkbox" class="main-nav-toggle" id="main-nav-toggle" />
     <header class="main-header">
-        <div class="main-header__logo-container">Logo</div>
+        <div class="main-header__logo-container">
+            <a href="index.html">
+                <!-- <img class="main-header__logo-img" src="img/logo.png" alt="Logo"> -->
+            </a>
+        </div>
         <div class="main-header__search-form-container">Form</div>
         <div class="main-header__cart-button-container">
             <i class="main-header__cart fa-solid fa-cart-shopping"></i>
@@ -29,16 +33,16 @@
             <nav class="main-nav">
                 <ul class="main-nav__list">
                     <li class="main-nav__item">
-                        <a class="main-nav__link" href="#">Inicio</a>
+                        <a class="main-nav__link" href="index.html">Inicio</a>
                     </li>
                     <li class="main-nav__item">
-                        <a class="main-nav__link" href="#">Alta</a>
+                        <a class="main-nav__link" href="alta.html">Alta</a>
                     </li>
                     <li class="main-nav__item">
-                        <a class="main-nav__link" href="#">Contacto</a>
+                        <a class="main-nav__link" href="contacto.html">Contacto</a>
                     </li>
                     <li class="main-nav__item">
-                        <a class="main-nav__link" href="#">Nosotros</a>
+                        <a class="main-nav__link" href="nosotros.html">Nosotros</a>
                     </li>
                 </ul>
             </nav>
@@ -55,29 +59,65 @@
             </button>
             <ul class="slider__container" id="slides-container">
                 <li class="slider__slide"><img class="slider__img" src="img/0324490.jpg" alt=""></li>
-                <li class="slider__slide"></li>
+                <li class="slider__slide"><img class="slider__img" src="img/primary-hero.jpg" alt=""></li>
                 <li class="slider__slide"></li>
                 <li class="slider__slide"></li>
             </ul>
         </section>
-
-        <footer class="slider__footer">
+        
+        <!-- <footer class="slider__footer">
             <p>Rana Pichona</p>
-        </footer>
-
+        </footer> -->
+        
         <section class="section-cards">
             <header class="section-cards__header">
                 <h1 class="main-title">Juguetería Cósmica, <span class="main-title__span">¡la imaginación no tiene
-                        limites!</span></h1>
-                <h2 class="our-products">Nuestros Productos</h2>
-            </header>
-            <div class="cards-separator"></div>
-            <div class="cards-container">
-                <section class="news-section">
+                    limites!</span></h1>
+                    <h2 class="our-products">Nuestros Productos</h2>
+                </header>
+                <div class="cards-separator"></div>
+                <div class="cards-container">
                     <div class="card">
                         <div class="card__header">
                             <div class="card__separator"></div>
-                            <h4 class="card__subtitle">New products</h4>
+                            <h4 class="card__subtitle">¡Producto Nuevo!</h4>
+                        </div>
+                        <div class="card__body">
+                            <div class="card__half card__half--fb">
+                                <div class="card__featured-text">
+                                    <h3 class="card__title">Mega Cyborg Hand</h3>
+                                    <p class="card__sub">Brand Example</p>
+                                    <p class="card__price">$210.00</p>
+                                </div>
+                                <div class="card__image">
+                                    <img class="card__image"
+                                        src="img/thames-kosmos-mega-cyborg-hand.jpg"
+                                        alt="" />
+                                </div>
+                            </div>
+                            <div class="card__half">
+                                <div class="card__description">
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Vero voluptatem nam pariatur voluptate perferendis,
+                                        asperiores aspernatur! Porro similique consequatur, nobis
+                                        soluta minima, quasi laboriosam hic cupiditate perferendis
+                                        esse numquam magni.
+                                    </p>
+                                </div>
+                                <span class="card__stock"><i class="fa fa-pen"></i> In stock</span>
+                            </div>
+                        </div>
+                        <div class="card__footer">
+                            <div class="card__action">
+                                <button class="card__button">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__header">
+                            <div class="card__separator"></div>
+                            <h4 class="card__subtitle">¡Producto Nuevo!</h4>
                         </div>
                         <div class="card__body">
                             <div class="card__half card__half--fb">
@@ -114,7 +154,7 @@
                     <div class="card">
                         <div class="card__header">
                             <div class="card__separator"></div>
-                            <h4 class="card__subtitle">New products</h4>
+                            <h4 class="card__subtitle">¡Producto Nuevo!</h4>
                         </div>
                         <div class="card__body">
                             <div class="card__half card__half--fb">
@@ -151,7 +191,7 @@
                     <div class="card">
                         <div class="card__header">
                             <div class="card__separator"></div>
-                            <h4 class="card__subtitle">New products</h4>
+                            <h4 class="card__subtitle">¡Producto Nuevo!</h4>
                         </div>
                         <div class="card__body">
                             <div class="card__half card__half--fb">
@@ -188,7 +228,7 @@
                     <div class="card">
                         <div class="card__header">
                             <div class="card__separator"></div>
-                            <h4 class="card__subtitle">New products</h4>
+                            <h4 class="card__subtitle">¡Producto Nuevo!</h4>
                         </div>
                         <div class="card__body">
                             <div class="card__half card__half--fb">
@@ -222,306 +262,266 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card__header">
-                            <div class="card__separator"></div>
-                            <h4 class="card__subtitle">New products</h4>
-                        </div>
-                        <div class="card__body">
-                            <div class="card__half card__half--fb">
-                                <div class="card__featured-text">
-                                    <h3 class="card__title">Lorem</h3>
-                                    <p class="card__sub">Office Chair</p>
-                                    <p class="card__price">$210.00</p>
-                                </div>
-                                <div class="card__image">
-                                    <img class="card__image"
-                                        src="https://images-na.ssl-images-amazon.com/images/I/613A7vcgJ4L._SL1500_.jpg"
-                                        alt="" />
-                                </div>
+
+                <div class="card">
+                    <div class="card__header">
+                        <div class="card__separator"></div>
+                        <h4 class="card__subtitle">¡Producto Nuevo!</h4>
+                    </div>
+                    <div class="card__body">
+                        <div class="card__half card__half--fb">
+                            <div class="card__featured-text">
+                                <h3 class="card__title">Lorem</h3>
+                                <p class="card__sub">Office Chair</p>
+                                <p class="card__price">$210.00</p>
                             </div>
-                            <div class="card__half">
-                                <div class="card__description">
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Vero voluptatem nam pariatur voluptate perferendis,
-                                        asperiores aspernatur! Porro similique consequatur, nobis
-                                        soluta minima, quasi laboriosam hic cupiditate perferendis
-                                        esse numquam magni.
-                                    </p>
-                                </div>
-                                <span class="card__stock"><i class="fa fa-pen"></i> In stock</span>
+                            <div class="card__image">
+                                <img class="card__image"
+                                    src="https://images-na.ssl-images-amazon.com/images/I/613A7vcgJ4L._SL1500_.jpg"
+                                    alt="" />
                             </div>
                         </div>
-                        <div class="card__footer">
-                            <div class="card__action">
-                                <button class="card__button">Add to cart</button>
+                        <div class="card__half">
+                            <div class="card__description">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Vero voluptatem nam pariatur voluptate perferendis,
+                                    asperiores aspernatur! Porro similique consequatur, nobis
+                                    soluta minima, quasi laboriosam hic cupiditate perferendis
+                                    esse numquam magni.
+                                </p>
+                            </div>
+                            <span class="card__stock"><i class="fa fa-pen"></i> In stock</span>
+                        </div>
+                    </div>
+                    <div class="card__footer">
+                        <div class="card__action">
+                            <button class="card__button">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__header">
+                        <div class="card__separator"></div>
+                        <h4 class="card__subtitle">¡Producto Nuevo!</h4>
+                    </div>
+                    <div class="card__body">
+                        <div class="card__half card__half--fb">
+                            <div class="card__featured-text">
+                                <h3 class="card__title">Lorem</h3>
+                                <p class="card__sub">Office Chair</p>
+                                <p class="card__price">$210.00</p>
+                            </div>
+                            <div class="card__image">
+                                <img class="card__image"
+                                    src="https://images-na.ssl-images-amazon.com/images/I/613A7vcgJ4L._SL1500_.jpg"
+                                    alt="" />
                             </div>
                         </div>
-                    </div>
-                </section>
-            </div>
-            </div>
-            </di>
-            <div class="card">
-                <div class="card__header">
-                    <div class="card__separator"></div>
-                    <h4 class="card__subtitle">New products</h4>
-                </div>
-                <div class="card__body">
-                    <div class="card__half card__half--fb">
-                        <div class="card__featured-text">
-                            <h3 class="card__title">Lorem</h3>
-                            <p class="card__sub">Office Chair</p>
-                            <p class="card__price">$210.00</p>
-                        </div>
-                        <div class="card__image">
-                            <img class="card__image"
-                                src="https://images-na.ssl-images-amazon.com/images/I/613A7vcgJ4L._SL1500_.jpg"
-                                alt="" />
+                        <div class="card__half">
+                            <div class="card__description">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Vero voluptatem nam pariatur voluptate perferendis,
+                                    asperiores aspernatur! Porro similique consequatur, nobis
+                                    soluta minima, quasi laboriosam hic cupiditate perferendis
+                                    esse numquam magni.
+                                </p>
+                            </div>
+                            <span class="card__stock"><i class="fa fa-pen"></i> In stock</span>
                         </div>
                     </div>
-                    <div class="card__half">
-                        <div class="card__description">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Vero voluptatem nam pariatur voluptate perferendis,
-                                asperiores aspernatur! Porro similique consequatur, nobis
-                                soluta minima, quasi laboriosam hic cupiditate perferendis
-                                esse numquam magni.
-                            </p>
-                        </div>
-                        <span class="card__stock"><i class="fa fa-pen"></i> In stock</span>
-                    </div>
-                </div>
-                <div class="card__footer">
-                    <div class="card__action">
-                        <button class="card__button">Add to cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card__header">
-                    <div class="card__separator"></div>
-                    <h4 class="card__subtitle">New products</h4>
-                </div>
-                <div class="card__body">
-                    <div class="card__half card__half--fb">
-                        <div class="card__featured-text">
-                            <h3 class="card__title">Lorem</h3>
-                            <p class="card__sub">Office Chair</p>
-                            <p class="card__price">$210.00</p>
-                        </div>
-                        <div class="card__image">
-                            <img class="card__image"
-                                src="https://images-na.ssl-images-amazon.com/images/I/613A7vcgJ4L._SL1500_.jpg"
-                                alt="" />
+                    <div class="card__footer">
+                        <div class="card__action">
+                            <button class="card__button">Add to cart</button>
                         </div>
                     </div>
-                    <div class="card__half">
-                        <div class="card__description">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Vero voluptatem nam pariatur voluptate perferendis,
-                                asperiores aspernatur! Porro similique consequatur, nobis
-                                soluta minima, quasi laboriosam hic cupiditate perferendis
-                                esse numquam magni.
-                            </p>
-                        </div>
-                        <span class="card__stock"><i class="fa fa-pen"></i> In stock</span>
+                </div>
+                <div class="card">
+                    <div class="card__header">
+                        <div class="card__separator"></div>
+                        <h4 class="card__subtitle">¡Producto Nuevo!</h4>
                     </div>
-                </div>
-                <div class="card__footer">
-                    <div class="card__action">
-                        <button class="card__button">Add to cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card__header">
-                    <div class="card__separator"></div>
-                    <h4 class="card__subtitle">New products</h4>
-                </div>
-                <div class="card__body">
-                    <div class="card__half card__half--fb">
-                        <div class="card__featured-text">
-                            <h3 class="card__title">Lorem</h3>
-                            <p class="card__sub">Office Chair</p>
-                            <p class="card__price">$210.00</p>
+                    <div class="card__body">
+                        <div class="card__half card__half--fb">
+                            <div class="card__featured-text">
+                                <h3 class="card__title">Lorem</h3>
+                                <p class="card__sub">Office Chair</p>
+                                <p class="card__price">$210.00</p>
+                            </div>
+                            <div class="card__image">
+                                <img class="card__image"
+                                    src="https://images-na.ssl-images-amazon.com/images/I/613A7vcgJ4L._SL1500_.jpg"
+                                    alt="" />
+                            </div>
                         </div>
-                        <div class="card__image">
-                            <img class="card__image"
-                                src="https://images-na.ssl-images-amazon.com/images/I/613A7vcgJ4L._SL1500_.jpg"
-                                alt="" />
+                        <div class="card__half">
+                            <div class="card__description">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Vero voluptatem nam pariatur voluptate perferendis,
+                                    asperiores aspernatur! Porro similique consequatur, nobis
+                                    soluta minima, quasi laboriosam hic cupiditate perferendis
+                                    esse numquam magni.
+                                </p>
+                            </div>
+                            <span class="card__stock"><i class="fa fa-pen"></i> In stock</span>
                         </div>
                     </div>
-                    <div class="card__half">
-                        <div class="card__description">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Vero voluptatem nam pariatur voluptate perferendis,
-                                asperiores aspernatur! Porro similique consequatur, nobis
-                                soluta minima, quasi laboriosam hic cupiditate perferendis
-                                esse numquam magni.
-                            </p>
-                        </div>
-                        <span class="card__stock"><i class="fa fa-pen"></i> In stock</span>
-                    </div>
-                </div>
-                <div class="card__footer">
-                    <div class="card__action">
-                        <button class="card__button">Add to cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card__header">
-                    <div class="card__separator"></div>
-                    <h4 class="card__subtitle">New products</h4>
-                </div>
-                <div class="card__body">
-                    <div class="card__half card__half--fb">
-                        <div class="card__featured-text">
-                            <h3 class="card__title">Lorem</h3>
-                            <p class="card__sub">Office Chair</p>
-                            <p class="card__price">$210.00</p>
-                        </div>
-                        <div class="card__image">
-                            <img class="card__image"
-                                src="https://images-na.ssl-images-amazon.com/images/I/613A7vcgJ4L._SL1500_.jpg"
-                                alt="" />
+                    <div class="card__footer">
+                        <div class="card__action">
+                            <button class="card__button">Add to cart</button>
                         </div>
                     </div>
-                    <div class="card__half">
-                        <div class="card__description">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Vero voluptatem nam pariatur voluptate perferendis,
-                                asperiores aspernatur! Porro similique consequatur, nobis
-                                soluta minima, quasi laboriosam hic cupiditate perferendis
-                                esse numquam magni.
-                            </p>
-                        </div>
-                        <span class="card__stock"><i class="fa fa-pen"></i> In stock</span>
+                </div>
+                <div class="card">
+                    <div class="card__header">
+                        <div class="card__separator"></div>
+                        <h4 class="card__subtitle">¡Producto Nuevo!</h4>
                     </div>
-                </div>
-                <div class="card__footer">
-                    <div class="card__action">
-                        <button class="card__button">Add to cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card__header">
-                    <div class="card__separator"></div>
-                    <h4 class="card__subtitle">New products</h4>
-                </div>
-                <div class="card__body">
-                    <div class="card__half card__half--fb">
-                        <div class="card__featured-text">
-                            <h3 class="card__title">Lorem</h3>
-                            <p class="card__sub">Office Chair</p>
-                            <p class="card__price">$210.00</p>
+                    <div class="card__body">
+                        <div class="card__half card__half--fb">
+                            <div class="card__featured-text">
+                                <h3 class="card__title">Lorem</h3>
+                                <p class="card__sub">Office Chair</p>
+                                <p class="card__price">$210.00</p>
+                            </div>
+                            <div class="card__image">
+                                <img class="card__image"
+                                    src="https://images-na.ssl-images-amazon.com/images/I/613A7vcgJ4L._SL1500_.jpg"
+                                    alt="" />
+                            </div>
                         </div>
-                        <div class="card__image">
-                            <img class="card__image"
-                                src="https://images-na.ssl-images-amazon.com/images/I/613A7vcgJ4L._SL1500_.jpg"
-                                alt="" />
+                        <div class="card__half">
+                            <div class="card__description">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Vero voluptatem nam pariatur voluptate perferendis,
+                                    asperiores aspernatur! Porro similique consequatur, nobis
+                                    soluta minima, quasi laboriosam hic cupiditate perferendis
+                                    esse numquam magni.
+                                </p>
+                            </div>
+                            <span class="card__stock"><i class="fa fa-pen"></i> In stock</span>
                         </div>
                     </div>
-                    <div class="card__half">
-                        <div class="card__description">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Vero voluptatem nam pariatur voluptate perferendis,
-                                asperiores aspernatur! Porro similique consequatur, nobis
-                                soluta minima, quasi laboriosam hic cupiditate perferendis
-                                esse numquam magni.
-                            </p>
-                        </div>
-                        <span class="card__stock"><i class="fa fa-pen"></i> In stock</span>
-                    </div>
-                </div>
-                <div class="card__footer">
-                    <div class="card__action">
-                        <button class="card__button">Add to cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card__header">
-                    <div class="card__separator"></div>
-                    <h4 class="card__subtitle">New products</h4>
-                </div>
-                <div class="card__body">
-                    <div class="card__half card__half--fb">
-                        <div class="card__featured-text">
-                            <h3 class="card__title">Lorem</h3>
-                            <p class="card__sub">Office Chair</p>
-                            <p class="card__price">$210.00</p>
-                        </div>
-                        <div class="card__image">
-                            <img class="card__image"
-                                src="https://images-na.ssl-images-amazon.com/images/I/613A7vcgJ4L._SL1500_.jpg"
-                                alt="" />
+                    <div class="card__footer">
+                        <div class="card__action">
+                            <button class="card__button">Add to cart</button>
                         </div>
                     </div>
-                    <div class="card__half">
-                        <div class="card__description">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Vero voluptatem nam pariatur voluptate perferendis,
-                                asperiores aspernatur! Porro similique consequatur, nobis
-                                soluta minima, quasi laboriosam hic cupiditate perferendis
-                                esse numquam magni.
-                            </p>
-                        </div>
-                        <span class="card__stock"><i class="fa fa-pen"></i> In stock</span>
+                </div>
+                <div class="card">
+                    <div class="card__header">
+                        <div class="card__separator"></div>
+                        <h4 class="card__subtitle">¡Producto Nuevo!</h4>
                     </div>
-                </div>
-                <div class="card__footer">
-                    <div class="card__action">
-                        <button class="card__button">Add to cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card__header">
-                    <div class="card__separator"></div>
-                    <h4 class="card__subtitle">New products</h4>
-                </div>
-                <div class="card__body">
-                    <div class="card__half card__half--fb">
-                        <div class="card__featured-text">
-                            <h3 class="card__title">Lorem</h3>
-                            <p class="card__sub">Office Chair</p>
-                            <p class="card__price">$210.00</p>
+                    <div class="card__body">
+                        <div class="card__half card__half--fb">
+                            <div class="card__featured-text">
+                                <h3 class="card__title">Lorem</h3>
+                                <p class="card__sub">Office Chair</p>
+                                <p class="card__price">$210.00</p>
+                            </div>
+                            <div class="card__image">
+                                <img class="card__image"
+                                    src="https://images-na.ssl-images-amazon.com/images/I/613A7vcgJ4L._SL1500_.jpg"
+                                    alt="" />
+                            </div>
                         </div>
-                        <div class="card__image-container">
-                            <img class="card__image"
-                                src="https://images-na.ssl-images-amazon.com/images/I/613A7vcgJ4L._SL1500_.jpg"
-                                alt="" />
+                        <div class="card__half">
+                            <div class="card__description">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Vero voluptatem nam pariatur voluptate perferendis,
+                                    asperiores aspernatur! Porro similique consequatur, nobis
+                                    soluta minima, quasi laboriosam hic cupiditate perferendis
+                                    esse numquam magni.
+                                </p>
+                            </div>
+                            <span class="card__stock"><i class="fa fa-pen"></i> In stock</span>
                         </div>
                     </div>
-                    <div class="card__half">
-                        <div class="card__description">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Vero voluptatem nam pariatur voluptate perferendis,
-                                asperiores aspernatur! Porro similique consequatur, nobis
-                                soluta minima, quasi laboriosam hic cupiditate perferendis
-                                esse numquam magni.
-                            </p>
+                    <div class="card__footer">
+                        <div class="card__action">
+                            <button class="card__button">Add to cart</button>
                         </div>
-                        <span class="card__stock"><i class="fa fa-pen"></i> In stock</span>
                     </div>
                 </div>
-                <div class="card__footer">
-                    <div class="card__action">
-                        <button class="card__button">Add to cart</button>
+                <div class="card">
+                    <div class="card__header">
+                        <div class="card__separator"></div>
+                        <h4 class="card__subtitle">¡Producto Nuevo!</h4>
+                    </div>
+                    <div class="card__body">
+                        <div class="card__half card__half--fb">
+                            <div class="card__featured-text">
+                                <h3 class="card__title">Lorem</h3>
+                                <p class="card__sub">Office Chair</p>
+                                <p class="card__price">$210.00</p>
+                            </div>
+                            <div class="card__image">
+                                <img class="card__image"
+                                    src="https://images-na.ssl-images-amazon.com/images/I/613A7vcgJ4L._SL1500_.jpg"
+                                    alt="" />
+                            </div>
+                        </div>
+                        <div class="card__half">
+                            <div class="card__description">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Vero voluptatem nam pariatur voluptate perferendis,
+                                    asperiores aspernatur! Porro similique consequatur, nobis
+                                    soluta minima, quasi laboriosam hic cupiditate perferendis
+                                    esse numquam magni.
+                                </p>
+                            </div>
+                            <span class="card__stock"><i class="fa fa-pen"></i> In stock</span>
+                        </div>
+                    </div>
+                    <div class="card__footer">
+                        <div class="card__action">
+                            <button class="card__button">Add to cart</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="card">
+                    <div class="card__header">
+                        <div class="card__separator"></div>
+                        <h4 class="card__subtitle">¡Producto Nuevo!</h4>
+                    </div>
+                    <div class="card__body">
+                        <div class="card__half card__half--fb">
+                            <div class="card__featured-text">
+                                <h3 class="card__title">Lorem</h3>
+                                <p class="card__sub">Office Chair</p>
+                                <p class="card__price">$210.00</p>
+                            </div>
+                            <div class="card__image-container">
+                                <img class="card__image"
+                                    src="https://images-na.ssl-images-amazon.com/images/I/613A7vcgJ4L._SL1500_.jpg"
+                                    alt="" />
+                            </div>
+                        </div>
+                        <div class="card__half">
+                            <div class="card__description">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Vero voluptatem nam pariatur voluptate perferendis,
+                                    asperiores aspernatur! Porro similique consequatur, nobis
+                                    soluta minima, quasi laboriosam hic cupiditate perferendis
+                                    esse numquam magni.
+                                </p>
+                            </div>
+                            <span class="card__stock"><i class="fa fa-pen"></i> In stock</span>
+                        </div>
+                    </div>
+                    <div class="card__footer">
+                        <div class="card__action">
+                            <button class="card__button">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -530,10 +530,10 @@
         <div class="main-footer__left">
             <h3 class="main-footer__company">Juguetería<span class="main-footer__company-span"> Cósmica</span></h3>
             <p class="main-footer__links-container">
-                <a href="#" class="main-footer__link main-footer__link--first">Inicio</a>
-                <a href="#" class="main-footer__link">Alta</a>
-                <a href="#" class="main-footer__link">Contacto</a>
-                <a href="#" class="main-footer__link">Nosotros</a>
+                <a href="index.html" class="main-footer__link main-footer__link--first">Inicio</a>
+                <a href="alta.html" class="main-footer__link">Alta</a>
+                <a href="contacto.html" class="main-footer__link">Contacto</a>
+                <a href="nosotros.html" class="main-footer__link">Nosotros</a>
             <p class="main-footer__company-copyright">Lorem, ipsum. ©2022</p>
         </div>
         <div class="main-footer__center">
@@ -549,7 +549,7 @@
             <div>
                 <i class="main-footer__i main-footer__i--envelope fa fa-envelope"></i>
                 <p class="main-footer__center-paragraph"><a class="main-footer__center-link"
-                        href="mailto:support@company.com">lorem@lorem123.com</a></p>
+                        href="mailto:support@company.com">jonathanandueza1201@gmail.com</a></p>
             </div>
         </div>
         <div class="main-footer__right">

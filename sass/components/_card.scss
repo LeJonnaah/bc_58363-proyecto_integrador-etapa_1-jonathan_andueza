@@ -1,8 +1,15 @@
 .card {
     box-shadow: 0 6px 6px rgba(#000, 0.3);
-    background-color: #e5e5e5;
+    background-color: #fff;
     margin-bottom: 16px;
+    border-radius: 10px;
     transition: all .2s;
+    font-family: 'Roboto Condensed', sans-serif;
+    // height: 470px;
+
+    @media (min-width: 478px) {
+        max-width: 400px;
+    }
 
     &__header {
         display: flex;
@@ -12,27 +19,35 @@
 
     &__separator {
         flex: 1 0 10px;
-        background: #0AB5D7;
-        padding: 16px 60px;
+        background: #8B89B1;
+        border-radius: 2px;
+        padding: 16px 33%;
     }
     
     &__title {
-        margin: 0;
-        padding: 0;
         font-weight: 800;
+        margin-bottom: 10px;
         font-size: 2em;
-        line-height: 50px;
+        line-height: 1.2;
         color: #181e28;
+        
+        @media (min-width: 478px) {
+            font-size: 3em;
+        }
     }
 
     &__subtitle {
         flex: 0 1 200px;
-        text-align: right;
-        margin: 0;
-        color: #252525;
+        // text-align: right;
+        margin-left: 10px;
+        color: hsl(243, 20%, 42%);
         font-weight: 600;
-        font-size: 1em;
+        font-size: 0.7em;
         text-transform: uppercase;
+
+            @media (min-width: 478px) {
+            font-size: 1em;
+        }
     }
 
     &__body {
@@ -46,8 +61,15 @@
         font-weight: 300;
         line-height: 16px;
         font-size: 0.7em;
-        color: #555;
+        color: black;
+        font-family: 'Roboto Condensed', sans-serif;
+        
+        @media (min-width: 478px) {
+            font-size: 1em;
+        }
     }
+
+// Acordarme de arreglar el subtitulo
 
     &__sub {
         font-size: 1.5em;
@@ -57,7 +79,7 @@
         margin-bottom: 5px;
     }
 
-    &__price {
+    & &__price {
         color: #252525;
         font-size: 1.5em;
     }
@@ -73,6 +95,7 @@
     }
     
     &__image {
+        margin-top: 15px;
         display: block;
         max-width: 100%;
         height: auto;
@@ -83,8 +106,13 @@
     }
 
     &__stock {
+        font-family: 'Amatic SC', cursive;
         font-weight: 600;
-        color: #a1cc16;
+        color: hsl(243, 20%, 42%);
+
+        @media (min-width: 478px) {
+            font-size: 1.5em;
+    }
     }
 
     &__footer {
@@ -102,8 +130,7 @@
             left: 20px;
             width: calc(100% - 40px);
             height: 3px;
-            background: #0AB5D7;
-            background: linear-gradient(to right, #0AB5D7 0%, #0AB5D7 20%, #ddd 20%, #ddd 100%);
+            background: linear-gradient(to right, #EBD26E 0%, #EBD26E 20%, #ddd 20%, #ddd 100%);
         }
     }
 
@@ -112,7 +139,7 @@
         border: 1px solid #87B06D;
         padding: 14px 30px;
         border-radius: 200px;
-        color: #E5E5E5;
+        color: #fff;
         background: #A8C695;
         font-size: 1em;
         transition: 200ms;
@@ -127,4 +154,15 @@
         transform: scale(1.05);
         transform-origin: bottom;
     }
+
+    @media (min-width: 478px) {
+        max-width: 600px;
+    }
+
+    @media (min-width: 768px) {
+        max-width: 470px;
+    }
+    // @include sm {
+    //     margin: 10px;
+    // }
 }

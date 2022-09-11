@@ -3,33 +3,33 @@
     cursor: pointer;
     width: 2em;
     height: 2em;
-    background-color: #064E61;
+    background-color: #8B89B1;
     position: relative;
-    border-radius: .2em;
+    border-radius: 5px;
 
     &:hover {
-        background-color: #2F3A52;
-        color: #eee;
+        background-color: hsl(243deg, 20%, 42%);
+        color: #E5E5E5;
     }
     
     &__top-bread {
         display: block;
         position: absolute;
         width: 80%;
-        height: 10%;
+        height: 8%;
         left: 10%;
         top: 20%;
-        background-color: #E5E5E5;
+        background-color: #fff;
     }
     
     &__meat {
         display: block;
         position: absolute;
         width: 80%;
-        height: 10%;
+        height: 8%;
         top: 50%;
         left: 10%;
-        background-color: #E5E5E5;
+        background-color: #fff;
         transform: translateY(-50%);
     }
     
@@ -37,10 +37,10 @@
         display: block;
         position: absolute;
         width: 80%;
-        height: 10%;
+        height: 8%;
         bottom: 20%;
         left: 10%;
-        background-color: #E5E5E5;
+        background-color: #fff;
     }
     
 }

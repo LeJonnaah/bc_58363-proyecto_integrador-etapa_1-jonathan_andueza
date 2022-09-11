@@ -1,4 +1,5 @@
 //Abstracts
+@use 'abstracts/breakpoints';
 
 //Vendors
 @use 'vendors/normalize';
@@ -21,5 +22,6 @@
 
 //Pages
 @use 'pages/index';
+@use 'pages/alta';
 
 //Themes

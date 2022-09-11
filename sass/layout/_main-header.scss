@@ -8,17 +8,22 @@
 
     &__logo-container {
         display: flex;
-        background-color: #064E61;
-        padding: 1.4em;
+        background-color: #8B89B1;
+        // padding: 1.4em;
         flex-basis: 30%;
+        // background-image: url('../../img/logo.png');
 
         @media (min-width: 768px) {
             flex-basis: 15%;
         }
     }
 
+    &__logo-img {
+        width: 70%;
+    }
+
     &__search-form-container {
-        background-color: #064E61;
+        background-color: #8B89B1;
         display: flex;
         padding: 1.4em;
         flex-grow: 1;
@@ -32,7 +37,7 @@
     }
 
     &__cart-button-container {
-        background-color: #064E61;
+        background-color: #8B89B1;
         padding: 2px;
         display: flex;
         flex-grow: 1;
@@ -43,7 +48,7 @@
     }
 
     &__hamburger-button-container {
-        background-color: #064E61;
+        background-color: #8B89B1;
         padding: 1em;
 
         @media (min-width: 768px) {
@@ -54,10 +59,11 @@
     &__cart {
         align-self: center;
         justify-self: center;
+        color: #fff;
     }
 
     &__main-nav-container {
-        background-color: #064E61;
+        background-color: #8B89B1;
         flex-basis: 100%;
         display: none;
         flex-grow: 1;
