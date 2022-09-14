@@ -46,6 +46,10 @@
         }
     }
 
+    &__featured-text {
+        text-align: center;
+    }
+
     &__body {
         padding: 0 5px;
         display: flex;
@@ -104,10 +108,14 @@
         font-family: 'Amatic SC', cursive;
         font-weight: 600;
         color: hsl(243, 20%, 42%);
-
+        
         @media (min-width: 480px) {
             font-size: 1.5em;
-    }
+        }
+        
+        &-fa-pen {
+            color: hsl(243, 20%, 42%);
+        }
     }
 
     &__footer {
@@ -126,22 +134,6 @@
             width: calc(100% - 40px);
             height: 3px;
             background: linear-gradient(to right, #EB9AB3 0%, #EB9AB3 20%, #F1E5DF 20%, #F1E5DF 100%);
-        }
-    }
-
-    &__button {
-        cursor: pointer;
-        border: 1px solid #87B06D;
-        padding: 14px 30px;
-        border-radius: 200px;
-        color: #fff;
-        background: #A8C695;
-        font-size: 1em;
-        transition: 200ms;
-        
-        &:hover {
-            background: #E5E5E5;
-            color: #729F56;
         }
     }
 

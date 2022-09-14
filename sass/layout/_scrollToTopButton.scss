@@ -1,0 +1,19 @@
+.back-to-top-button {
+    display: none; 
+    position: fixed;
+    bottom: 5px; 
+    right: 5px; 
+    z-index: 99; 
+    border: none; 
+    outline: none; 
+    background-color: #eb9ab3; 
+    color: white;
+    cursor: pointer;
+    padding: 10px; 
+    border-radius: 5px; 
+
+    &:hover {
+        background-color: #b7788c; 
+        color: #e5e5e5;
+    }
+}

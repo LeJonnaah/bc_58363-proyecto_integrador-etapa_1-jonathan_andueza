@@ -9,6 +9,11 @@
     color: #fff;
     // padding: 55px 50px;
 
+    @media (min-width: 768px) {
+        font-size: 1em;
+        padding: 20px 5px;
+    }
+
     &__left,
     &__center,
     &__right {
@@ -18,11 +23,18 @@
         text-align: center;
         // display: inline-block;
         // vertical-align: top;
+
+        @media (min-width: 768px) {
+            display: inline-block;
+            vertical-align: top;
+        }
     }
 
-    // &__left {
-    //     width: 40%;
-    // }
+    &__left {
+        @media (min-width: 768px) {
+            width: 40%;
+        }
+    }
 
     &__company {
         // color:  #e5e5e5;
@@ -36,7 +48,7 @@
     }
 
     &__company &__company-span {
-        color: #8B89B1
+        color: #eb9ab3;
     }
 
     &__links-container {
@@ -67,9 +79,17 @@
         }
     }
 
-    // &__center {
-    //     width: 35%;
-    // }
+    &__center {
+
+        @media (min-width: 768px) {
+            width: 35%;
+            text-align: left;
+
+            & i {
+                margin-left: 0;
+            }
+        }
+    }
 
     &__center &__i {
         background-color: #6CA3D8;
@@ -110,9 +130,11 @@
         line-height: 2;
     }
 
-    // &__right {
-    //     width: 20%;
-    // }
+    &__right {
+        @media (min-width: 768px) {
+            width: 20%;
+        }
+    }
 
     &__company-about {
         line-height: 20px;
@@ -147,42 +169,5 @@
         line-height: 35px;
         margin-right: 3px;
         margin-bottom: 5px;
-    }
-
-    @media (min-width: 768px) {
-
-        .main-footer {
-            font-size: 1em;
-            padding: 20px 5px;
-            
-            &__left,
-            &__center,
-            &__right {
-                // display: block;
-                // width: 100%;
-                // margin-bottom: 40px;
-                // text-align: center;
-                display: inline-block;
-                vertical-align: top;
-            }
-            
-            &__left {
-                width: 40%;
-            }
-            
-            &__center {
-                width: 35%;
-                text-align: left;
-            }   
-            
-            &__right {
-                width: 20%;
-            }
-
-            &__center i {
-                margin-left: 0;
-            }
-
-        }
     }
 }

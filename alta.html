@@ -66,20 +66,18 @@
                 </div>
                 <div class="form-container__group">
                     <div class="group-container">
-                        <label class="group-container__label" for="stock">Stock
-                            <input class="group-container__input" type="text">
-                        </label>
-                    </div>
-                    <div class="group-container">
                         <label class="group-container__label" for="brand">Marca
                             <input class="group-container__input" type="text">
                         </label>
                     </div>
-                </div>
-                <div class="group-container">
-                    <label class="group-container__label" for="category">Categoría
-                        <input class="group-container__input" type="text">
-                    </label>
+                    <div class="group-container">
+                        <label class="group-container__label group-container__label--center" for="stock">Stock
+                            <select name="free-ship" id="free-ship">
+                                <option value="0">No</option>
+                                <option value="1">Si</option>
+                            </select>
+                        </label>
+                    </div>
                 </div>
                 <div class="form-container__group">
                     <div class="group-container">
@@ -94,7 +92,12 @@
                     </div>
                 </div>
                 <div class="group-container">
-                    <label class="group-container__label" for="free-ship">Envío sin cargo
+                    <label class="group-container__label" for="category">Categoría
+                        <input class="group-container__input" type="text">
+                    </label>
+                </div>
+                <div class="group-container">
+                    <label class="group-container__label group-container__label--center" for="free-ship">Envío sin cargo
                         <select name="free-ship" id="free-ship">
                             <option value="0">No</option>
                             <option value="1">Si</option>
@@ -118,7 +121,7 @@
                         <input class="group-container__input" type="file">
                     </label>
                 </div>
-                <input type="submit" class="form-container__submit-btn">
+                <input type="submit" class="form-container__submit-btn card__button">
             </form>
         </div>
     </main>
