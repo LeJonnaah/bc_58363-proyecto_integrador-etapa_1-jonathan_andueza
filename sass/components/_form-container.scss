@@ -1,0 +1,114 @@
+.form-container {
+    border-radius: 10px;
+    color: black;
+    margin: 16px;
+    padding: 16px 16px 32px;
+    background-color: #fff;
+    position: relative;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 6px 6px rgba(#000, 0.3);
+
+    @media (min-width: 768px) {
+        margin: 16px 7%; 
+
+        &__group {
+            display: flex;
+        }
+    }
+    @media (min-width: 1024px) {
+        margin: 16px 10%;
+    }
+
+    &__title {
+        font-family: 'Amatic SC', cursive;
+        font-size: 2em;
+        border-bottom: 1px solid #8B89B1;
+        text-align: center;
+        
+        @media (min-width: 768px) {
+            font-size: 3em;
+            text-align: left;
+        }
+    }
+
+    &__separator {
+        border-bottom: 1px solid #8B89B1;
+        margin: 16px 0;
+    }
+}
+
+.group-container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    
+    @media (min-width: 768px) {
+        // gap: 10px;
+    }
+    
+    &__label {
+        text-align: center;
+        margin-top: 10px;
+        
+        @media (min-width: 768px) {
+            text-align: left;
+        }
+
+        &--center {
+            align-self: center;
+        }
+    }
+
+    &__textarea {
+        width: 200px;
+        height: 150px;
+        padding: 12px 20px;
+        border: 2px solid #8b89b1;
+        border-radius: 5px;
+        resize: none;
+
+        &:focus {
+            background-color:  #f2f2f2;
+            outline: none;
+            border: 3px solid #8b89b1;
+        }
+
+        @media (min-width: 480px) {
+            width: 100%;
+        }
+    }
+
+    &__input {
+        margin-top: 5px;
+        display: flex;
+        width: 200px;
+        padding: 5px 10px 0;
+        border: none;
+        border-bottom: 1px solid #8b89b1;
+        
+        &:focus {
+            border-radius: 10px;
+            outline: none;
+            background: #f2f2f2;
+            border: 3px solid #8b89b1;
+        }
+        
+        @media (min-width: 480px) {
+            width: 100%;
+        }
+        
+        &-age {
+            display: inline;
+            width: 40px;
+        }
+
+        &[type="file"] {
+            border: none;
+            background: none;
+        }
+    }
+}

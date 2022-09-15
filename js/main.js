@@ -1,3 +1,5 @@
+'use strict';
+
 // 1. Variables
 
 const slidesContainer = document.getElementById("slides-container");
@@ -6,43 +8,62 @@ const prevButton = document.getElementById("slide-arrow-prev");
 const nextButton = document.getElementById("slide-arrow-next");
 const scrollToTopButton = document.querySelector(".back-to-top-button");
 
-// 2. Event Listeners
+// 2. Functions
 
-nextButton.addEventListener("click", () => {
+slidesContainer.addEventListener("scroll", () => {
     const slideWidth = slide.clientWidth;
-    slidesContainer.scrollLeft += slideWidth;
+    const slideCount = slidesContainer.childElementCount;
+    const scrollPosition = slidesContainer.scrollLeft;
+    const maxScrollPosition = slideWidth * (slideCount - 1);
+
+    if (scrollPosition === maxScrollPosition) {
+        setTimeout(() => {
+            slidesContainer.scrollLeft = 0;
+        }, 10000);
+    }
 });
 
-prevButton.addEventListener("click", () => {
-    const slideWidth = slide.clientWidth;
-    slidesContainer.scrollLeft -= slideWidth;
-});
-
-scrollToTopButton.addEventListener("click", topFunction);
-
-// 3. Timers
-
-const nextSlideTimeout = setInterval(() => {
-    nextButton.click();
-}, 5000);
-
-// const contactUsTimeout = setTimeout(() => {
-//     document.getElementById("contact-us-button").click();
-// }, 10000);
-
-// 4. Functions
-
-function scrollFunction() {
+const scrollFunction = () => {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         scrollToTopButton.style.display = "block";
     } else {
         scrollToTopButton.style.display = "none";
     }
+};
+
+window.onscroll = () => scrollFunction();
+
+const topFunction = () => {
+    document.documentElement.style.scrollBehavior = "smooth";
+    document.documentElement.scrollTop = 0;
 }
 
-window.onscroll = function () { scrollFunction() };
 
-function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
+// 3. Event Listeners
+
+nextButton.addEventListener("click", () => {
+    const slideWidth = slide.clientWidth;
+    slidesContainer.scrollLeft += slideWidth;
+
+    if (slidesContainer.scrollLeft === slideWidth * (slidesContainer.childElementCount - 1)) {
+        slidesContainer.scrollLeft = 0;
+    }
+});
+
+
+prevButton.addEventListener("click", () => {
+    const slideWidth = slide.clientWidth;
+    slidesContainer.scrollLeft -= slideWidth;
+
+    if (slidesContainer.scrollLeft === 0) {
+        slidesContainer.scrollLeft = slideWidth * (slidesContainer.childElementCount - 1);
+    }
+});
+
+scrollToTopButton.addEventListener("click", topFunction);
+
+// 4. Timers
+
+const nextSlideTimeout = setInterval(() => {
+    nextButton.click();
+}, 10000);

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Dancing+Script:wght@400;700&family=Kaushan+Script&family=Ms+Madi&family=Poppins:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap"); /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Ms+Madi&family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap"); /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
 /**
@@ -320,7 +320,7 @@ body {
 }
 
 body {
-  font-family: "Amatic SC", cursive;
+  font-family: "Roboto", sans-serif;
 }
 
 .u-text-align-left {
@@ -453,6 +453,7 @@ body {
   align-self: center;
   margin-left: 5px;
   padding: 5px;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
   padding-left: 10px;
   border-radius: 20px;
   display: none;
@@ -580,6 +581,7 @@ body {
   padding: 20px 0px;
   font-family: "Roboto Condensed", sans-serif;
   color: #fff;
+  font-family: "Poppins", sans-serif;
 }
 @media (min-width: 768px) {
   .main-footer {
@@ -604,6 +606,7 @@ body {
   }
 }
 .main-footer__company {
+  text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
   font-size: 2em;
 }
 .main-footer__company-copyright {
@@ -613,6 +616,8 @@ body {
 }
 .main-footer__company .main-footer__company-span {
   color: #eb9ab3;
+  display: inline-block;
+  font-family: "Ms Madi", cursive;
 }
 .main-footer__links-container {
   margin: 20px 0 12px;
@@ -636,6 +641,9 @@ body {
   display: inline-block;
   padding-right: 5px;
 }
+.main-footer__link:hover {
+  color: #e5e5e5;
+}
 @media (min-width: 768px) {
   .main-footer__center {
     width: 35%;
@@ -649,12 +657,15 @@ body {
   background-color: #6CA3D8;
   font-size: 1.5em;
   width: 38px;
-  height: 38px;
   border-radius: 50%;
   text-align: center;
   line-height: 42px;
   margin: 10px 15px;
   vertical-align: middle;
+}
+.main-footer__center .main-footer__i:hover {
+  background-color: #527ca4;
+  color: #e5e5e5;
 }
 .main-footer__center .main-footer__i--envelope {
   font-size: 1.4em;
@@ -667,8 +678,11 @@ body {
   margin: 0;
 }
 .main-footer__center-link {
-  color: #e5e5e5;
+  color: #fff;
   text-decoration: none;
+}
+.main-footer__center-link:hover {
+  color: #e5e5e5;
 }
 .main-footer__center-span {
   display: block;
@@ -711,27 +725,28 @@ body {
   margin-right: 3px;
   margin-bottom: 5px;
 }
-
-.form-container {
-  border-radius: 10px;
-  color: black;
-  margin: 16px;
-  padding: 16px;
-  background-color: #fff;
+.main-footer__right .main-footer__icon:hover {
+  background-color: #527ca4;
 }
 
 .whatsapp-btn {
   position: fixed;
   width: 60px;
   height: 60px;
-  bottom: 40px;
-  right: 40px;
+  bottom: 50px;
+  right: 5px;
   background-color: #25d366;
   color: #FFF;
   border-radius: 50px;
   text-align: center;
   font-size: 30px;
   z-index: 100;
+}
+@media (min-width: 480px) {
+  .whatsapp-btn {
+    bottom: 40px;
+    right: 40px;
+  }
 }
 .whatsapp-btn:hover {
   background-color: #1ca04d;
@@ -766,7 +781,6 @@ body {
   margin-bottom: 16px;
   border-radius: 10px;
   transition: all 0.2s;
-  font-family: "Roboto Condensed", sans-serif;
 }
 .card__header {
   display: flex;
@@ -812,7 +826,6 @@ body {
   font-weight: 300;
   font-size: 0.7em;
   color: black;
-  font-family: "Roboto Condensed", sans-serif;
 }
 @media (min-width: 480px) {
   .card p {
@@ -850,7 +863,7 @@ body {
 .card__stock {
   font-family: "Amatic SC", cursive;
   font-weight: 600;
-  color: hsl(243deg, 20%, 42%);
+  color: #a8c695;
 }
 @media (min-width: 480px) {
   .card__stock {
@@ -858,7 +871,7 @@ body {
   }
 }
 .card__stock-fa-pen {
-  color: hsl(243deg, 20%, 42%);
+  color: #a8c695;
 }
 .card__footer {
   padding: 30px 40px;
@@ -912,42 +925,49 @@ body {
 }
 .slider__arrow {
   position: absolute;
-  display: flex;
   top: 0;
   bottom: 0;
   margin: auto;
-  height: 4rem;
+  height: 40px;
+  width: 40px;
   background-color: white;
   border: none;
-  width: 2rem;
-  font-size: 3rem;
+  font-size: 2em;
+  color: #6ca3d8;
   cursor: pointer;
   opacity: 0.5;
   transition: opacity 100ms;
 }
+@media (min-width: 1024px) {
+  .slider__arrow {
+    height: 60px;
+    width: 60px;
+  }
+}
 .slider__arrow:hover {
   opacity: 1;
 }
+.slider__arrow:active {
+  opacity: 1;
+  border: 3px solid #6ca3d8;
+}
 .slider__slide {
-  width: 100%;
   flex: 1 0 100%;
 }
 .slider__img {
   width: 100%;
-  max-height: 70vh;
+  height: auto;
   height: 100%;
 }
 
 #slide-arrow-prev {
-  left: 0;
-  padding-left: 0.25rem;
-  border-radius: 0 2rem 2rem 0;
+  left: 10px;
+  border-radius: 50%;
 }
 
 #slide-arrow-next {
-  right: 0;
-  padding-left: 0.75rem;
-  border-radius: 2rem 0 0 2rem;
+  right: 10px;
+  border-radius: 50%;
 }
 
 .slider__slide:nth-child(1) {
@@ -976,10 +996,121 @@ body {
   background: #A8C695;
   font-size: 1em;
   transition: 200ms;
+  align-self: flex-end;
 }
 .card__button:hover {
   background: #E5E5E5;
   color: #729F56;
+}
+.card__button:active {
+  background: #ccc;
+}
+
+.form-container {
+  border-radius: 10px;
+  color: black;
+  margin: 16px;
+  padding: 16px 16px 32px;
+  background-color: #fff;
+  position: relative;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
+}
+@media (min-width: 768px) {
+  .form-container {
+    margin: 16px 7%;
+  }
+  .form-container__group {
+    display: flex;
+  }
+}
+@media (min-width: 1024px) {
+  .form-container {
+    margin: 16px 10%;
+  }
+}
+.form-container__title {
+  font-family: "Amatic SC", cursive;
+  font-size: 2em;
+  border-bottom: 1px solid #8B89B1;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .form-container__title {
+    font-size: 3em;
+    text-align: left;
+  }
+}
+.form-container__separator {
+  border-bottom: 1px solid #8B89B1;
+  margin: 16px 0;
+}
+
+.group-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+}
+.group-container__label {
+  text-align: center;
+  margin-top: 10px;
+}
+@media (min-width: 768px) {
+  .group-container__label {
+    text-align: left;
+  }
+}
+.group-container__label--center {
+  align-self: center;
+}
+.group-container__textarea {
+  width: 200px;
+  height: 150px;
+  padding: 12px 20px;
+  border: 2px solid #8b89b1;
+  border-radius: 5px;
+  resize: none;
+}
+.group-container__textarea:focus {
+  background-color: #f2f2f2;
+  outline: none;
+  border: 3px solid #8b89b1;
+}
+@media (min-width: 480px) {
+  .group-container__textarea {
+    width: 100%;
+  }
+}
+.group-container__input {
+  margin-top: 5px;
+  display: flex;
+  width: 200px;
+  padding: 5px 10px 0;
+  border: none;
+  border-bottom: 1px solid #8b89b1;
+}
+.group-container__input:focus {
+  border-radius: 10px;
+  outline: none;
+  background: #f2f2f2;
+  border: 3px solid #8b89b1;
+}
+@media (min-width: 480px) {
+  .group-container__input {
+    width: 100%;
+  }
+}
+.group-container__input-age {
+  display: inline;
+  width: 40px;
+}
+.group-container__input[type=file] {
+  border: none;
+  background: none;
 }
 
 .cards-container {
@@ -999,6 +1130,7 @@ body {
   font-weight: 800;
   color: #fff;
   text-align: center;
+  text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
   margin: 0;
   display: none;
 }
@@ -1031,72 +1163,18 @@ body {
 
 .our-products {
   font-size: 2em;
-  border-top: 4px solid #6CA3D8;
+  border-bottom: 5px solid #8B89B1;
   color: black;
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
   background-color: #fff;
   text-align: center;
   padding: 20px;
   margin-bottom: 40px;
+  font-family: "Amatic SC", cursive;
 }
 @media (min-width: 480px) {
   .our-products {
     font-size: 3em;
     padding: 40px;
-  }
-}
-
-.form-container {
-  border-radius: 10px;
-  color: black;
-  margin: 16px;
-  padding: 16px 16px 32px;
-  background-color: #fff;
-  position: relative;
-  font-family: sans-serif;
-  display: flex;
-  justify-content: center;
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
-}
-@media (min-width: 768px) {
-  .form-container {
-    margin: 16px 7%;
-  }
-  .form-container__group {
-    display: flex;
-  }
-}
-@media (min-width: 1024px) {
-  .form-container {
-    margin: 16px 10%;
-  }
-}
-
-.group-container {
-  display: flex;
-  margin: 20px;
-  width: 100%;
-}
-.group-container__label--center {
-  align-self: center;
-}
-.group-container__input {
-  margin-top: 5px;
-  display: flex;
-  width: 200px;
-  padding: 5px;
-}
-.group-container__input-age {
-  display: inline;
-  width: 32px;
-}
-@media (min-width: 480px) {
-  .group-container__input {
-    width: 300px;
-  }
-}
-@media (min-width: 1024px) {
-  .group-container__input {
-    width: 400px;
   }
 }/*# sourceMappingURL=main.css.map */

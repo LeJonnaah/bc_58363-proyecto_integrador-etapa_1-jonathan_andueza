@@ -7,9 +7,14 @@
     background: #A8C695;
     font-size: 1em;
     transition: 200ms;
+    align-self: flex-end;
     
     &:hover {
         background: #E5E5E5;
         color: #729F56;
+    }
+    
+    &:active {
+        background: #ccc;
     }
 }

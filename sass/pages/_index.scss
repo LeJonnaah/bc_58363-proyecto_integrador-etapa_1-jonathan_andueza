@@ -14,6 +14,7 @@
     font-weight: 800;
     color: #fff;
     text-align: center;
+    text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
     margin: 0;
     display: none;
     
@@ -44,13 +45,14 @@
 
 .our-products {
     font-size: 2em;
-    border-top: 4px solid #6CA3D8;
+    border-bottom: 5px solid #8B89B1;
     color: black;
     box-shadow: 0 6px 6px rgba(#000, 0.3);
     background-color: #fff;
     text-align: center;
     padding: 20px;
     margin-bottom: 40px;
+    font-family: "Amatic SC", cursive;
     
     @media (min-width: 480px) {
         font-size: 3em;

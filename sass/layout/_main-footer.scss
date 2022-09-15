@@ -7,7 +7,8 @@
     padding: 20px 0px;
     font-family: 'Roboto Condensed', sans-serif;
     color: #fff;
-    // padding: 55px 50px;
+    font-family: 'Poppins', sans-serif;
+
 
     @media (min-width: 768px) {
         font-size: 1em;
@@ -19,10 +20,7 @@
     &__right {
         display: block;
         width: 100%;
-        // margin-bottom: 40px;
         text-align: center;
-        // display: inline-block;
-        // vertical-align: top;
 
         @media (min-width: 768px) {
             display: inline-block;
@@ -37,7 +35,7 @@
     }
 
     &__company {
-        // color:  #e5e5e5;
+        text-shadow: 6px 6px 0px rgb(0 0 0 / 20%);
         font-size: 2em;
     }
 
@@ -49,6 +47,8 @@
 
     &__company &__company-span {
         color: #eb9ab3;
+        display: inline-block;
+        font-family: "Ms Madi", cursive;
     }
 
     &__links-container {
@@ -73,9 +73,12 @@
             font-weight: 300;
             font-size: 1.2em;
             left: 0;
-            // color: #e5e5e5;
             display: inline-block;
             padding-right: 5px;
+        }
+
+        &:hover {
+            color: #e5e5e5;
         }
     }
 
@@ -93,15 +96,18 @@
 
     &__center &__i {
         background-color: #6CA3D8;
-        // color: #e5e5e5;
         font-size: 1.5em;
         width: 38px;
-        height: 38px;
         border-radius: 50%;
         text-align: center;
         line-height: 42px;
         margin: 10px 15px;
         vertical-align: middle;
+
+        &:hover {
+            background-color: #527ca4;
+            color: #e5e5e5;
+        }
 
         &--envelope {
             font-size: 1.4em;
@@ -111,16 +117,18 @@
 
     &__center-paragraph {
         display: inline-block;
-        // color: #e5e5e5;
         font-weight: 400;
         vertical-align: middle;
         margin: 0;
     }
 
     &__center-link {
-        color: #e5e5e5;
+        color: #fff;
         text-decoration: none;
-        ;
+
+        &:hover {
+            color: #e5e5e5;
+        }
     }
 
     &__center-span {
@@ -145,7 +153,6 @@
 
         &-span {
             display: block;
-            // margin: 0 16px 20px;
             font-size: 1em;
             font-weight: bold;
             margin-bottom: 20px;
@@ -169,5 +176,9 @@
         line-height: 35px;
         margin-right: 3px;
         margin-bottom: 5px;
+
+        &:hover {
+            background-color: #527ca4;
+        }
     }
 }

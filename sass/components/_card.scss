@@ -4,7 +4,6 @@
     margin-bottom: 16px;
     border-radius: 10px;
     transition: all .2s;
-    font-family: 'Roboto Condensed', sans-serif;
     // height: 470px;
 
     &__header {
@@ -61,14 +60,11 @@
         font-weight: 300;
         font-size: 0.7em;
         color: black;
-        font-family: 'Roboto Condensed', sans-serif;
         
         @media (min-width: 480px) {
             font-size: 1em;
         }
     }
-
-// Acordarme de arreglar el subtitulo
 
     &__sub {
         font-size: 1.5em;
@@ -107,14 +103,15 @@
     &__stock {
         font-family: 'Amatic SC', cursive;
         font-weight: 600;
-        color: hsl(243, 20%, 42%);
+        // color: hsl(243, 20%, 42%);
+        color: #a8c695;
         
         @media (min-width: 480px) {
             font-size: 1.5em;
         }
         
         &-fa-pen {
-            color: hsl(243, 20%, 42%);
+            color: #a8c695;
         }
     }
 
