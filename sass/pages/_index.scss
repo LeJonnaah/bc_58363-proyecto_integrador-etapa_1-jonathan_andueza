@@ -44,15 +44,22 @@
 }
 
 .our-products {
+    background-image: url('../img/elemental/stars-background.jpg');
+    background-attachment: fixed;
+    font-family: "Poppins", sans-serif;
+    text-shadow: 0 2px 1px #b7788c, 
+        -1px 3px 1px #835664, 
+        -2px 5px 1px #4f343d;
+    font-variant: small-caps;
     font-size: 2em;
-    border-bottom: 5px solid #8B89B1;
-    color: black;
+    letter-spacing: 10px;
+    color: #eb9ab3;
     box-shadow: 0 6px 6px rgba(#000, 0.3);
-    background-color: #fff;
+    // background: #f1e5df;
+    // background: linear-gradient(180deg,#ffffff 60%, #f1e5df 100%);
     text-align: center;
     padding: 20px;
     margin-bottom: 40px;
-    font-family: "Amatic SC", cursive;
     
     @media (min-width: 480px) {
         font-size: 3em;

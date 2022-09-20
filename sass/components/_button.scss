@@ -5,6 +5,7 @@
     border-radius: 200px;
     color: #fff;
     background: #A8C695;
+    box-shadow: 0 6px 6px rgb(0 0 0 / 30%);
     font-size: 1em;
     transition: 200ms;
     align-self: flex-end;
@@ -16,5 +17,9 @@
     
     &:active {
         background: #ccc;
+    }
+
+    &--mt20px {
+        margin-top: 20px;
     }
 }

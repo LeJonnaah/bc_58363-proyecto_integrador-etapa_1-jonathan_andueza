@@ -10,22 +10,35 @@
     justify-content: center;
     box-shadow: 0 6px 6px rgba(#000, 0.3);
 
-    @media (min-width: 768px) {
+        @media (min-width: 768px) {
         margin: 16px 7%; 
-
-        &__group {
-            display: flex;
-        }
     }
+    
     @media (min-width: 1024px) {
         margin: 16px 10%;
     }
 
+    &__group {
+
+        @media (min-width: 768px) {
+            display: flex;
+        }
+
+        &--age {
+        display: flex;
+        }
+    }
+
     &__title {
         font-family: 'Amatic SC', cursive;
-        font-size: 2em;
+        font-size: 1.3em;
         border-bottom: 1px solid #8B89B1;
         text-align: center;
+        font-family: "Poppins", sans-serif;
+        text-shadow: 0 2px 1px #b7788c;
+        font-variant: small-caps;
+        letter-spacing: 10px;
+        color: #eb9ab3;
         
         @media (min-width: 768px) {
             font-size: 3em;
@@ -33,9 +46,25 @@
         }
     }
 
+    &__subtitle {
+        font-family: 'Amatic SC', cursive;
+        font-size: 1.5em;
+        text-align: center;
+        margin: 10px 0px;
+        
+        @media (min-width: 768px) {
+            font-size: 2em;
+            text-align: left;
+        }
+    }
+    
     &__separator {
         border-bottom: 1px solid #8B89B1;
-        margin: 16px 0;
+        margin: 16px;
+    }
+
+    &--block {
+        display: block;
     }
 }
 
@@ -43,11 +72,10 @@
     display: flex;
     flex-direction: column;
     margin: 20px;
-    width: 100%;
     font-family: 'Poppins', sans-serif;
     
-    @media (min-width: 768px) {
-        // gap: 10px;
+    &--age {
+        width: 50%;
     }
     
     &__label {
@@ -57,9 +85,13 @@
         @media (min-width: 768px) {
             text-align: left;
         }
-
+        
         &--center {
             align-self: center;
+        }
+        
+        &--left {
+            text-align: left;
         }
     }
 

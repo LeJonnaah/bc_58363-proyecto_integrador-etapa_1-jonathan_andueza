@@ -1,9 +1,11 @@
 .main-header {
     display: flex;
-    flex-wrap: wrap;
-    // color: #E5E5E5;
     // position: fixed;
+    flex-wrap: wrap;
     font-family: 'Poppins', sans-serif;
+    width: 100%;
+    z-index: 999;
+    top: 0;
     background-color: #8B89B1;
 
     &__logo-container {
@@ -25,8 +27,18 @@
     }
 
     &__logo-link {
+        width: 100%;
         display: flex;
         text-decoration: none;
+
+        &:hover {
+            background-color: #62617d;
+        }
+        
+        &:hover .main-header__logo-img,
+        &:hover .main-title {
+            opacity: 0.8;
+        }
     }
 
     &__logo-img {
@@ -85,7 +97,6 @@
 
     &__cart-button-container {
         background-color: #8B89B1;
-        // padding: 2px;
         display: flex;
         justify-content: center;
         flex-grow: 1;
@@ -98,6 +109,20 @@
         @media (min-width: 1200px) {
             width: 100px;
             flex-grow: 0;
+        }
+    }
+
+    &__cart-dropdown {
+        display: none;
+        background-color: red;
+        position: absolute;
+        right: 50%;
+        top: 50%    ;
+        z-index: 999;
+        padding: 50px;
+        
+        &--visible {
+            display: block;
         }
     }
 

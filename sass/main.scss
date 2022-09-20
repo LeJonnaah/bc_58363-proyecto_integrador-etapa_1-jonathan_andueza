@@ -18,12 +18,14 @@
 @use 'layout/main-footer';
 @use 'layout/whatsapp-btn';
 @use 'layout/scrollToTopButton';
+@use 'layout/scrollbar';
 
 //Components
 @use 'components/card';
 @use 'components/carousel';
 @use 'components/button';
 @use 'components/form-container';
+@use 'components/list';
 
 //Pages
 @use 'pages/index';

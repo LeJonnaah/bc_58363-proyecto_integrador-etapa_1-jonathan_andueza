@@ -37,6 +37,17 @@
     &__company {
         text-shadow: 6px 6px 0px rgb(0 0 0 / 20%);
         font-size: 2em;
+
+        &::before {
+            content:"";
+            display: inline-block;
+            background-image: url('../../img/elemental/logo.png');
+            background-repeat: no-repeat;
+            background-size: 10px 20px;
+            transform: scale(5, 2.5) translateX(-5px);
+            width: 10px; 
+            height: 20px;
+        }
     }
 
     &__company-copyright {
@@ -47,12 +58,11 @@
 
     &__company &__company-span {
         color: #eb9ab3;
-        display: inline-block;
+        display: block;
         font-family: "Ms Madi", cursive;
     }
 
     &__links-container {
-        // color:  #e5e5e5;
         margin: 20px 0 12px;
         padding: 0;
     }

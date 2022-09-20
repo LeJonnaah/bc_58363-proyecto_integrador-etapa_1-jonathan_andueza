@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juguetería Cósmica | Nosotros</title>
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="icon" href="img/logo.png">
+    <link rel="icon" href="img/elemental/logo.png">
     <script src="https://kit.fontawesome.com/48ddd1a14a.js" crossorigin="anonymous"></script>
 </head>
 
@@ -14,15 +15,17 @@
     <button class="back-to-top-button" title="Volver arriba">
         <i class="fa-solid fa-caret-up"></i>
     </button>
-    <a href="#" class="whatsapp-btn" target="_blank"> 
+    <a href="#" class="whatsapp-btn" target="_blank">
         <i class="fa fa-whatsapp whatsapp-btn__icon"></i>
     </a>
+
     <input type="checkbox" class="main-nav-toggle" id="main-nav-toggle" />
     <header class="main-header">
         <div class="main-header__logo-container">
             <a class="main-header__logo-link" href="index.html">
-                <img class="main-header__logo-img" src="img/logo.png" alt="Logo">
-                <h1 class="main-title">Juguetería Cósmica<span class="main-title__span">¡la imaginación no tiene limites!</span></h1>
+                <img class="main-header__logo-img" src="img/elemental/logo.png" alt="Logo">
+                <h1 class="main-title">Juguetería Cósmica<span class="main-title__span">¡la imaginación no tiene
+                        límites!</span></h1>
             </a>
         </div>
         <div class="main-header__search-form-container">
@@ -31,6 +34,10 @@
         </div>
         <div class="main-header__cart-button-container">
             <i class="main-header__cart fa-solid fa-cart-shopping"></i>
+            <div class="main-header__cart-dropdown">
+                <span class="main-header__cart-button-text">Carrito</span>
+                <span class="main-header__cart-button-text main-header__cart-button-text--price">$0</span>
+            </div>
         </div>
         <div class="main-header__hamburger-button-container">
             <label class="hamburger-button" for="main-nav-toggle" title="Alternar la barra de navegación.">
@@ -58,12 +65,42 @@
             </nav>
         </div>
     </header>
-    <main></main>
+
+    <main>
+        <div class="form-container form-container--block">
+            <h2 class="form-container__title">Sobre mí</h2>
+            <img src="#" alt="">
+            <h3 class="form-container__subtitle">Lorem 2</h3>
+            <p>Mi nombre es Jonathan Andueza y soy alumno de Full Stack Engineer, Piloto Privado de Avion y de Ingles.
+                Esta es mi primer e-commerce, a futuro espero mejorar ampliamente en mis conocimientos relacionados con
+                la programación y el diseño web, ya que todavía soy bastante principiante. Quise dejar este apartado de
+                la pagina para que conozcan un poco más sobre mi y mis intereses/metas personales.
+            </p>
+            <div class="list-container">
+                <h3 class="form-container__subtitle">Mis gustos</h3>
+                <ul class="list">
+                    <li class="list__item">Aviación</li>
+                    <li class="list__item">Automovilismo</li>
+                    <li class="list__item">programación</li>
+                    <li class="list__item">Videojuegos</li>
+                    <li class="list__item">Música</li>
+                </ul>
+
+                <h3 class="form-container__subtitle">Mis cualidades</h3>
+                <ul class="list">
+                    <li class="list__item">Honestidad</li>
+                    <li class="list__item">Trabajo en equipo</li>
+                    <li class="list__item">Responsabilidad</li>
+                    <li class="list__item">Puntualidad</li>
+                </ul>
+            </div>
+        </div>
+    </main>
 
     <footer class="main-footer">
         <div class="main-footer__left">
-            <!-- <img class="main-header__logo-img" src="img/logo.png" alt="Logo">  -->
-            <h3 class="main-footer__company">Juguetería Cósmica<span class="main-footer__company-span"> ¡la imaginación no tiene limites!</span></h3>
+            <h3 class="main-footer__company">Juguetería Cósmica<span class="main-footer__company-span"> ¡la imaginación
+                    no tiene límites!</span></h3>
             <p class="main-footer__links-container">
                 <a href="index.html" class="main-footer__link main-footer__link--first">Inicio</a>
                 <a href="alta.html" class="main-footer__link">Alta</a>
@@ -73,29 +110,35 @@
         </div>
         <div class="main-footer__center">
             <div>
-                <i class="main-footer__i fa fa-phone"></i>
+                <a class="main-footer__center-link" href="tel:+54-9-11-5124-3303">
+                    <i class="main-footer__i fa fa-phone"></i></a>
                 <p class="main-footer__center-paragraph">
-                    <a class="main-footer__center-link" 
-                    href="tel:+54 9 11-5124-3303">+54 9 11-5124-3303</a></p>
+                    <a class="main-footer__center-link" href="tel:+54-9-11-5124-3303">+54 9 11-5124-3303</a>
+                </p>
             </div>
             <div>
-                <i class="main-footer__i main-footer__i--envelope fa fa-envelope"></i>
-                <p class="main-footer__center-paragraph">
-                    <a class="main-footer__center-link" 
-                    href="mailto:jonathanandueza1201@gmail.com">jonathanandueza1201@gmail.com</a></p>
+                <a class="main-footer__center-link" href="mailto:jonathanandueza1201@gmail.com">
+                    <i class="main-footer__i main-footer__i--envelope fa fa-envelope"></i>
+                    <p class="main-footer__center-paragraph">
+                        jonathanandueza1201@gmail.com</p>
+                </a>
             </div>
         </div>
         <div class="main-footer__right">
             <p class="main-footer__company-about">
                 <span class="main-footer__company-about-span">Proyecto Integrador</span>
-                Sitio web diseñado y desarrollado por Jonathan Andueza.
+                Sitio web diseñado y desarrollado por Jonathan Emanuel Andueza.
             </p>
             <div class="main-footer__icons-container">
-                <a href="https://linkedin.com/in/jonathan-andueza-7bba69227" target="_blank"><i class="main-footer__icon fa fa-linkedin"></i></a>
-                <a href="https://github.com/LeJonnaah" target="_blank"><i class="main-footer__icon fa fa-github"></i></a>
+                <a href="https://linkedin.com/in/jonathan-andueza-7bba69227" target="_blank"><i
+                        class="main-footer__icon fa fa-linkedin"></i></a>
+                <a href="https://github.com/LeJonnaah" target="_blank"><i
+                        class="main-footer__icon fa fa-github"></i></a>
             </div>
         </div>
     </footer>
-    
+
+<script src="js/main.js"></script>
 </body>
+
 </html>

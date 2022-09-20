@@ -1,0 +1,6 @@
+1. Cambiar los options por radios
+2. Footer sticky en el bottom
+3. Intentar hacer la navbar fixed
+4. Poner imágenes en el carrusel 
+5. Chequear ortografía
+6. Estilizar la pagina de nosotros correctamente

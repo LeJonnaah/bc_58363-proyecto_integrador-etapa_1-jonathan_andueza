@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juguetería Cósmica | Contacto</title>
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="icon" href="img/logo.png">
+    <link rel="icon" href="img/elemental/logo.png">
     <script src="https://kit.fontawesome.com/48ddd1a14a.js" crossorigin="anonymous"></script>
 </head>
 
@@ -17,12 +17,13 @@
     <a href="#" class="whatsapp-btn" target="_blank"> 
         <i class="fa fa-whatsapp whatsapp-btn__icon"></i>
     </a>
+    
     <input type="checkbox" class="main-nav-toggle" id="main-nav-toggle" />
     <header class="main-header">
         <div class="main-header__logo-container">
             <a class="main-header__logo-link" href="index.html">
-                <img class="main-header__logo-img" src="img/logo.png" alt="Logo">
-                <h1 class="main-title">Juguetería Cósmica<span class="main-title__span">¡la imaginación no tiene limites!</span></h1>
+                <img class="main-header__logo-img" src="img/elemental/logo.png" alt="Logo">
+                <h1 class="main-title">Juguetería Cósmica<span class="main-title__span">¡la imaginación no tiene límites!</span></h1>
             </a>
         </div>
         <div class="main-header__search-form-container">
@@ -31,6 +32,10 @@
         </div>
         <div class="main-header__cart-button-container">
             <i class="main-header__cart fa-solid fa-cart-shopping"></i>
+            <div class="main-header__cart-dropdown">
+                <span class="main-header__cart-button-text">Carrito</span>
+                <span class="main-header__cart-button-text main-header__cart-button-text--price">$0</span>
+            </div>
         </div>
         <div class="main-header__hamburger-button-container">
             <label class="hamburger-button" for="main-nav-toggle" title="Alternar la barra de navegación.">
@@ -66,22 +71,22 @@
                 <div class="form-container__separator"></div>
                 <div class="group-container">
                     <label class="group-container__label" for="name">Nombre</label>
-                        <input class="group-container__input" name="name" type="text">
+                        <input class="group-container__input" id="name" type="text">
                     <label class="group-container__label" for="mail">E-mail</label>
-                        <input class="group-container__input" name="mail" type="email">
+                        <input class="group-container__input" id="mail" type="email">
                 </div>
                 <div class="group-container">
-                    <label class="group-container__label" for="comments">¡Dejanos tu comentario!</label>
+                    <label class="group-container__label group-container__label--left" for="comments">¡Dejanos tu comentario!</label>
                     <textarea class="group-container__textarea" name="comments" id="comments" cols="30" rows="10"></textarea>
-                    <input type="submit" class="form-container__submit-btn card__button">
+                    <input type="submit" class="form-container__submit-btn card__button card__button--mt20px">
+                </div>
             </form>
         </div>
     </main>
 
     <footer class="main-footer">
         <div class="main-footer__left">
-            <!-- <img class="main-header__logo-img" src="img/logo.png" alt="Logo">  -->
-            <h3 class="main-footer__company">Juguetería Cósmica<span class="main-footer__company-span"> ¡la imaginación no tiene limites!</span></h3>
+            <h3 class="main-footer__company">Juguetería Cósmica<span class="main-footer__company-span"> ¡la imaginación no tiene límites!</span></h3>
             <p class="main-footer__links-container">
                 <a href="index.html" class="main-footer__link main-footer__link--first">Inicio</a>
                 <a href="alta.html" class="main-footer__link">Alta</a>
@@ -91,22 +96,25 @@
         </div>
         <div class="main-footer__center">
             <div>
-                <i class="main-footer__i fa fa-phone"></i>
+                <a class="main-footer__center-link" 
+                    href="tel:+54-9-11-5124-3303">
+                <i class="main-footer__i fa fa-phone"></i></a>
                 <p class="main-footer__center-paragraph">
                     <a class="main-footer__center-link" 
-                    href="tel:+54 9 11-5124-3303">+54 9 11-5124-3303</a></p>
+                    href="tel:+54-9-11-5124-3303">+54 9 11-5124-3303</a></p>
             </div>
             <div>
+                <a class="main-footer__center-link" 
+                    href="mailto:jonathanandueza1201@gmail.com">
                 <i class="main-footer__i main-footer__i--envelope fa fa-envelope"></i>
                 <p class="main-footer__center-paragraph">
-                    <a class="main-footer__center-link" 
-                    href="mailto:jonathanandueza1201@gmail.com">jonathanandueza1201@gmail.com</a></p>
+                jonathanandueza1201@gmail.com</p></a>
             </div>
         </div>
         <div class="main-footer__right">
             <p class="main-footer__company-about">
                 <span class="main-footer__company-about-span">Proyecto Integrador</span>
-                Sitio web diseñado y desarrollado por Jonathan Andueza.
+                Sitio web diseñado y desarrollado por Jonathan Emanuel Andueza.
             </p>
             <div class="main-footer__icons-container">
                 <a href="https://linkedin.com/in/jonathan-andueza-7bba69227" target="_blank"><i class="main-footer__icon fa fa-linkedin"></i></a>
@@ -114,6 +122,7 @@
             </div>
         </div>
     </footer>
-    
+
+    <script src="js/main.js"></script>
 </body>
 </html>
