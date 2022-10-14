@@ -15,6 +15,11 @@
         padding: 20px 5px;
     }
 
+    @media (min-height: 1024px) {
+        bottom: 0;
+        position: absolute;
+    }
+
     &__left,
     &__center,
     &__right {

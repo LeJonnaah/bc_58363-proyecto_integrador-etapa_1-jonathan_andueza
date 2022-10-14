@@ -1,0 +1,72 @@
+<div class="form-container">
+    <form class="form-container__form" action="post">
+        <h2 class="form-container__title">Alta producto</h2>
+        <div class="form-container__separator"></div>
+        <div class="form-container__group">
+            <div class="group-container">
+                <label class="group-container__label" for="name">Nombre</label>
+                <input class="group-container__input" id="name" type="text" />
+            </div>
+            <div class="group-container">
+                <label class="group-container__label" for="price">Precio</label>
+                <input class="group-container__input" id="price" type="number" />
+            </div>
+        </div>
+        <div class="form-container__group">
+            <div class="group-container">
+                <label class="group-container__label" for="brand">Marca</label>
+                <input class="group-container__input" id="brand" type="text" />
+            </div>
+            <div class="group-container">
+                <label class="group-container__label group-container__label--center" for="stock">Stock</label>
+                <select name="stock" id="stock">
+                    <option value="0">No</option>
+                    <option value="1">Si</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-container__group">
+            <div class="group-container">
+                <label class="group-container__label" for="short-description">Descripción corta</label>
+                <input class="group-container__input" id="short-description" type="text" />
+            </div>
+            <div class="group-container">
+                <label class="group-container__label" for="long-description">Descripción larga</label>
+                <input class="group-container__input" id="long-description" type="text" />
+            </div>
+        </div>
+        <div class="form-container__group">
+            <div class="group-container">
+                <label class="group-container__label" for="category">Categoría</label>
+                <input class="group-container__input" id="category" type="text" />
+            </div>
+            <div class="group-container">
+                <p class="group-container__label">Envío sin cargo</p>
+                <div class="group-container__radio-group">
+                    <input type="radio" name="free-ship" id="yes-free-ship" />
+                    <label for="yes-free-ship">Si</label>
+                </div>
+                <div class="group-container__radio-group">
+                    <input type="radio" name="free-ship" id="no-free-ship" />
+                    <label for="no-free-ship">No</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-container__group form-container__group--age">
+            <div class="group-container group-container--age">
+                <label class="group-container__label-age" for="min-age">Edad desde</label>
+                <input class="group-container__input-age" id="min-age" type="number" />
+            </div>
+            <div class="group-container group-container--age">
+                <label class="group-container__label-age" for="max-age">Edad hasta</label>
+                <input class="group-container__input-age" id="max-age" type="number" />
+            </div>
+        </div>
+        <div class="group-container">
+            <label class="group-container__label" for="image">Imagen</label>
+            <input class="group-container__input" id="image" type="file" />
+        </div>
+        <p class="form-container__required">Todos los campos son obligatorios.</p>
+        <input type="submit" class="form-container__submit-btn card__button" />
+    </form>
+</div>

@@ -66,6 +66,12 @@
     &--block {
         display: block;
     }
+
+    &__required {
+        color: #e56972;
+        font-size: 0.8em;
+        margin: 10px;
+    }
 }
 
 .group-container {
@@ -119,14 +125,14 @@
         display: flex;
         width: 200px;
         padding: 5px 10px 0;
-        border: none;
-        border-bottom: 1px solid #8b89b1;
+        border: 2px solid #fff;
+        border-bottom: 2px solid #8b89b1;
         
         &:focus {
             border-radius: 10px;
             outline: none;
             background: #f2f2f2;
-            border: 3px solid #8b89b1;
+            border: 2px solid #8b89b1;
         }
         
         @media (min-width: 480px) {

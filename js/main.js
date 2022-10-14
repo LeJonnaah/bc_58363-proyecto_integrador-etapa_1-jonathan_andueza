@@ -2,12 +2,12 @@
 
 // 1. Variables //
 
-const slidesContainer = document.getElementById("slides-container");
-const slide = document.querySelector(".slider__slide");
-const prevButton = document.getElementById("slide-arrow-prev");
-const nextButton = document.getElementById("slide-arrow-next");
 const scrollToTopButton = document.querySelector(".back-to-top-button");
 const cartButton = document.querySelector(".main-header__cart");
+const cartBackground = document.querySelector(".main-header__cart-background");
+const cartDropdown = document.querySelector(".main-header__cart-dropdown");
+const cartXMark = document.querySelector(".main-header__cart-xmark");
+const cartItemXMark = document.querySelectorAll(".main-header__cart-item-delete");
 
 // 2. Functions //
 
@@ -26,6 +26,11 @@ const topFunction = () => {
     document.documentElement.scrollTop = 0;
 }
 
+const closeCartDropdown = () => {
+    cartDropdown.classList.remove("main-header__cart-dropdown--visible");
+    cartBackground.classList.remove("main-header__cart-background--visible");
+}
+
 // 3. Event Listeners //
 
 window.addEventListener("scroll", () => {
@@ -40,53 +45,26 @@ window.addEventListener("scroll", () => {
 scrollToTopButton.addEventListener("click", topFunction);
 
 cartButton.addEventListener("click", () => {
-    console.log("cart button clicked");
-    const cartDropdown = document.querySelector(".main-header__cart-dropdown");
     cartDropdown.classList.toggle("main-header__cart-dropdown--visible");
+    cartBackground.classList.toggle("main-header__cart-background--visible");
 });
 
-try {
-    slidesContainer.addEventListener("scroll", () => {
-        const slideWidth = slide.clientWidth;
-        const slideCount = slidesContainer.childElementCount;
-        const scrollPosition = slidesContainer.scrollLeft;
-        const maxScrollPosition = slideWidth * (slideCount - 1);
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        closeCartDropdown();
+    }  
+});
 
-        if (scrollPosition === maxScrollPosition) {
-            setTimeout(() => {
-                slidesContainer.scrollLeft = 0;
-            }, 10000);
-        }
+document.addEventListener("click", (e) => {
+    if (e.target === cartBackground) {
+        closeCartDropdown();
+    } else if (e.target === cartXMark) {
+        closeCartDropdown();
+    }
+});
+
+cartItemXMark.forEach((xMark) => {
+    xMark.addEventListener("click", () => {
+        xMark.parentElement.remove();
     });
-
-    nextButton.addEventListener("click", () => {
-        const slideWidth = slide.clientWidth;
-        slidesContainer.scrollLeft += slideWidth;
-
-        if (slidesContainer.scrollLeft === slideWidth * (slidesContainer.childElementCount - 1)) {
-            slidesContainer.scrollLeft = 0;
-        }
-    });
-
-
-    prevButton.addEventListener("click", () => {
-        const slideWidth = slide.clientWidth;
-        slidesContainer.scrollLeft -= slideWidth;
-
-        if (slidesContainer.scrollLeft === 0) {
-            slidesContainer.scrollLeft = slideWidth * (slidesContainer.childElementCount - 1);
-        }
-    });
-} catch (error) {
-    console.error(error);
-}
-
-// 4. Timers //
-
-try {
-    const nextSlideTimeout = setInterval(() => {
-    nextButton.click();
-}, 10000);
-} catch (error) {
-    console.error(error);
-}
+});
