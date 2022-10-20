@@ -1,14 +1,4 @@
-console.warn('🆗: Módulo PageAlta cargado.');
-
-class PageAlta {
-
-    static async init() {
-        console.log('PageAlta.init()');
-        console.log('*');
-        console.log('**');
-        console.log('***');
-    }
-}
+class PageAlta { static async init() {console.log('PageAlta.init()');}}
 
 export default PageAlta;
 
@@ -24,7 +14,6 @@ const inputShortDescription = document.querySelector("#short-description");
 const inputLongDescription = document.querySelector("#long-description");
 const inputMinAge = document.querySelector("#min-age");
 const inputMaxAge = document.querySelector("#max-age");
-const inputMail = document.querySelector("#mail");
 const inputCategory = document.querySelector("#category");
 
 /// 2.regExp  ///
@@ -33,12 +22,9 @@ const regExpProductName = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s
 const regExpProductPrice = new RegExp("^[0-9]{1,9}$");
 const regExpProductBrand = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]){3,40}$");
 const regExpProductCategory = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]){3,50}$");
-const regExpShortDescription = new RegExp("^\w{0,79}$");
-const regExpLongDescription = new RegExp("^\w.{0,1999}$");
+const regExpShortDescription = new RegExp("^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,79}$");
+const regExpLongDescription = new RegExp("^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,1999}$");
 const regExpAge = new RegExp("^((100((\.|,)[0-9]{1,2})?)|([0-9]{1,2}((\.|,)[0-9]{0,2})?))$");
-const regExpEmail = new RegExp(
-    "^[a-zA-Z0-9.!#$%&*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$"
-);
 
 /// 3. Functions  ///
 
@@ -105,7 +91,7 @@ inputShortDescription.addEventListener("change", (e) => {
     validateInput(regExpShortDescription, e);
 });
 
-inputShortDescription.addEventListener("change", (e) => {
+inputLongDescription.addEventListener("change", (e) => {
     validateInput(regExpLongDescription, e);
 });
 

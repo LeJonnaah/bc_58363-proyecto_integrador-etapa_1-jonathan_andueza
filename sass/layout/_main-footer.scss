@@ -194,6 +194,8 @@
 
         &:hover {
             background-color: #527ca4;
+            transition: all 0.3s ease-in-out;
+            transform: scale(1.1);
         }
     }
 }

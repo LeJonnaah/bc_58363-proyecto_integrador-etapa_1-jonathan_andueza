@@ -15,3 +15,22 @@ body::-webkit-scrollbar-thumb {
         background-color: #62617d;
     }
 }
+
+.main-header__cart-dropdown::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #e5e5e5;
+}
+
+.main-header__cart-dropdown::-webkit-scrollbar {
+    width: 12px;
+}
+
+
+.main-header__cart-dropdown::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #eb9ab3;
+
+    &:hover {
+        background-color: #b7788c;
+    }
+}

@@ -1,36 +1,20 @@
-// /// 3. Server ///
 
 // import express from 'express';
+// import routerProducts from './routers/products.js';
+
+// const app = express();
+
+// app.use(express.static('public', { extensions: ['html', 'htm'] }));
+// app.use(express.urlencoded({extended: true}));
+// app.use(express.json());
 
 
-// /////////////// No se si va abajo de todo
+// app.use('/api/products', routerProducts);
 
-// const server = app.listen(3000, () => {
-//     console.log('Server running on port 3000');
-// });
 
-// server.on('error', (error) => {
-//     console.log('Error on server:', error);
-// });
-
-// /// 1. Functions ///
-
-// const routeNotFound = (req, res) => {
-//     const {url, method} = req;
-//     res.status(404).render('404.html', {
-//         message: `The route ${url} with the method ${method} does not exist`
-//     });
-// };
-
-// /// 2. GET Routes ///
-
-// /// 3. * Routes ///
-
-// app.get('*', routeNotFound);
-// app.put('*', routeNotFound);
-// app.post('*', routeNotFound);
-// app.delete('*', routeNotFound);
-
+// const PORT = 8080;
+// const server = app.listen(PORT, () => console.log(`Servidor Express escuchando en el puerto ${PORT}.`));
+// server.on('error', error => console.log('Error al iniciar el servidor Express: ' + error.message));
 
 class Main {
 

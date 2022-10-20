@@ -29,9 +29,11 @@
         padding: 1em .7em;
         color: #fff;
         text-decoration: none;
+        transition: all 600ms cubic-bezier(.62,.04,.3,1.56);
         
         &--active {
-            color: #6B6A8B;
+            color: #eb9ab3;
+            font-weight: bold;
         }
         
         &:hover,

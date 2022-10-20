@@ -1,4 +1,4 @@
-.card__button {
+.button {
     cursor: pointer;
     border: 1px solid #87B06D;
     padding: 14px 30px;
@@ -22,5 +22,11 @@
 
     &--mt20px {
         margin-top: 20px;
+    }
+
+    &--absolute {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
     }
 }
