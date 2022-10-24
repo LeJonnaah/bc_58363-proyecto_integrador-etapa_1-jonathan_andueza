@@ -1,4 +1,4 @@
-class PageAlta { static async init() {console.log('PageAlta.init()');}}
+class PageAlta { static async init() { console.log('PageAlta.init()'); } }
 
 export default PageAlta;
 
@@ -28,22 +28,23 @@ const regExpAge = new RegExp("^((100((\.|,)[0-9]{1,2})?)|([0-9]{1,2}((\.|,)[0-9]
 
 /// 3. Functions  ///
 
-function displayCheckOnInput(e) {
-    e.target.style.backgroundColor = "#a8c695";
-}
-
-function displayErrorOnInput(e) {
-    e.target.style.backgroundColor = "#e56972";
-}
-
-const validateInput = (regExp, e) => {
-    if (regExp.test(e.target.value)) {
-        displayCheckOnInput(e);
-    } else if (!regExp.test(e.target.value)) {
-        displayErrorOnInput(e);
-    } 
-    if (e.target.value === "") {
-        e.target.style.backgroundColor = "#fff";
+const displayErrorBox = (e, regExp, message) => {
+    const obligatoryFieldHTML = `
+    <div class="form-container__obligatory-field">
+        <p class="form-container__field-text">Este campo es obligatorio.</p>
+        <p class="form-container__field-text">${message}</p>
+    </div>
+`;
+    if (!regExp.test(e.target.value)) {
+        e.target.style.backgroundColor = "#e56972";
+        if (!e.target.nextElementSibling) {
+            e.target.insertAdjacentHTML("afterend", obligatoryFieldHTML);
+            setTimeout(() => {
+                e.target.nextElementSibling.remove();
+            }, 3000);
+        }
+    } else {
+        e.target.style.backgroundColor = "#a8c695";
     }
 };
 
@@ -66,35 +67,50 @@ mainForm.addEventListener("submit", (e) => {
     }
 });
 
-inputName.addEventListener("change", (e) => {
-    validateInput(regExpProductName, e);
+mainForm.addEventListener("change", (e) => {
+    if (e.target === inputName) {
+        displayErrorBox(e, regExpProductName, "El nombre debe tener entre 3 y 30 caracteres.");
+    }
 });
 
-
-inputPrice.addEventListener("change", (e) => {
-    validateInput(regExpProductPrice, e);
+mainForm.addEventListener("change", (e) => {
+    if (e.target === inputPrice) {
+        displayErrorBox(e, regExpProductPrice, "El precio debe tener entre 1 y 9 caracteres.");
+    }
 });
 
-inputBrand.addEventListener("change", (e) => {
-    validateInput(regExpProductBrand, e);
+mainForm.addEventListener("change", (e) => {
+    if (e.target === inputBrand) {
+        displayErrorBox(e, regExpProductBrand, "La marca debe tener entre 3 y 40 caracteres.");
+    }
 });
 
-inputMinAge.addEventListener("change", (e) => {
-    validateInput(regExpAge, e);
+mainForm.addEventListener("change", (e) => {
+    if (e.target === inputShortDescription) {
+        displayErrorBox(e, regExpAge, "La descripción corta debe tener entre 0 y 79 caracteres.");
+    }
 });
 
-inputMaxAge.addEventListener("change", (e) => {
-    validateInput(regExpAge, e);
+mainForm.addEventListener("change", (e) => {
+    if (e.target === inputLongDescription) {
+        displayErrorBox(e, regExpAge, "La descripción larga debe tener entre 0 y 1999 caracteres.");
+    }
 });
 
-inputShortDescription.addEventListener("change", (e) => {
-    validateInput(regExpShortDescription, e);
+mainForm.addEventListener("change", (e) => {
+    if (e.target === inputMinAge) {
+        displayErrorBox(e, regExpShortDescription, "La edad mínima debe tener entre 0 y 2 caracteres.");
+    }
 });
 
-inputLongDescription.addEventListener("change", (e) => {
-    validateInput(regExpLongDescription, e);
+mainForm.addEventListener("change", (e) => {
+    if (e.target === inputMaxAge) {
+        displayErrorBox(e, regExpLongDescription, "La edad máxima debe tener entre 0 y 2 caracteres.");
+    }
 });
 
-inputCategory.addEventListener("change", (e) => {
-    validateInput(regExpProductCategory, e);
+mainForm.addEventListener("change", (e) => {
+    if (e.target === inputCategory) {
+        displayErrorBox(e, regExpProductCategory, "La categoría debe tener entre 3 y 50 caracteres.");
+    }
 });

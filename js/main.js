@@ -27,8 +27,17 @@ const topFunction = () => {
 }
 
 const closeCartDropdown = () => {
-    cartDropdown.classList.remove("main-header__cart-dropdown--visible");
+    // close cart dropdown and remove background with adnimation
     cartBackground.classList.remove("main-header__cart-background--visible");
+    cartDropdown.classList.remove("main-header__cart-dropdown--visible");
+    cartBackground.classList.add("main-header__cart-background--inactive");
+    cartDropdown.classList.add("main-header__cart-dropdown--inactive");
+    // remove animation classes after animation is done
+    setTimeout(() => {
+        cartBackground.classList.remove("main-header__cart-background--inactive");
+        cartDropdown.classList.remove("main-header__cart-dropdown--inactive");
+    }
+    , 500);
 }
 
 // 3. Event Listeners //
@@ -44,9 +53,13 @@ window.addEventListener("scroll", () => {
 
 scrollToTopButton.addEventListener("click", topFunction);
 
-cartButton.addEventListener("click", () => {
-    cartDropdown.classList.toggle("main-header__cart-dropdown--visible");
-    cartBackground.classList.toggle("main-header__cart-background--visible");
+document.addEventListener("click", e => {
+    if (e.target === cartButton) {
+        cartDropdown.classList.toggle("main-header__cart-dropdown--visible");
+        cartBackground.classList.toggle("main-header__cart-background--visible");
+    } else if (e.target === cartBackground || e.target === cartXMark) {
+        closeCartDropdown();
+    }
 });
 
 document.addEventListener("keydown", (e) => {
@@ -55,16 +68,10 @@ document.addEventListener("keydown", (e) => {
     }  
 });
 
-document.addEventListener("click", (e) => {
-    if (e.target === cartBackground) {
-        closeCartDropdown();
-    } else if (e.target === cartXMark) {
-        closeCartDropdown();
+document.addEventListener("click", e => {
+    if (e.target.classList.contains("cart-item__xmark")) {
+        e.target.closest('.cart-item__container').remove();
+        // itemRemovedFromCart();
+        // calculateCartTotalPrice();
     }
-});
-
-cartItemXMark.forEach((xMark) => {
-    xMark.addEventListener("click", () => {
-        xMark.parentElement.remove();
-    });
 });

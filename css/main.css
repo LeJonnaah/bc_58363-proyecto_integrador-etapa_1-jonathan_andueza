@@ -506,6 +506,13 @@ body {
   z-index: 1;
   display: block;
 }
+.main-header__cart-background--inactive {
+  animation: fadeOut 3.5s;
+  display: none;
+}
+.main-header__cart-dropdown--inactive {
+  display: none;
+}
 .main-header__cart-xmark {
   position: absolute;
   top: 2px;
@@ -886,6 +893,15 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: #b7788c;
 }
 
+@media (min-width: 1024px) {
+  .cart-item__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    flex-wrap: wrap;
+  }
+}
 .cart-item__xmark {
   font-size: 2em;
   color: #e56972;
@@ -934,6 +950,7 @@ body::-webkit-scrollbar-thumb:hover {
   border: none;
 }
 .cart-item__separator {
+  flex-basis: 100%;
   border-bottom: 1px solid #8b89b1;
   margin: 10px 0;
 }
@@ -966,16 +983,16 @@ body::-webkit-scrollbar-thumb:hover {
   line-height: 1.2;
   color: #054d60;
 }
-.card__subtitle {
+.card__brand {
   flex: 0 1 200px;
   margin-left: 10px;
   color: hsl(243deg, 20%, 42%);
-  font-weight: 600;
+  font-weight: bold;
   font-size: 0.7em;
   text-transform: uppercase;
 }
 @media (min-width: 480px) {
-  .card__subtitle {
+  .card__brand {
     font-size: 1em;
   }
 }
@@ -1174,12 +1191,6 @@ body::-webkit-scrollbar-thumb:hover {
 .button--mt20px {
   margin-top: 20px;
 }
-.button--absolute {
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-}
-
 .form-container {
   border-radius: 10px;
   color: black;
@@ -1212,7 +1223,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 .form-container__title {
   font-family: "Amatic SC", cursive;
-  font-size: 1.3em;
+  font-size: 2em;
   border-bottom: 1px solid #8B89B1;
   text-align: center;
   font-family: "Poppins", sans-serif;
@@ -1250,6 +1261,16 @@ body::-webkit-scrollbar-thumb:hover {
   color: #e56972;
   font-size: 0.8em;
   margin: 10px;
+}
+.form-container__obligatory-field {
+  background-color: #e56972;
+  padding: 10px;
+  color: #f2f2f2;
+  font-weight: bold;
+  margin: 0;
+  margin-top: 5px;
+  max-width: 226px;
+  font-size: 0.8em;
 }
 
 .group-container {
@@ -1357,7 +1378,9 @@ body::-webkit-scrollbar-thumb:hover {
 }
 @media (min-width: 1024px) {
   .message-container--success {
-    top: 20%;
+    border-radius: 0;
+    top: 0;
+    z-index: 9999999999999;
   }
 }
 .message-container--error {

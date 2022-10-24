@@ -15,7 +15,9 @@
         background-color: #a8c695;
 
         @media (min-width: 1024px) {
-            top: 20%;
+            border-radius: 0;
+            top: 0;
+            z-index: 9999999999999;
         }
     }
 

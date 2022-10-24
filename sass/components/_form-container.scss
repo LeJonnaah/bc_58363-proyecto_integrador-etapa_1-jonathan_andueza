@@ -10,10 +10,10 @@
     justify-content: center;
     box-shadow: 0 6px 6px rgba(#000, 0.3);
 
-        @media (min-width: 768px) {
-        margin: 16px 7%; 
+    @media (min-width: 768px) {
+        margin: 16px 7%;
     }
-    
+
     @media (min-width: 1024px) {
         margin: 16px 10%;
     }
@@ -25,13 +25,13 @@
         }
 
         &--age {
-        display: flex;
+            display: flex;
         }
     }
 
     &__title {
         font-family: 'Amatic SC', cursive;
-        font-size: 1.3em;
+        font-size: 2em;
         border-bottom: 1px solid #8B89B1;
         text-align: center;
         font-family: "Poppins", sans-serif;
@@ -39,7 +39,7 @@
         font-variant: small-caps;
         letter-spacing: 10px;
         color: #eb9ab3;
-        
+
         @media (min-width: 768px) {
             font-size: 3em;
             text-align: left;
@@ -51,13 +51,13 @@
         font-size: 1.5em;
         text-align: center;
         margin: 10px 0px;
-        
+
         @media (min-width: 768px) {
             font-size: 2em;
             text-align: left;
         }
     }
-    
+
     &__separator {
         border-bottom: 1px solid #8B89B1;
         margin: 16px;
@@ -72,6 +72,17 @@
         font-size: 0.8em;
         margin: 10px;
     }
+
+    &__obligatory-field{
+        background-color: #e56972;
+        padding: 10px;
+        color: #f2f2f2;
+        font-weight: bold;
+        margin: 0;
+        margin-top: 5px;
+        max-width: 226px;
+        font-size: 0.8em;
+    }
 }
 
 .group-container {
@@ -79,23 +90,23 @@
     flex-direction: column;
     margin: 20px;
     font-family: 'Poppins', sans-serif;
-    
+
     &--age {
         width: 50%;
     }
-    
+
     &__label {
         text-align: center;
         margin-top: 10px;
-        
+
         @media (min-width: 768px) {
             text-align: left;
         }
-        
+
         &--center {
             align-self: center;
         }
-        
+
         &--left {
             text-align: left;
         }
@@ -110,7 +121,7 @@
         resize: none;
 
         &:focus {
-            background-color:  #f2f2f2;
+            background-color: #f2f2f2;
             outline: none;
             border: 3px solid #8b89b1;
         }
@@ -127,18 +138,18 @@
         padding: 5px 10px 0;
         border: 2px solid #fff;
         border-bottom: 2px solid #8b89b1;
-        
+
         &:focus {
             border-radius: 10px;
             outline: none;
             background: #f2f2f2;
             border: 2px solid #8b89b1;
         }
-        
+
         @media (min-width: 480px) {
             width: 100%;
         }
-        
+
         &-age {
             display: inline;
             width: 40px;

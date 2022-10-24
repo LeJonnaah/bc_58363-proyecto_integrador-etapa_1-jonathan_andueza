@@ -1,5 +1,16 @@
 .cart-item {
 
+    &__container{
+
+        @media (min-width: 1024px) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+    }
+    
     &__xmark {
         font-size: 2em;
         color: #e56972;
@@ -56,6 +67,7 @@
     }
 
     &__separator {
+        flex-basis: 100%;
         border-bottom: 1px solid #8b89b1;
         margin: 10px 0;
     }

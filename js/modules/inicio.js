@@ -5,30 +5,25 @@ export default PageInicio;
 "use strict";
 
 class Product {
-    constructor(title, price, image, description) {
+    constructor(brand, title, subtitle, price, image, description, minAge, maxAge) {
+        this.brand = brand;
         this.title = title;
+        this.subtitle = subtitle;
         this.price = price;
         this.image = image;
         this.description = description;
+        this.minAge = minAge;
+        this.maxAge = maxAge;
     }
 }
 
 const products = [
-    new Product('Lorem Avion', 12000, '../img/products/legosi-toy.png', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'),
-    new Product('Lorem Avion', 12000, '../img/products/legosi-toy.png', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'),
-    new Product('Lorem Avion', 12000, '../img/products/legosi-toy.png', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'),
-    new Product('Lorem Avion', 12000, '../img/products/legosi-toy.png', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'),
-    new Product('Lorem Avion', 12000, '../img/products/legosi-toy.png', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'),
-    new Product('Lorem Avion', 12000, '../img/products/legosi-toy.png', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'),
-    new Product('Lorem Avion', 12000, '../img/products/legosi-toy.png', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'),
-    new Product('Lorem Avion', 12000, '../img/products/legosi-toy.png', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'),
-    new Product('Lorem Avion', 12000, '../img/products/legosi-toy.png', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'),
-    new Product('Lorem Avion', 12000, '../img/products/legosi-toy.png', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'),
-    new Product('Lorem Avion', 12000, '../img/products/legosi-toy.png', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'),
-    new Product('Lorem Auto', 30000, 'https://images.unsplash.com/photo-1581084517869-8b8b5b0b5f1c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'),
-    new Product('Lorem Peluche', 10000, 'https://images.unsplash.com/photo-1581084517869-8b8b5b0b5f1c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'),
-    new Product('Lorem Lego', 3232, 'https://images.unsplash.com/photo-1581084517869-8b8b5b0b5f1c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'),
-    new Product('Lorem Casa', 1200, 'https://images.unsplash.com/photo-1581084517869-8b8b5b0b5f1c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'),
+    new Product('¡Producto Nuevo!', 'Lorem Avion', 'Lorem', 12000, '../img/products/legosi-toy.png', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.', 0, 3,),
+    new Product('¡Recomendado', 'Lorem Topo', 'Lorem', 12000, '../img/products/mega-cyborg-hand-toy.jpg', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.', 0, 12,),
+    new Product('¡Nuevo!', 'Lorem Auto', 'Lorem', 30000, 'https://images.unsplash.com/photo-1581084517869-8b8b5b0b5f1c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.', 1, 5,),
+    new Product('¡Producto Nuevo!', 'Lorem Peluche', 'Lorem', 10000, 'https://images.unsplash.com/photo-1581084517869-8b8b5b0b5f1c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.', 3, 6),
+    new Product('¡Producto Nuevo!', 'Lorem Lego', 'Lorem', 3232, 'https://images.unsplash.com/photo-1581084517869-8b8b5b0b5f1c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.', 0, 3,),
+    new Product('¡Producto Nuevo!', 'Lorem Casa', 'Lorem', 1200, 'https://images.unsplash.com/photo-1581084517869-8b8b5b0b5f1c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80', 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.', 0, 3,),
 ];
 
 const xhr = new XMLHttpRequest();
@@ -51,14 +46,41 @@ const slide = document.querySelector(".slider__slide");
 const prevButton = document.getElementById("slide-arrow-prev");
 const nextButton = document.getElementById("slide-arrow-next");
 const cartTotalPrice = document.querySelector(".main-header__cart-price");
+const cartDropdown = document.querySelector(".main-header__cart-dropdown");
+const cartItemQuantityInput = document.querySelectorAll(".cart-item__quantity-input");
+
 
 // 2. Functions //
+
+const calculateItemSubtotal = (price, quantity) => {
+    return price * quantity;
+};
+
+const calculateCartTotalPrice = () => {
+    const cartItemPrice = document.querySelectorAll(".cart-item__price");
+    const cartItemQuantityInput = document.querySelectorAll(".cart-item__quantity-input");
+    let totalPrice = 0;
+    cartItemPrice.forEach(price => {
+        const priceNumber = Number(price.textContent.replace("$", ""));
+        cartItemQuantityInput.forEach(quantity => {
+            const quantityNumber = Number(quantity.value);
+            totalPrice += priceNumber * quantityNumber;
+            quantity.addEventListener("change", () => {
+                calculateCartTotalPrice();
+                calculateItemSubtotal(priceNumber, quantityNumber);
+            });
+        });
+    });
+    cartTotalPrice.textContent = `$${totalPrice}`;
+};
 
 const checkIfItemIsInCart = product => {
     const cartItemTitle = document.querySelectorAll(".cart-item__title");
     let itemIsInCart = false;
     cartItemTitle.forEach(title => {
         if (title.textContent === product.title) {
+            
+            console.log("Item is already in cart");
             itemIsInCart = true;
         }
     });
@@ -81,6 +103,10 @@ const createAndDeleteCartItem = product => {
                 <button class="cart-item__btn cart-item__btn--minus">-</button>
                 <input type="number" value="1" class="cart-item__quantity-input"/>
                 <button class="cart-item__btn cart-item__btn--plus">+</button>
+            </div>
+            <div class='cart-item__subtotal-container'>
+                <p class="cart-item__subtotal-quote">Subtotal</p>
+                <p class="cart-item__subtotal-price">${product.subtotal}</p>	
             </div>
             <div class"cart-item__xmark-container">
                 <i class="fas fa-times cart-item__xmark"></i>
@@ -150,24 +176,11 @@ const itemRemovedFromCart = () => {
     }, 2000);
 };
 
-const calculateCartTotalPrice = () => {
-    const cartItemPrice = document.querySelectorAll(".cart-item__price");
-    const cartItemQuantityInput = document.querySelectorAll(".cart-item__quantity-input");
-    let totalPrice = 0;
-    cartItemPrice.forEach(price => {
-        const priceNumber = Number(price.textContent.replace("$", ""));
-        cartItemQuantityInput.forEach(quantity => {
-            const quantityNumber = Number(quantity.value);
-            totalPrice += priceNumber * quantityNumber;
-        });
-        // totalPrice += priceNumber *;
-    });
-    cartTotalPrice.textContent = `$${totalPrice}`;
-};
 
 const cartItemFunctionality = () => {
     cartItemMinusButton();
     cartItemPlusButton();
+    calculateCartTotalPrice();
 };
 
 const addProductToCart = product => {
@@ -219,11 +232,11 @@ prevButton.addEventListener("click", () => {
 
 document.addEventListener("click", e => {
     if (e.target.classList.contains("button")) {
-        console.log("click")
         const product = {
+            image: e.target.closest(".card").querySelector(".card__image").src,
             title: e.target.closest(".card").querySelector(".card__title").textContent,
             price: e.target.closest(".card").querySelector(".card__price").textContent,
-            image: e.target.closest(".card").querySelector(".card__image").src
+            // subtotal: 
         };
         addProductToCart(product);
     }
@@ -234,3 +247,6 @@ document.addEventListener("click", e => {
 setInterval(() => {
     nextButton.click();
 }, 10000);
+
+
+export {cartItemFunctionality};

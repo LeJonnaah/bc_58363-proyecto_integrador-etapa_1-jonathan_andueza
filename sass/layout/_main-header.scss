@@ -123,6 +123,15 @@
         display: block;
     }
 
+  &__cart-background--inactive {
+        animation: fadeOut 3.5s;
+        display: none;
+    }
+
+    &__cart-dropdown--inactive {
+        display: none;
+    }
+
     &__cart-xmark {
         position: absolute;
         top: 2px;
