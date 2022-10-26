@@ -1,0 +1,80 @@
+.cart {
+    &__item {
+        position: relative;
+    }
+
+    &__background--visible {
+        background-color: hsla(0, 0%, 0%, .4);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: block;
+    }
+
+    &__xmark {
+        position: absolute;
+        top: 2px;
+        right: 3px;
+        font-size: 2em;
+        color: #e56972;
+        cursor: pointer;
+        z-index: 2;
+
+        &:hover {
+            color: #b25158;
+        }
+    }
+
+    &__text {
+        font-size: 1.5em;
+        font-family: "Poppins", sans-serif;
+        font-weight: 800;
+        line-height: 1.2;
+        font-variant: small-caps;
+        letter-spacing: 2px;
+        color: #054d60;
+
+        @media (min-width: 768px) {
+            font-size: 2.5em;
+        }
+    }
+    
+    &__price {
+        font-family: "Poppins", sans-serif;
+        color: #252525;
+
+        @media (min-width: 768px) {
+            font-size: 2em;
+        }
+    }
+
+    &__dropdown {
+        display: none;
+        background-color: #fff;
+        position: absolute;
+        right: 1%;
+        top: 110%;
+        color: #000;
+        width: 98%;
+        z-index: 10;
+        border-radius: 10px;
+        padding: 50px;
+        overflow-y: auto;
+        max-height: 500px;
+
+        @media (min-width: 1024px) {
+            width: 50%;
+        }
+
+        @media (min-height: 1024px) {
+            max-height: 1000px;
+        }
+
+        &--visible {
+            display: block;
+        }
+    }
+}

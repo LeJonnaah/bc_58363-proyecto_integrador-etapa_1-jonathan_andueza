@@ -1,0 +1,41 @@
+{{#if products}}
+    {{#each products}}
+                <div class="card">
+                <div class="card__id">{{id}}</div>
+                <div class="card__header">
+                    <div class="card__separator"></div>
+                    <h4 class="card__header-text">{{header}}</h4>
+                </div>
+                <div class="card__body">
+                    <div class="card__half card__half--fb">
+                        <div class="card__featured-text">
+                            <h3 class="card__title">{{title}}</h3>
+                            <p class="card__brand">{{brand}}</p>
+                            <p class="card__price">&#36; {{price}}</p>
+                        </div>
+                        <div class="card__image-container">
+                            <img class="card__image"
+                                src="{{image}}"
+                                alt="Imagen del producto" />
+                        </div>
+                    </div>
+                    <div class="card__half">
+                        <div class="card__description">
+                            <p>
+                                {{description}}
+                            </p>
+                        </div>
+                        <i class="card__stock-fa fa fa-pen"></i>
+                        <span class="card__stock">¡De {{minAge}} a {{maxAge}} años!</span>
+                    </div>
+                </div>
+                <div class="card__footer">
+                    <div class="card__action">
+                        <button class="button">Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>
+    {{/each}}
+{{else}}
+    <h2>Upss... No se han encontrado productos :p</h2>
+{{/if}}

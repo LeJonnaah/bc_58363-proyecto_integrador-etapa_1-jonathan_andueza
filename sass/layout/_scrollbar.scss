@@ -16,17 +16,17 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
-.main-header__cart-dropdown::-webkit-scrollbar-track {
+.cart__dropdown::-webkit-scrollbar-track {
     border-radius: 10px;
-    background-color: #e5e5e5;
+    background-color: #fff;
 }
 
-.main-header__cart-dropdown::-webkit-scrollbar {
+.cart__dropdown::-webkit-scrollbar {
     width: 12px;
 }
 
 
-.main-header__cart-dropdown::-webkit-scrollbar-thumb {
+.cart__dropdown::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: #eb9ab3;
 

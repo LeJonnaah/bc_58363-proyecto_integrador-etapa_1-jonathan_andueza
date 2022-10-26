@@ -1,0 +1,74 @@
+<div class="form-container">
+    <form class="form-container__form" action="post">
+        <h2 class="form-container__title">Alta producto</h2>
+        <div class="form-container__separator"></div>
+        <div class="form-container__group">
+            <div class="group-container">
+                <label class="group-container__label" for="name">Nombre</label>
+                <input class="group-container__input" id="name" type="text" />
+            </div>
+            <div class="group-container">
+                <label class="group-container__label" for="type">Tipo</label>
+                <input class="group-container__input" id="type" type="text" />
+            </div>
+        </div>
+        <div class="form-container__group">
+            <div class="group-container">
+                <label class="group-container__label" for="brand">Marca</label>
+                <input class="group-container__input" id="brand" type="text" />
+            </div>
+            <div class="group-container">
+                <label class="group-container__label" for="price">Precio</label>
+                <input class="group-container__input" id="price" type="number" />
+            </div>
+        </div>
+        <div class="form-container__group">
+            <div class="group-container">
+                <label class="group-container__label" for="category">Categoría</label>
+                <input class="group-container__input" id="category" type="text" />
+            </div>
+            <div class="group-container">
+                <label class="group-container__label--short" for="stock">Stock</label>
+                <input class="group-container__input--short" id="stock" type="number" />
+            </div>
+        </div>
+        <div class="form-container__group form-container__group--short">
+            <div class="group-container group-container--short">
+                <label class="group-container__label--short" for="min-age">Edad desde</label>
+                <input class="group-container__input--short" id="min-age" type="number" />
+            </div>
+            <div class="group-container group-container--short">
+                <label class="group-container__label--short" for="max-age">Edad hasta</label>
+                <input class="group-container__input--short" id="max-age" type ="number" />
+            </div>
+        </div>
+        <div class="form-container__group">
+            <div class="group-container group-container--fb50">
+                <label class="group-container__label" for="image">Imagen</label>
+                <input class="group-container__input" id="image" type="file" accept=".png, .jpg, .jpeg"/>
+            </div>
+            <div class="group-container">
+                <p class="group-container__label">Envío sin cargo</p>
+                <div class="group-container__radio-group">
+                    <input type="radio" name="free-ship" id="yes-free-ship" />
+                    <label for="yes-free-ship">Si</label>
+                </div>
+                <div class="group-container__radio-group">
+                    <input type="radio" name="free-ship" id="no-free-ship" />
+                    <label for="no-free-ship">No</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="group-container">
+            <label class="group-container__label group-container__label--left" for="short-description">Descripción corta</label>
+            <textarea class="group-container__textarea group-container__textarea--alta" name="short-description" id="short-description" cols="30" rows="10"></textarea>
+        </div>
+        <div class="group-container">
+            <label class="group-container__label group-container__label--left" for="long-description">Descripción larga</label>
+            <textarea class="group-container__textarea group-container__textarea--alta" name="long-description" id="long-description" cols="30" rows="10"></textarea>
+        </div>
+        <p class="form-container__required">Todos los campos son obligatorios.</p>
+        <input type="submit" class="button"/>
+    </form>
+</div>

@@ -25,8 +25,9 @@
 @use 'components/carousel';
 @use 'components/button';
 @use 'components/form-container';
-@use 'components/list';
+@use 'components/group-container';
 @use 'components/message-container';
+@use 'components/cart';
 
 //Pages
 @use 'pages/index';

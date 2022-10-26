@@ -1,8 +1,9 @@
 .cart-item {
+    position: relative;
 
     &__container{
 
-        @media (min-width: 1024px) {
+        @media (min-width: 768px) {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -41,6 +42,10 @@
 
     &__img {
         width: 8vh;
+
+        @media (min-width: 768px) {
+            width: 15vh;
+        }
     }
 
     &__btn {

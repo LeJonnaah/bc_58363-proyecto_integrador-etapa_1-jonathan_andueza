@@ -5,6 +5,10 @@
     border-radius: 10px;
     transition: all .2s;
 
+    &__id {
+        display: none;
+    }
+    
     &__header {
         display: flex;
         align-items: center;
@@ -29,7 +33,7 @@
         color: #054d60;
     }
 
-    &__brand {
+    &__header-text {
         flex: 0 1 200px;
         margin-left: 10px;
         color: hsl(243, 20%, 42%);
@@ -64,7 +68,7 @@
         }
     }
 
-    &__sub {
+    &__brand {
         font-size: 1.5em;
         text-transform: uppercase;
         color: #686e77;
