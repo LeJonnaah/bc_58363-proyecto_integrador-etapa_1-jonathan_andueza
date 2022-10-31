@@ -60,6 +60,8 @@
         }
 
         &:active {
+            transform: scale(0.9);
+            transition: transform 100ms;
             opacity: 1;
             border: 3px solid #6ca3d8;
         }

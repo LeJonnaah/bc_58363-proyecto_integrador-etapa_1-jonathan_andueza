@@ -23,6 +23,11 @@
         &:hover {
             color: #b25158;
         }
+
+        &:active {
+            transform: scale(1.2);
+            transition: transform 100ms;
+        }
     }
 
     &__title {
@@ -35,9 +40,19 @@
         color: #054d60;
     }
 
-    &__price {
+    &__price,
+    &__subtotal-price {
         font-family: "Poppins", sans-serif;
         color: #252525;
+    }
+
+    &__subtotal-quote {
+        font-size: 1.2em;
+        font-weight: 800;
+        line-height: 1.2;
+        font-variant: small-caps;
+        letter-spacing: 2px;
+        color: #eb9ab3;
     }
 
     &__img {
@@ -46,6 +61,10 @@
         @media (min-width: 768px) {
             width: 15vh;
         }
+    }
+
+    &__id {
+        display: none;
     }
 
     &__btn {
@@ -60,7 +79,13 @@
         transition: all .2s ease-in-out;
 
         &:hover {
-            background-color: #b25158;
+            background-color: #62617d;
+        }
+        
+        &:active {
+            background-color: #c7c4fd;
+            transform: scale(0.9);
+            transition: transform 100ms;
         }
     }
 

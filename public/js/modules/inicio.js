@@ -13,12 +13,13 @@ class PageInicio {
 
     static async init () {
         console.log('PageInicio.init()');
-
+        
         const products = await productController.getProducts();
         PageInicio.renderTemplateCards(products);
-    
+        
         console.log(`Se encontraron ${products.length} productos.`);
-    }};
+    }
+};
 
 export default PageInicio;
 
@@ -36,52 +37,44 @@ const cartDropdown = document.querySelector(".cart__dropdown");
 // 2. Functions //
 
 const calculateCartTotalPrice = () => {
-    const cartItemPrice = document.querySelectorAll(".cart-item__price");
-    const cartItemQuantityInput = document.querySelectorAll(".cart-item__quantity-input");
+    const cartItems = document.querySelectorAll(".cart-item__container");
     let totalPrice = 0;
-    cartItemPrice.forEach(price => {
-        const priceNumber = Number(price.textContent.replace("$", ""));
-        cartItemQuantityInput.forEach(quantity => {
-            const quantityNumber = Number(quantity.value);
-            totalPrice += priceNumber * quantityNumber;
-        });
+    cartItems.forEach(item => {
+        const itemPrice = item.querySelector(".cart-item__price").innerText;
+        const itemQuantity = item.querySelector(".cart-item__quantity-input").value;
+        const itemPriceNumber = Number(itemPrice.replace("$", ""));
+        totalPrice += itemPriceNumber * itemQuantity;
     });
-    cartTotalPrice.textContent = `$${totalPrice}`;
+    cartTotalPrice.innerText = `$${totalPrice}`;
 };
 
 const calculateItemSubtotalPrice = () => {
-    const cartItemPrice = document.querySelectorAll(".cart-item__price");
-    const cartItemQuantityInput = document.querySelectorAll(".cart-item__quantity-input");
-    const cartItemSubtotalPrice = document.querySelectorAll(".cart-item__subtotal-price");
-    cartItemPrice.forEach((price, index) => {
-        const priceNumber = Number(price.textContent.replace("$", ""));
-        cartItemQuantityInput.forEach((quantity, index) => {
-            const quantityNumber = Number(quantity.value);
-            cartItemSubtotalPrice[index].textContent = `$${priceNumber * quantityNumber}`;
-        });
+    const cartItem = document.querySelectorAll(".cart-item__container");
+    cartItem.forEach(item => {
+        const cartItemPrice = item.querySelector(".cart-item__price");
+        const cartItemQuantityInput = item.querySelector(".cart-item__quantity-input");
+        const cartItemSubtotalPrice = item.querySelector(".cart-item__subtotal-price");
+        const priceNumber = Number(cartItemPrice.textContent.replace("$", ""));
+        const quantityNumber = Number(cartItemQuantityInput.value);
+        cartItemSubtotalPrice.textContent = `$${priceNumber * quantityNumber}`;
     });
 };
 
-const quantityInput = () => {
-    const cartItemQuantityInput = document.querySelectorAll(".cart-item__quantity-input");
+const quantityInputUpdateTotals = () => {
+const cartItemQuantityInput = document.querySelectorAll(".cart-item__quantity-input");
     cartItemQuantityInput.forEach(input => {
         input.addEventListener("change", () => {
             if (input.value < 1) {
                 input.value = 1;
             }
-            updatePrice();
+            updatePriceTotals();
         });
     });
 };
 
-const updatePrice = () => {
+const updatePriceTotals = () => {
     calculateCartTotalPrice();
     calculateItemSubtotalPrice();
-};
-
-const cartItemFunctionality = () => {
-    updatePrice();
-    quantityInput();
 };
 
 const createAndDeleteCartItem = product => {
@@ -118,7 +111,7 @@ const createAndDeleteCartItem = product => {
         if (e.target.classList.contains("cart-item__xmark")) {
             e.target.closest('.cart-item__container').remove();
             itemRemovedFromCart();
-            updatePrice();
+            updatePriceTotals();
         }
     });
 };
@@ -133,7 +126,7 @@ const itemAddedToCart = () => {
     document.body.insertAdjacentElement("afterbegin", itemAddedToCartWindow);
     setTimeout(() => {
         itemAddedToCartWindow.remove();
-    }, 100);
+    }, 1000);
 }
 
 const itemRemovedFromCart = () => {
@@ -146,9 +139,9 @@ const itemRemovedFromCart = () => {
     document.body.insertAdjacentElement("afterbegin", itemRemovedFromCartWindow);
     setTimeout(() => {
         itemRemovedFromCartWindow.remove();
-    }, 100);
+    }, 1000);
+    updatePriceTotals();
 };
-
 
 const checkIfItemIsInCart = product => {
     const cartItemID = document.querySelectorAll(".cart-item__id");
@@ -156,24 +149,26 @@ const checkIfItemIsInCart = product => {
     cartItemID.forEach(id => {
         if (id.textContent == product.id) {
             itemIsInCart = true;
+            itemAddedToCart();
         }
     });
     return itemIsInCart;
 };
 
 const addToCart = product => {
+    const cartItemQuantityInput = document.querySelectorAll(".cart-item__quantity-input");
     if (checkIfItemIsInCart(product)) {
-        const cartItemQuantityInput = document.querySelectorAll(".cart-item__quantity-input");
         cartItemQuantityInput.forEach(quantity => {
             if (quantity.closest(".cart-item__container").querySelector(".cart-item__id").textContent == product.id) {
                 quantity.value++;
-                updatePrice();
+                updatePriceTotals();
             }
         });
     } else {
         createAndDeleteCartItem(product);
-        cartItemFunctionality();
+        quantityInputUpdateTotals();
         itemAddedToCart();
+        updatePriceTotals();
     }
 };
 
@@ -193,33 +188,26 @@ slidesContainer.addEventListener("scroll", () => {
 });
 
 nextButton.addEventListener("click", e => {
-    // if (e.target === document.querySelector("#slide-arrow-next")) {
     const slideWidth = slide.clientWidth;
     slidesContainer.scrollLeft += slideWidth;
-
     if (slidesContainer.scrollLeft === slideWidth * (slidesContainer.childElementCount - 1)) {
         slidesContainer.scrollLeft = 0;
     }
-// }
 });
 
 prevButton.addEventListener("click", e => {
-    // if (e.target === document.getElementById("slide-arrow-prev")) {
-        console.log("prev button clicked");
     const slideWidth = slide.clientWidth;
     slidesContainer.scrollLeft -= slideWidth;
-
     if (slidesContainer.scrollLeft === 0) {
         slidesContainer.scrollLeft = slideWidth * (slidesContainer.childElementCount - 1);
     }
-// }
 });
 
 document.addEventListener("click", e => {
     if (e.target.closest(".cart-item__btn--plus")) {
         const input = e.target.previousElementSibling;
         input.value = Number(input.value) + 1;
-        updatePrice();
+        updatePriceTotals();
     }
 });
 
@@ -228,7 +216,7 @@ document.addEventListener("click", e => {
         const input = e.target.nextElementSibling;
         if (input.value > 1) {
             input.value = Number(input.value) - 1;
-            updatePrice();
+            updatePriceTotals();
         } else {
             e.target.closest(".cart-item__container").remove();
             itemRemovedFromCart();

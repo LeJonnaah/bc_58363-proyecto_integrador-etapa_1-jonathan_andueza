@@ -5,19 +5,15 @@
     width: 100%;
     text-align: left;
     padding: 20px 0px;
-    font-family: 'Roboto Condensed', sans-serif;
     color: #fff;
     font-family: 'Poppins', sans-serif;
+    position: sticky;
+    top: 100%;
 
 
     @media (min-width: 768px) {
         font-size: 1em;
         padding: 20px 5px;
-    }
-
-    @media (min-height: 1024px) {
-        bottom: 0;
-        position: absolute;
     }
 
     &__left,

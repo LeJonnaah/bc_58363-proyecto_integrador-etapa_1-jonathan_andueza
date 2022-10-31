@@ -11,6 +11,11 @@
         background-color: hsl(243deg, 20%, 42%);
         color: #E5E5E5;
     }
+
+    &:active {
+        transform: rotate(90deg);
+        transition: transform 100ms;
+    }
     
     &__top-bread {
         display: block;

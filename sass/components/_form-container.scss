@@ -67,10 +67,14 @@
         display: block;
     }
 
-    &__required {
+    &__optional {
         color: #e56972;
         font-size: 0.8em;
-        margin: 10px;
+
+        &-span {
+            color: #e56972;
+            font-size: 2em;
+        } 
     }
 
     &__obligatory-field{

@@ -20,6 +20,40 @@
         box-shadow: none;
     }
 
+    &--delete {
+        background: #E56972;
+        border: 1px solid #B25158;
+        padding: 10px 20px;
+        font-size: 0.8em;
+        
+        &:hover {
+            background: #E5E5E5;
+            color: #b25158;
+        }
+        
+        &:active {
+            background: #ccc;
+            box-shadow: none;
+        }
+    }
+
+    &--modify {
+        background: #0bb5d8;
+        border: 1px solid #088aa4;
+        padding: 10px 20px;
+        font-size: 0.8em;
+        
+        &:hover {
+            background: #E5E5E5;
+            color: #088aa4;
+        }
+        
+        &:active {
+            background: #ccc;
+            box-shadow: none;
+        }
+    }
+
     &--mt20px {
         margin-top: 20px;
     }

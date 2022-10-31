@@ -18,7 +18,6 @@
 @use 'layout/whatsapp-btn';
 @use 'layout/scrollToTopButton';
 @use 'layout/scrollbar';
-@use 'layout/cart-item';
 
 //Components
 @use 'components/card';
@@ -28,6 +27,7 @@
 @use 'components/group-container';
 @use 'components/message-container';
 @use 'components/cart';
+@use 'components/cart-item';
 
 //Pages
 @use 'pages/index';

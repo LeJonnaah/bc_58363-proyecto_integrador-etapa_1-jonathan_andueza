@@ -13,7 +13,14 @@
     border-radius: 5px; 
 
     &:hover {
+        transform: translateY(-5px);
         background-color: #b7788c; 
+        transition: transform 100ms;
         color: #e5e5e5;
+    }
+
+    &:active {
+        transform: translateY(0px);
+        transition: all 100ms;
     }
 }

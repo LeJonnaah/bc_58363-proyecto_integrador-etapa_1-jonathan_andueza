@@ -28,8 +28,8 @@
                 <input class="group-container__input" id="category" type="text" />
             </div>
             <div class="group-container">
-                <label class="group-container__label--short" for="stock">Stock</label>
-                <input class="group-container__input--short" id="stock" type="number" />
+                <label class="group-container__label" for="stock">Stock</label>
+                <input class="group-container__input" id="stock" type="number" />
             </div>
         </div>
         <div class="form-container__group form-container__group--short">
@@ -48,7 +48,7 @@
                 <input class="group-container__input" id="image" type="file" accept=".png, .jpg, .jpeg"/>
             </div>
             <div class="group-container">
-                <p class="group-container__label">Envío sin cargo</p>
+                <p class="group-container__label"><span class="form-container__optional-span">*</span> Envío sin cargo</p>
                 <div class="group-container__radio-group">
                     <input type="radio" name="free-ship" id="yes-free-ship" />
                     <label for="yes-free-ship">Si</label>
@@ -59,7 +59,6 @@
                 </div>
             </div>
         </div>
-
         <div class="group-container">
             <label class="group-container__label group-container__label--left" for="short-description">Descripción corta</label>
             <textarea class="group-container__textarea group-container__textarea--alta" name="short-description" id="short-description" cols="30" rows="10"></textarea>
@@ -68,7 +67,9 @@
             <label class="group-container__label group-container__label--left" for="long-description">Descripción larga</label>
             <textarea class="group-container__textarea group-container__textarea--alta" name="long-description" id="long-description" cols="30" rows="10"></textarea>
         </div>
-        <p class="form-container__required">Todos los campos son obligatorios.</p>
-        <input type="submit" class="button"/>
+        <p class="form-container__optional"><span class="form-container__optional-span">*</span> Campo opcional.</p>
+        <button class="button button--delete">Eliminar</button>
+        <button class="button button--modify">Modificar</button>
+        <button class="button button--float-right">Dar de alta</button>
     </form>
 </div>

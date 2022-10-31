@@ -12,35 +12,90 @@
 	},
 		{
 		"header": "¡Oferta Espacial!",
-		"title": "Peluche Legosi",
+		"title": "Lorem qsy",
 		"brand": "Hasbro",
-		"price": 23000,
+		"price": 12000,
 		"image": "img/products/mega-cyborg-hand-toy.jpg",
+		"description": "lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+		"minAge": "1",
+		"maxAge": "5",
+		"id" : "2"
+	},
+	{
+		"header": "¡Últimos en stock!",
+		"title": "Lorem ipsudium",
+		"brand": "Lorem",
+		"price": 42131,
+		"image": "img/products/j-3.png",
 		"description": "lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
 		"minAge": "0",
 		"maxAge": "3",
 		"id" : "3"
-	},
+	},	
 	{
-		"header": "¡Ultimos en stock!",
-		"title": "Peluche Legosi",
-		"brand": "Hasbro",
-		"price": 23000,
+		"header": "¡Últimos en stock!",
+		"title": "J-3 Cub",
+		"brand": "Piper",
+		"price": 120000,
+		"image": "img/products/j-3.png",
+		"description": "lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+		"minAge": "0",
+		"maxAge": "99",
+		"id" : "4"
+	},	
+	{
+		"header": "¡Últimos en stock!",
+		"title": "No se",
+		"brand": "Saber o no saber",
+		"price": 10000,
 		"image": "img/products/legosi-toy.png",
 		"description": "lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
 		"minAge": "0",
 		"maxAge": "3",
-		"id" : "4"
+		"id" : "5"
 	},	
 	{
-		"header": "¡Producto Nuevo!",
-		"title": "Peluche Legosi",
+		"header": "¡amet consectetur!",
+		"title": "Dolor sit amet",
+		"brand": "Elit",
+		"price": 10000,
+		"image": "img/products/legosi-toy.png",
+		"description": "lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+		"minAge": "0",
+		"maxAge": "3",
+		"id" : "6"
+	},	
+	{
+		"header": "¡Últimos en stock!",
+		"title": "Lorem Algo",
 		"brand": "Hasbro",
-		"price": 23000,
+		"price": 10000,
 		"image": "img/products/mega-cyborg-hand-toy.jpg",
 		"description": "lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
 		"minAge": "0",
 		"maxAge": "3",
-		"id" : "2"
+		"id" : "7"
+	},
+	{
+		"header": "¡Texto de ejemplo!",
+		"title": "Texto Indiferente",
+		"brand": "Marca",
+		"price": 10000,
+		"image": "img/products/legosi-toy.png",
+		"description": "lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+		"minAge": "0",
+		"maxAge": "3",
+		"id" : "8"
+	},
+	{
+		"header": "¡Producto Nuevo!",
+		"title": "Ipsum Lorem",
+		"brand": "Algo",
+		"price": 2200,
+		"image": "img/products/legosi-toy.png",
+		"description": "lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. lore ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+		"minAge": "0",
+		"maxAge": "3",
+		"id" : "9"
 	}
 ]

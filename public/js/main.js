@@ -1,4 +1,3 @@
-
 class Main {
 
     async ajax(url, method = 'get') {
@@ -82,6 +81,7 @@ const cartButton = document.querySelector(".main-header__cart");
 const cartBackground = document.querySelector(".cart__background");
 const cartDropdown = document.querySelector(".cart__dropdown");
 const cartXMark = document.querySelector(".cart__xmark");
+const mainFooter = document.querySelector(".main-footer");
 
 // 2. Functions //
 
@@ -101,17 +101,16 @@ const topFunction = () => {
 }
 
 const closeCartDropdown = () => {
-    // close cart dropdown and remove background with adnimation
-    cartBackground.classList.remove("cart__background--visible");
-    cartDropdown.classList.remove("cart__dropdown--visible");
-    cartBackground.classList.add("cart__background--inactive");
-    cartDropdown.classList.add("cart__dropdown--inactive");
-    // remove animation classes after animation is done
+    cartDropdown.classList.add("cart__dropdown--transform-out--bottom");
     setTimeout(() => {
-        cartBackground.classList.remove("cart__background--inactive");
-        cartDropdown.classList.remove("cart__dropdown--inactive");
-    }
-    , 500);
+        cartDropdown.classList.add("cart__dropdown--transform-out");
+    }, 200);
+    setTimeout(() => {
+        cartDropdown.classList.remove("cart__dropdown--transform-out--bottom");
+        cartBackground.classList.remove("cart__background--visible");
+        cartDropdown.classList.remove("cart__dropdown--visible");
+        cartDropdown.classList.remove("cart__dropdown--transform-out");
+    }, 300);
 }
 
 // 3. Event Listeners //
@@ -129,8 +128,8 @@ scrollToTopButton.addEventListener("click", topFunction);
 
 document.addEventListener("click", e => {
     if (e.target === cartButton) {
-        cartDropdown.classList.toggle("cart__dropdown--visible");
         cartBackground.classList.toggle("cart__background--visible");
+        cartDropdown.classList.toggle("cart__dropdown--visible");
     } else if (e.target === cartBackground || e.target === cartXMark) {
         closeCartDropdown();
     }

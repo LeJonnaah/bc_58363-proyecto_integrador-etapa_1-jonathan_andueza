@@ -16,14 +16,14 @@
 
         @media (min-width: 1024px) {
             border-radius: 0;
-            top: 0;
-            z-index: 9999999999999;
+            top: 10%;
+            z-index: 9999;
         }
     }
 
     &--error {
         background-color: #e56972;
-        z-index: 999990;
+        z-index: 9999;
         left: 0;
         bottom: 0;
     }

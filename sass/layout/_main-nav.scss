@@ -29,17 +29,22 @@
         padding: 1em .7em;
         color: #fff;
         text-decoration: none;
-        transition: all 600ms cubic-bezier(.62,.04,.3,1.56);
+        transition: all 200ms cubic-bezier(.62,.04,.3,1.56);
         
         &--active {
+            font-size: 1.1em;
             color: #eb9ab3;
             font-weight: bold;
         }
         
-        &:hover,
-        &:focus {
+        &:hover {
             color: #E5E5E5;
             outline: none;
+        }
+
+        &:active {
+            transform: scale(1.2);
+            color: #fff;
         }
 
         @media (min-width: 1024px) {

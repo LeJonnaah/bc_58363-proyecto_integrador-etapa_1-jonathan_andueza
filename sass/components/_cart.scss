@@ -76,5 +76,20 @@
         &--visible {
             display: block;
         }
+
+        &--transform-in {
+            transform: translateY(110%);
+            transition: transform .5s ease-in-out;
+        }
+
+        &--transform-out--bottom {
+            transform: translateY(100px);
+            transition: transform .2s ease-in-out;
+        }
+
+        &--transform-out {
+            transform: translateY(-200px);
+            transition: transform .2s ease-in-out;
+        }
     }
 }

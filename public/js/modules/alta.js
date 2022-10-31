@@ -22,10 +22,10 @@ class PageAlta {
 
         /// 2.regExp  ///
 
-        const regExpProductName = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]){3,30}$");
-        const regExpProductPrice = new RegExp("^[0-9]{1,9}$");
-        const regExpProductBrand = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]){3,40}$");
-        const regExpProductCategory = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]){3,50}$");
+        const regExpProductName = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,30}$");
+        const regExpProductPrice = new RegExp("(.[0-9]{1,2})?");
+        const regExpProductBrand = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,40}$");
+        const regExpProductCategory = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,50}$");
         const regExpShortDescription = new RegExp("^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,79}$");
         const regExpLongDescription = new RegExp("^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,1999}$");
         const regExpAge = new RegExp("\d+");
@@ -49,6 +49,9 @@ class PageAlta {
                 }
             } else {
                 e.target.style.backgroundColor = "#a8c695";
+                if (e.target.nextElementSibling) {
+                    e.target.nextElementSibling.remove();
+                }
             }
         };
 
@@ -134,5 +137,3 @@ class PageAlta {
 }
 
 export default PageAlta;
-
-
