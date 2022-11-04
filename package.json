@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "16.6.1"
+  },
   "type": "module",
   "name": "js",
   "version": "1.0.0",
