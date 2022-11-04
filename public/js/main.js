@@ -82,6 +82,8 @@ const cartBackground = document.querySelector(".cart__background");
 const cartDropdown = document.querySelector(".cart__dropdown");
 const cartXMark = document.querySelector(".cart__xmark");
 const mainFooter = document.querySelector(".main-footer");
+const currentYearFooter = document.querySelector("#current-year");
+currentYearFooter.innerHTML = new Date().getFullYear();
 
 // 2. Functions //
 
@@ -115,14 +117,6 @@ const closeCartDropdown = () => {
 
 // 3. Event Listeners //
 
-window.addEventListener("scroll", () => {
-    const navBar = document.querySelector(".main-header");
-    if (window.scrollY > 0) {
-        navBar.style.position = "fixed";
-    } else {
-        navBar.style.position = "relative";
-    }
-});
 
 scrollToTopButton.addEventListener("click", topFunction);
 
@@ -140,3 +134,4 @@ document.addEventListener("keydown", (e) => {
         closeCartDropdown();
     }  
 });
+

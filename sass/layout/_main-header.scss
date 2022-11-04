@@ -1,13 +1,12 @@
 .main-header {
     display: flex;
-    // position: fixed;
+    position: sticky;
     flex-wrap: wrap;
     font-family: 'Poppins', sans-serif;
     width: 100%;
     z-index: 999;
     top: 0;
     background-color: #8B89B1;
-    // border-bottom: 5px solid #62617d;
 
     &__logo-container {
         display: flex;

@@ -390,6 +390,7 @@ body {
 
 .main-header {
   display: flex;
+  position: sticky;
   flex-wrap: wrap;
   font-family: "Poppins", sans-serif;
   width: 100%;
@@ -1508,6 +1509,10 @@ body::-webkit-scrollbar-thumb:hover {
   flex-basis: 100%;
   border-bottom: 1px solid #8b89b1;
   margin: 10px 0;
+}
+.cart-item__removed-animation {
+  transform: scale(0);
+  transition: transform 100ms;
 }
 
 .cards-container {

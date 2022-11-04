@@ -101,4 +101,9 @@
         border-bottom: 1px solid #8b89b1;
         margin: 10px 0;
     }
+
+    &__removed-animation {
+        transform: scale(0);
+        transition: transform 100ms;
+    }
 }

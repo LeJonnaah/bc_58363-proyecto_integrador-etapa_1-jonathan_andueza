@@ -13,7 +13,6 @@ class ProductModel {
             case PERSISTENCE_TYPE.TYPE_FILE:
                 return new ProductModelFile();
             case PERSISTENCE_TYPE.TYPE_MONGODB:
-                ProductModelMongoDB.connectDB();
                 return new ProductModelMongoDB();
             default:
                 return new ProductModelMem();

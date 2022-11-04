@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import config from '../config.js';
+import DBMongoDB from './DB/MongoDB.js';
 
 const productSchema = mongoose.Schema({
     name: String,
@@ -12,37 +12,18 @@ const ProductsModel = mongoose.model('products', productSchema);
 
 class ProductModelMongoDB {
 
-    static connected = false;
-
-    static async connectDB () {
-        try {
-            // await mongoose.connect('mongodb://localhost:27017/ecommerce');
-            // await mongoose.connect('mongodb://localhost/ecommerce');
-            await mongoose.connect(config.MONGODB_CONNECTION_STR, {
-                useNewUrlParser: true,
-                useUnifiedTopology: true,
-                serverSelectionTimeoutMS: config.MONGODB_TIMEOUT
-            });
-            console.log('Conexión con MongoDB exitosa.');
-            ProductModelMongoDB.connected = true;
-        } catch (error) {
-            console.error(`Error al intentar establecer la conexión con MongoDB. Detalle: ${error.message}`);
-        }
-    }
-
-
     ////////////////////////////////////////////////////////////////////////////////
     //                              CRUD - C: Create                              //
     ////////////////////////////////////////////////////////////////////////////////`
 
     async createProduct (product) {
-        if (!ProductModelMongoDB.connected) {
+        if (! await DBMongoDB.connectDB()) {
             return {};
         }
         try {
             const newProduct = new ProductsModel(product);
             await newProduct.save();
-            return newProduct;
+            return DBMongoDB.getObjectWithId(newProduct.toObject());
         } catch (error) {
             console.error('Error al intentar dar de alta el producto:', error.message);
             return {};
@@ -56,12 +37,12 @@ class ProductModelMongoDB {
     ////////////////////////////////////////////////////////////////////////////////
 
     async readProducts () {
-        if (!ProductModelMongoDB.connected) {
+        if (! await DBMongoDB.connectDB()) {
             return [];
         }
         try {
-            const products = await ProductsModel.find({});
-            return products;
+            const products = await ProductsModel.find({}).lean();
+            return DBMongoDB.getObjectWithId(products);
         } catch (error) {
             console.error('Error al intentar leer los productos:', error.message);
             return [];
@@ -70,7 +51,7 @@ class ProductModelMongoDB {
     }
 
     async readProduct (id) {
-        if (!ProductModelMongoDB.connected) {
+        if (! await DBMongoDB.connectDB()) {
             return {};
         }
         try {
@@ -81,8 +62,8 @@ class ProductModelMongoDB {
             // return products[0];
             // const product = await ProductsModel.findOne({_id: id}) || {};
             // return product;
-            const product = await ProductsModel.findById(id) || {};
-            return product;
+            const product = await ProductsModel.findById(id).lean() || {};
+            return DBMongoDB.getObjectWithId(product);
         } catch (error) {
             console.error(`Error al intentar leer el producto #:${id}`, error.message);
         }
@@ -95,7 +76,7 @@ class ProductModelMongoDB {
     ////////////////////////////////////////////////////////////////////////////////`
 
     async updateProduct (id, product) {
-        if (!ProductModelMongoDB.connected) {
+        if (! await DBMongoDB.connectDB()) {
             return {};
         }
         try {
@@ -108,8 +89,8 @@ class ProductModelMongoDB {
             // });
             const updatedProduct = await ProductsModel.findByIdAndUpdate(id, {$set: product}, {
                 returnDocument: 'after'
-            });
-            return updatedProduct || {};
+            }).lean() || {};
+            return DBMongoDB.getObjectWithId(updatedProduct);
         } catch (error) {
             console.error(`Error al intentar actualizar el producto #:${id}`, error.message);
             return {};
@@ -121,13 +102,13 @@ class ProductModelMongoDB {
     ////////////////////////////////////////////////////////////////////////////////
 
     async deleteProduct (id) {
-        if (!ProductModelMongoDB.connected) {
+        if (! await DBMongoDB.connectDB()) {
             return {};
         }
         try {
             // await ProductsModel.deleteOne({_id: id});
-            const deletedProduct = await ProductsModel.findByIdAndDelete(id) || {};
-            return deletedProduct;
+            const deletedProduct = await ProductsModel.findByIdAndDelete(id).lean() || {};
+            return DBMongoDB.getObjectWithId(deletedProduct);
         } catch (error) {
             console.error(`Error al intentar eliminar el producto #:${id}`, error.message);
             return {};

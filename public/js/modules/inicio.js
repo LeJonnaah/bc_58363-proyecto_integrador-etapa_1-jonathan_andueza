@@ -109,9 +109,12 @@ const createAndDeleteCartItem = product => {
     cartDropdown.insertAdjacentElement("afterbegin", cartItem);
     document.addEventListener("click", e => {
         if (e.target.classList.contains("cart-item__xmark")) {
-            e.target.closest('.cart-item__container').remove();
-            itemRemovedFromCart();
-            updatePriceTotals();
+            e.target.closest(".cart-item__container").classList.add("cart-item__removed-animation");
+            setTimeout(() => {
+                e.target.closest('.cart-item__container').remove();
+                itemRemovedFromCart();
+                updatePriceTotals();
+            }, 150);
         }
     });
 };

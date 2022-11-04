@@ -1,45 +1,49 @@
 <div class="form-container">
-    <form class="form-container__form" action="post">
+    <form class="form-container__form" autocomplete="off">
         <h2 class="form-container__title">Alta producto</h2>
         <div class="form-container__separator"></div>
         <div class="form-container__group">
             <div class="group-container">
+                <div>
+                    <label for="id">Id:</label>
+                    <input id="id" name="id">
+                </div>
                 <label class="group-container__label" for="name">Nombre</label>
-                <input class="group-container__input" id="name" type="text" />
+                <input class="group-container__input" id="name" name="name" type="text" />
             </div>
             <div class="group-container">
                 <label class="group-container__label" for="type">Tipo</label>
-                <input class="group-container__input" id="type" type="text" />
+                <input class="group-container__input" id="type" name="type" type="text" />
             </div>
         </div>
         <div class="form-container__group">
             <div class="group-container">
                 <label class="group-container__label" for="brand">Marca</label>
-                <input class="group-container__input" id="brand" type="text" />
+                <input class="group-container__input" id="brand" name="brand" type="text" />
             </div>
             <div class="group-container">
                 <label class="group-container__label" for="price">Precio</label>
-                <input class="group-container__input" id="price" type="number" />
+                <input class="group-container__input" id="price" name="price" type="number" />
             </div>
         </div>
         <div class="form-container__group">
             <div class="group-container">
                 <label class="group-container__label" for="category">Categoría</label>
-                <input class="group-container__input" id="category" type="text" />
+                <input class="group-container__input" id="category" name="category" type="text" />
             </div>
             <div class="group-container">
                 <label class="group-container__label" for="stock">Stock</label>
-                <input class="group-container__input" id="stock" type="number" />
+                <input class="group-container__input" id="stock" name="stock" type="number" />
             </div>
         </div>
         <div class="form-container__group form-container__group--short">
             <div class="group-container group-container--short">
                 <label class="group-container__label--short" for="min-age">Edad desde</label>
-                <input class="group-container__input--short" id="min-age" type="number" />
+                <input class="group-container__input--short" id="min-age" name="min-age" type="number" />
             </div>
             <div class="group-container group-container--short">
                 <label class="group-container__label--short" for="max-age">Edad hasta</label>
-                <input class="group-container__input--short" id="max-age" type ="number" />
+                <input class="group-container__input--short" id="max-age"  name="max-age" type="number" />
             </div>
         </div>
         <div class="form-container__group">
@@ -68,8 +72,13 @@
             <textarea class="group-container__textarea group-container__textarea--alta" name="long-description" id="long-description" cols="30" rows="10"></textarea>
         </div>
         <p class="form-container__optional"><span class="form-container__optional-span">*</span> Campo opcional.</p>
-        <button class="button button--delete">Eliminar</button>
+        <button class="button button--delete" disabled>Cancelar</button>
         <button class="button button--modify">Modificar</button>
         <button class="button button--float-right">Dar de alta</button>
     </form>
 </div>
+
+<section class="section-products-table form-container">
+    <h2>Listado de productos</h2>
+    <div class="products-table-container"></div>
+</section>
