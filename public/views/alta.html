@@ -6,20 +6,20 @@
             <div class="group-container">
                 <div>
                     <label for="id">Id:</label>
-                    <input id="id" name="id">
+                    <input id="id" name="id" disabled>
                 </div>
-                <label class="group-container__label" for="name">Nombre</label>
-                <input class="group-container__input" id="name" name="name" type="text" />
+                <label class="group-container__label" for="title">Nombre</label>
+                <input class="group-container__input" id="title" name="title" type="text" />
             </div>
             <div class="group-container">
-                <label class="group-container__label" for="type">Tipo</label>
-                <input class="group-container__input" id="type" name="type" type="text" />
+                <label class="group-container__label" for="header">Encabezado</label>
+                <input class="group-container__input" id="header" name="header" type="text" />
             </div>
         </div>
         <div class="form-container__group">
             <div class="group-container">
                 <label class="group-container__label" for="brand">Marca</label>
-                <input class="group-container__input" id="brand" name="brand" type="text" />
+                <input class="group-container__input" id="brand" name="brand" />
             </div>
             <div class="group-container">
                 <label class="group-container__label" for="price">Precio</label>
@@ -38,12 +38,12 @@
         </div>
         <div class="form-container__group form-container__group--short">
             <div class="group-container group-container--short">
-                <label class="group-container__label--short" for="min-age">Edad desde</label>
-                <input class="group-container__input--short" id="min-age" name="min-age" type="number" />
+                <label class="group-container__label--short" for="minAge">Edad desde</label>
+                <input class="group-container__input--short" id="minAge" name="minAge" type="number" />
             </div>
             <div class="group-container group-container--short">
-                <label class="group-container__label--short" for="max-age">Edad hasta</label>
-                <input class="group-container__input--short" id="max-age"  name="max-age" type="number" />
+                <label class="group-container__label--short" for="maxAge">Edad hasta</label>
+                <input class="group-container__input--short" id="maxAge"  name="maxAge" type="number" />
             </div>
         </div>
         <div class="form-container__group">
@@ -78,7 +78,7 @@
     </form>
 </div>
 
-<section class="section-products-table form-container">
+<section class="section-products-table">
     <h2>Listado de productos</h2>
     <div class="products-table-container"></div>
 </section>

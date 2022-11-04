@@ -50,7 +50,7 @@ const deleteProduct = async (req, res) => {
 
 
 export default {
-    getProducts,   //getProducts: getProducts
+    getProducts,
     getProduct,
     postProduct,
     putProduct,

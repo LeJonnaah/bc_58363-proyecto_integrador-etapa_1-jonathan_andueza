@@ -14,6 +14,7 @@ class ProductService {
     }
     
     async saveProduct(product) {
+        console.log('AlmostSaved:', product);
         let savedProduct = await http.post(this.URL_PRODUCT, product);
         return savedProduct;
     }

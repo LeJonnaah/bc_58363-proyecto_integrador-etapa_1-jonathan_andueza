@@ -1130,6 +1130,11 @@ body::-webkit-scrollbar-thumb:hover {
 .button--float-right {
   float: right;
 }
+.button[disabled] {
+  background: #ccc;
+  box-shadow: none;
+  cursor: not-allowed;
+}
 
 .form-container {
   border-radius: 10px;
@@ -1515,6 +1520,10 @@ body::-webkit-scrollbar-thumb:hover {
   transition: transform 100ms;
 }
 
+.section-products-table {
+  background-color: black;
+}
+
 .cards-container {
   padding: 1em;
 }
@@ -1579,6 +1588,26 @@ body::-webkit-scrollbar-thumb:hover {
 }
 @media (min-width: 480px) {
   .our-products {
+    font-size: 3em;
+    padding: 40px;
+  }
+}
+
+.no-products {
+  font-family: "Poppins", sans-serif;
+  text-shadow: 0 2px 1px #b7788c, -1px 3px 1px #835664, -2px 5px 1px #4f343d;
+  font-variant: small-caps;
+  font-size: 2em;
+  letter-spacing: 10px;
+  color: #000;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+@media (min-width: 480px) {
+  .no-products {
     font-size: 3em;
     padding: 40px;
   }

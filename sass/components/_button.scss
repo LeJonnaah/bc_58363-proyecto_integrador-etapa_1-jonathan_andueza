@@ -61,4 +61,10 @@
     &--float-right {
         float: right;
     }
+
+    &[disabled] {
+        background: #ccc;
+        box-shadow: none;
+        cursor: not-allowed;
+    }
 }

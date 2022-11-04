@@ -12,9 +12,7 @@ app.use(express.static('public', { extensions: ['html', 'htm'] }));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-
 app.use('/api/products', routerProducts);
-// console.log('config', config);rs
 
 const PORT = config.PORT;
 const server = app.listen(PORT, () => console.log(`Servidor Express escuchando en el puerto ${PORT}.`));

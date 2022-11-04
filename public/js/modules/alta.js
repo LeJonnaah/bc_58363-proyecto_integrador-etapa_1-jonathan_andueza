@@ -12,14 +12,11 @@ class PageAlta {
     static btnCancel;
 
     static validators = {
-        'id': /^[\da-f]{24}$/,
-        'name': /^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,30}$/,
-        'brand': /^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,40}$/,
-        'price': /^\d{1,10}$/, // ("(.[0-9]{1,2})?");
-        // 'description': /^.{1,255}$/,
-        'minAge': /^\d{1,3}$/,
-        'maxAge': /^\d{1,3}$/,
-        'stock': /^\d{1,10}$/,
+        'header': /^[a-zA-Z0-9\s]{3,}$/,
+        'title': /^[a-zA-Z0-9\s]{3,30}$/,
+        'brand': /^[a-zA-Z0-9\s]{3,30}$/,
+        'price': /^\d+(\.\d{1,2})?$/,
+        'short-description': /^[a-zA-Z0-9\s]{3,}$/,
 // const regExpProductCategory = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,50}$");
 // const regExpShortDescription = new RegExp("^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,79}$");
 // const regExpLongDescription = new RegExp("^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,1999}$");
@@ -27,6 +24,29 @@ class PageAlta {
 
     };
 
+
+    static async validateInputAndShowMessageBox (e, regExp, message) {
+        const errorMessageBox = `
+        <div class="form-container__obligatory-field">
+            <p class="form-container__field-text">Este campo es obligatorio.</p>
+            <p class="form-container__field-text">${message}</p>
+        </div>
+        `;
+        if (!regExp.test(e.target.value)) {
+            e.target.style.backgroundColor = "#e56972";
+            if (!e.target.nextElementSibling) {
+                e.target.insertAdjacentHTML("afterend", errorMessageBox);
+                setTimeout(() => {
+                    e.target.nextElementSibling.remove();
+                }, 3000);
+            }
+        } else {
+            e.target.style.backgroundColor = "#a8c695";
+            if (e.target.nextElementSibling) {
+                e.target.nextElementSibling.remove();
+            }
+        }
+    };
 
     static async deleteProduct(e) {
         if (!confirm('¿Estás seguro de querer eliminar el producto?')) {
@@ -63,7 +83,6 @@ class PageAlta {
         PageAlta.fields.forEach(field => {
             field.value = productToEdit[field.name];
         });
-
     }
 
     static async addTableEvents() {
@@ -159,19 +178,27 @@ class PageAlta {
         return updatedProduct;
     }
 
+    static async messageBox(message, type) {
+        const messageContainer = document.createElement('div');
+        messageContainer.classList.add('message-container', type);
+        messageContainer.innerHTML = message;
+        document.body.appendChild(messageContainer);
+        setTimeout(() => {
+            messageContainer.remove();
+        }, 3000);
+    }
+
     static async addFormEvents() {
-        
         PageAlta.btnCreate.addEventListener('click', async e => {
             console.error('btn-create');
             const validators = {...PageAlta.validators};
             delete validators.id;
-            // console.log(validators);
-            // console.log(PageAlta.validators);
             const productToSave = PageAlta.validateForm(validators);
             console.log('productToSave:', productToSave);
             if (productToSave) {
                 const savedProduct = await PageAlta.saveProduct(productToSave);
                 console.log('savedProduct:', savedProduct);
+                PageAlta.messageBox('Producto creado con éxito', 'message-container--success');
                 if (PageAlta.objectIsEmpty(savedProduct)) {
                     console.error('No se pudo crear el producto');
                     return;
@@ -204,6 +231,7 @@ class PageAlta {
         
         PageAlta.btnCancel.addEventListener('click', e => {
             console.error('btn-cancel');
+            PageAlta.messageBox('Se canceló la operación', 'message-container--warning');
 
             PageAlta.emptyForm();
             PageAlta.prepareFormForCreating();
@@ -230,33 +258,17 @@ class PageAlta {
     static async init () {
         console.log('PageAlta.init()');
 
-        PageAlta.prepareTable();
-        PageAlta.prepareForm();
+        
+        await PageAlta.prepareTable();
+        await PageAlta.prepareForm();
     }
+
+
+
+
 }
 
 export default PageAlta;
-
-
-
-"use strict";
-
-/// 1. Variables  ///
-
-const mainForm = document.querySelector(".form-container__form");
-const inputName = document.querySelector("#name");
-const inputType = document.querySelector("#type");
-const inputPrice = document.querySelector("#price");
-const inputBrand = document.querySelector("#brand");
-const inputShortDescription = document.querySelector("#short-description");
-const inputLongDescription = document.querySelector("#long-description");
-const inputMinAge = document.querySelector("#min-age");
-const inputStock = document.querySelector("#stock");
-const inputMaxAge = document.querySelector("#max-age");
-const inputCategory = document.querySelector("#category");
-
-/// 2.regExp  ///
-
 const regExpProductName = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,30}$");
 const regExpProductPrice = new RegExp("(.[0-9]{1,2})?");
 const regExpProductBrand = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,40}$");
@@ -264,90 +276,3 @@ const regExpProductCategory = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚü
 const regExpShortDescription = new RegExp("^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,79}$");
 const regExpLongDescription = new RegExp("^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,1999}$");
 const regExpAge = new RegExp("\d+");
-
-// /// 3. Functions  ///
-
-const validateInputAndShowMessageBox = (e, regExp, message) => {
-    const errorMessageBox = `
-    <div class="form-container__obligatory-field">
-        <p class="form-container__field-text">Este campo es obligatorio.</p>
-        <p class="form-container__field-text">${message}</p>
-    </div>
-    `;
-    if (!regExp.test(e.target.value)) {
-        e.target.style.backgroundColor = "#e56972";
-        if (!e.target.nextElementSibling) {
-            e.target.insertAdjacentHTML("afterend", errorMessageBox);
-            setTimeout(() => {
-                e.target.nextElementSibling.remove();
-            }, 3000);
-        }
-    } else {
-        e.target.style.backgroundColor = "#a8c695";
-        if (e.target.nextElementSibling) {
-            e.target.nextElementSibling.remove();
-        }
-    }
-};
-
-/// 4. Event Listeners  ///
-
-mainForm.addEventListener("change", e => {
-    if (e.target === inputType) {
-        validateInputAndShowMessageBox(e, regExpProductCategory, "La categoría debe tener entre 3 y 50 caracteres.");
-    }
-});
-
-mainForm.addEventListener("change", e => {
-    if (e.target === inputName) {
-        validateInputAndShowMessageBox(e, regExpProductName, "El nombre debe tener entre 3 y 30 caracteres.");
-    }
-});
-
-mainForm.addEventListener("change", e => {
-    if (e.target === inputPrice) {
-        validateInputAndShowMessageBox(e, regExpProductPrice, "El precio debe tener entre 1 y 9 caracteres. Campo numérico positivo.");
-    }
-});
-
-mainForm.addEventListener("change", e => {
-    if (e.target === inputBrand) {
-        validateInputAndShowMessageBox(e, regExpProductBrand, "La marca debe tener entre 3 y 40 caracteres.");
-    }
-});
-
-mainForm.addEventListener("change", e => {
-    if (e.target === inputShortDescription) {
-        validateInputAndShowMessageBox(e, regExpAge, "La descripción corta debe tener entre 0 y 79 caracteres.");
-    }
-});
-
-mainForm.addEventListener("change", e => {
-    if (e.target === inputLongDescription) {
-        validateInputAndShowMessageBox(e, regExpAge, "La descripción larga debe tener entre 0 y 1999 caracteres.");
-    }
-});
-
-mainForm.addEventListener("change", e => {
-    if (e.target === inputMinAge) {
-        validateInputAndShowMessageBox(e, regExpShortDescription, "La edad mínima debe tener entre 0 y 2 caracteres.");
-    }
-});
-
-mainForm.addEventListener("change", e => {
-    if (e.target === inputMaxAge) {
-        validateInputAndShowMessageBox(e, regExpLongDescription, "La edad máxima debe tener entre 0 y 2 caracteres.");
-    }
-});
-
-mainForm.addEventListener("change", e => {
-    if (e.target === inputCategory) {
-        validateInputAndShowMessageBox(e, regExpProductCategory, "La categoría debe tener entre 3 y 50 caracteres.");
-    }
-});
-
-mainForm.addEventListener("change", e => {
-    if (e.target === inputStock) {
-        validateInputAndShowMessageBox(e, regExpProductCategory, "La categoría debe tener entre 3 y 50 caracteres.");
-    }
-});

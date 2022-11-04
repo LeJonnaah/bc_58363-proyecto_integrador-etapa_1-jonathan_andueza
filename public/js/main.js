@@ -135,3 +135,9 @@ document.addEventListener("keydown", (e) => {
     }  
 });
 
+document.addEventListener("click", e => {
+    if (e.target.classList.contains("main-nav__link")) {
+        const mainNavToggle = document.querySelector(".main-nav-toggle");
+        mainNavToggle.checked = false;
+    }
+});
