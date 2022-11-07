@@ -29,6 +29,8 @@
 @use 'components/cart';
 @use 'components/cart-item';
 @use 'components/table';
+@use 'components/confirm-window';
+@use 'components/detailed-product';
 
 //Pages
 @use 'pages/index';

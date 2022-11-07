@@ -3,10 +3,16 @@ console.warn('🆗: Módulo PageContacto cargado.');
 
 class PageContacto {
 
-    static async init () {
+    static async init() {
         console.log('PageContacto.init()');
 
         "use strict";
+
+    }
+}
+
+export default PageContacto;
+
 
 // 1. Variables
 
@@ -48,24 +54,19 @@ const validateInputAndShowMessageBox = (e, regExp, message) => {
 
 // 4. Event Listeners
 
-mainForm.addEventListener("change", (e) => {
-    if (e.target.id === inputName) {
-        console.log("inputName");
-        validateInputAndShowMessageBox(e, regExpProductName, "Mínimo 3 caracteres.");
+document.addEventListener('change', () => {
+    if (document.querySelector('.form-container__form')) {
+        document.querySelector('.form-container__form').addEventListener('change', e => {
+            switch (e.target.name) {
+                case 'name':
+                    validateInputAndShowMessageBox(e, regExpProductName, 'El nombre debe tener entre 3 y 30 caracteres.');
+                    break;
+                case 'mail':
+                    validateInputAndShowMessageBox(e, regExpEmail, 'El email debe tener un formato válido.');
+                    break;
+                default:
+                    break;
+            }
+        });
     }
 });
-
-inputMail.addEventListener("change", (e) => {
-    if (e.target.id === inputMail) {
-        validateInputAndShowMessageBox(e, regExpEmail, "El formato del correo electrónico no es correcto.");
-    }
-});
-
-document.addEventListener("click", e => {
-    console.log(e.target.id);
-});
-    }
-}
-
-export default PageContacto;
-

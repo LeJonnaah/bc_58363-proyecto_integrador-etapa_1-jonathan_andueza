@@ -4,16 +4,12 @@
         <div class="form-container__separator"></div>
         <div class="form-container__group">
             <div class="group-container">
-                <div>
-                    <label for="id">Id:</label>
-                    <input id="id" name="id" disabled>
-                </div>
-                <label class="group-container__label" for="title">Nombre</label>
-                <input class="group-container__input" id="title" name="title" type="text" />
+                <label class="group-container__label" for="id">Id:</label>
+                <input class="group-container__input" id="id" name="id" disabled>
             </div>
             <div class="group-container">
-                <label class="group-container__label" for="header">Encabezado</label>
-                <input class="group-container__input" id="header" name="header" type="text" />
+                <label class="group-container__label" for="name">Nombre</label>
+                <input class="group-container__input" id="name" name="name" type="text" />
             </div>
         </div>
         <div class="form-container__group">
@@ -23,13 +19,13 @@
             </div>
             <div class="group-container">
                 <label class="group-container__label" for="price">Precio</label>
-                <input class="group-container__input" id="price" name="price" type="number" />
+                <input class="group-container__input" id="price" name="price" type="text" />
             </div>
         </div>
         <div class="form-container__group">
             <div class="group-container">
-                <label class="group-container__label" for="category">Categoría</label>
-                <input class="group-container__input" id="category" name="category" type="text" />
+                <label class="group-container__label" for="header">Encabezado</label>
+                <input class="group-container__input" id="header" name="header" type="text" />
             </div>
             <div class="group-container">
                 <label class="group-container__label" for="stock">Stock</label>
@@ -49,12 +45,12 @@
         <div class="form-container__group">
             <div class="group-container group-container--fb50">
                 <label class="group-container__label" for="image">Imagen</label>
-                <input class="group-container__input" id="image" type="file" accept=".png, .jpg, .jpeg"/>
+                <input class="group-container__input" id="image" name="image" type="text" />
             </div>
             <div class="group-container">
                 <p class="group-container__label"><span class="form-container__optional-span">*</span> Envío sin cargo</p>
                 <div class="group-container__radio-group">
-                    <input type="radio" name="free-ship" id="yes-free-ship" />
+                    <input type="radio" name="free-ship" name="ship" id="yes-free-ship" />
                     <label for="yes-free-ship">Si</label>
                 </div>
                 <div class="group-container__radio-group">
@@ -64,21 +60,21 @@
             </div>
         </div>
         <div class="group-container">
-            <label class="group-container__label group-container__label--left" for="short-description">Descripción corta</label>
-            <textarea class="group-container__textarea group-container__textarea--alta" name="short-description" id="short-description" cols="30" rows="10"></textarea>
+            <label class="group-container__label group-container__label--left" for="shortDescription">Descripción corta</label>
+            <textarea class="group-container__textarea group-container__textarea--alta" name="shortDescription" id="shortDescription" cols="30" rows="10"></textarea>
         </div>
         <div class="group-container">
-            <label class="group-container__label group-container__label--left" for="long-description">Descripción larga</label>
-            <textarea class="group-container__textarea group-container__textarea--alta" name="long-description" id="long-description" cols="30" rows="10"></textarea>
+            <label class="group-container__label group-container__label--left" for="longDescription">Descripción larga</label>
+            <textarea class="group-container__textarea group-container__textarea--alta" name="longDescription" id="longDescription" cols="30" rows="10"></textarea>
         </div>
         <p class="form-container__optional"><span class="form-container__optional-span">*</span> Campo opcional.</p>
         <button class="button button--delete" disabled>Cancelar</button>
-        <button class="button button--modify">Modificar</button>
+        <button class="button button--modify" disabled>Modificar</button>
         <button type="button" class="button button--float-right">Dar de alta</button>
     </form>
 </div>
 
 <section class="section-products-table">
-    <h2>Listado de productos</h2>
+    <h2 class="section-products__title">Listado de productos</h2>
     <div class="products-table-container"></div>
 </section>

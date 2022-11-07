@@ -28,9 +28,13 @@
         font-variant: small-caps;
         font-weight: 800;
         margin-bottom: 10px;
-        font-size: 2em;
+        font-size: 1.6em;
         line-height: 1.2;
         color: #054d60;
+
+        @media (min-width: 480px) {
+            font-size: 2em;
+        }
     }
 
     &__header-text {

@@ -2,12 +2,18 @@ import mongoose from 'mongoose';
 import DBMongoDB from './DB/MongoDB.js';
 
 const productSchema = mongoose.Schema({
-    name: String,
-    description: String,
-    price: Number
+    header: String,
+    title: String,
+    brand: String,
+    price: Number,
+    image: String,
+    stock: Number,
+    minAge: Number,
+    maxAge: Number,
+    ship: Boolean,
+    shortDescription: String,
 });
 
-// Modelo del documento almacenado en la colección
 const ProductsModel = mongoose.model('products', productSchema);
 
 class ProductModelMongoDB {
@@ -28,9 +34,7 @@ class ProductModelMongoDB {
             console.error('Error al intentar dar de alta el producto:', error.message);
             return {};
         }
-
     }
-
 
     ////////////////////////////////////////////////////////////////////////////////
     //                               CRUD - R: Read                               //
@@ -114,7 +118,6 @@ class ProductModelMongoDB {
             return {};
         }
     }
-
 }
 
 export default ProductModelMongoDB;

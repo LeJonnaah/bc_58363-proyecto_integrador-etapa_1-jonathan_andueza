@@ -3,55 +3,70 @@ import productController from '/js/controllers/product.js';
 console.warn('🆗: Módulo PageAlta cargado.');
 
 class PageAlta {
-
     static productsTableContainer;
     static productForm;
     static fields;
     static btnCreate;
     static btnUpdate;
     static btnCancel;
-
     static validators = {
-        'header': /^[a-zA-Z0-9\s]{3,}$/,
-        'title': /^[a-zA-Z0-9\s]{3,30}$/,
+        'title': /^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,30}$/,
         'brand': /^[a-zA-Z0-9\s]{3,30}$/,
         'price': /^\d+(\.\d{1,2})?$/,
-        'short-description': /^[a-zA-Z0-9\s]{3,}$/,
-// const regExpProductCategory = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,50}$");
-// const regExpShortDescription = new RegExp("^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,79}$");
-// const regExpLongDescription = new RegExp("^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,1999}$");
-// const regExpAge = new RegExp("\d+");
-
+        'stock': /^\d+(\.\d{1,2})?$/,
+        'header': /^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,30}$/,
+        'shortDescription': /^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,79}/,
+        'longDescription': /^^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,1999}$/,
+        'minAge': /^\d+(\.\d{1,2})?$/,
+        'maxAge': /^\d+(\.\d{1,2})?$/,
+        'image': /^https?:\/\/\S+\.(jpg|jpeg|png|gif)$/,
+        // const regExpAge = new RegExp("\d+");
     };
 
-
-    static async validateInputAndShowMessageBox (e, regExp, message) {
-        const errorMessageBox = `
-        <div class="form-container__obligatory-field">
-            <p class="form-container__field-text">Este campo es obligatorio.</p>
-            <p class="form-container__field-text">${message}</p>
-        </div>
-        `;
-        if (!regExp.test(e.target.value)) {
-            e.target.style.backgroundColor = "#e56972";
-            if (!e.target.nextElementSibling) {
-                e.target.insertAdjacentHTML("afterend", errorMessageBox);
+    static async confirmWindow() {
+        const confirmWindow = document.createElement('div');
+        confirmWindow.classList.add('confirm-window');
+        confirmWindow.innerHTML = `
+            <div class="confirm-window__container">
+                <h2 class="confirm-window__title">¿Está seguro que desea eliminar el producto?</h2>
+                <div class="confirm-window__buttons">
+                    <button class="confirm-window__button confirm-window__button--yes">Sí</button>
+                    <button class="confirm-window__button confirm-window__button--no">No</button>
+                </div>
+            </div>
+            `;
+            // <div class="confirm-window__background"></div>
+        document.body.appendChild(confirmWindow);
+        const confirmWindowContainer = confirmWindow.querySelector('.confirm-window__container');
+        confirmWindowContainer.classList.add('confirm-window__container--show');
+        const btnYes = confirmWindow.querySelector('.confirm-window__button--yes');
+        const btnNo = confirmWindow.querySelector('.confirm-window__button--no');
+        const promise = new Promise((resolve, reject) => {
+            btnYes.addEventListener('click', () => {
+                confirmWindowContainer.classList.remove('confirm-window__container--show');
+                confirmWindowContainer.classList.add('confirm-window__container--hide');
                 setTimeout(() => {
-                    e.target.nextElementSibling.remove();
-                }, 3000);
-            }
-        } else {
-            e.target.style.backgroundColor = "#a8c695";
-            if (e.target.nextElementSibling) {
-                e.target.nextElementSibling.remove();
-            }
-        }
-    };
+                    confirmWindow.remove();
+                    resolve(true);
+                }, 200);
+            });
+            btnNo.addEventListener('click', () => {
+                confirmWindowContainer.classList.remove('confirm-window__container--show');
+                confirmWindowContainer.classList.add('confirm-window__container--hide');
+                setTimeout(() => {
+                    confirmWindow.remove();
+                    resolve(false);
+                }, 200);
+            });
+        });
+        return promise;
+    }
 
     static async deleteProduct(e) {
-        if (!confirm('¿Estás seguro de querer eliminar el producto?')) {
-            return false;
+        if (!await PageAlta.confirmWindow()) {
+            return;
         }
+
         const row = e.target.closest('tr');
         const id = row.querySelector('td[data-product-property="id"]').innerHTML;
         const deletedProduct = await productController.deleteProduct(id);
@@ -87,7 +102,8 @@ class PageAlta {
 
     static async addTableEvents() {
         PageAlta.productsTableContainer.addEventListener('click', async e => {
-            if (e.target.classList.contains('btn-delete')) {
+            if (e.target.classList.contains('button--delete-table')) {
+                
                 const deletedProduct = await PageAlta.deleteProduct(e);
                 console.log('deletedProduct:', deletedProduct);
                 if (PageAlta.objectIsEmpty(deletedProduct)) {
@@ -96,7 +112,7 @@ class PageAlta {
 
                 return;
             }
-            if (e.target.classList.contains('btn-edit')) {
+            if (e.target.classList.contains('button--modify-table')) {
                 PageAlta.prepareFormForEditing();
                 PageAlta.completeForm(e);
                 return;
@@ -122,7 +138,6 @@ class PageAlta {
         await PageAlta.loadTable();
         PageAlta.addTableEvents();
     }
-
 
     static prepareFormForEditing() {
         PageAlta.productForm.querySelector('[name]:not([name="id"])').focus();
@@ -236,12 +251,11 @@ class PageAlta {
             PageAlta.emptyForm();
             PageAlta.prepareFormForCreating();
         });
-
-    }
+    };
 
     static objectIsEmpty(object) {
         return Object.entries(object).length === 0;
-    }
+    };
 
     static prepareForm() {
         PageAlta.productForm = document.querySelector('.form-container__form');
@@ -252,23 +266,16 @@ class PageAlta {
         PageAlta.addFormEvents();
     }
 
-
-
-
     static async init () {
         console.log('PageAlta.init()');
-
         
         await PageAlta.prepareTable();
         await PageAlta.prepareForm();
-    }
-
-
-
-
-}
+    };
+};
 
 export default PageAlta;
+
 const regExpProductName = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,30}$");
 const regExpProductPrice = new RegExp("(.[0-9]{1,2})?");
 const regExpProductBrand = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,40}$");
@@ -276,3 +283,67 @@ const regExpProductCategory = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚü
 const regExpShortDescription = new RegExp("^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,79}$");
 const regExpLongDescription = new RegExp("^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,1999}$");
 const regExpAge = new RegExp("\d+");
+
+const validateInputAndShowMessageBox = (e, regExp, message) => {
+    const errorMessageBox = `
+    <div class="form-container__obligatory-field">
+        <p class="form-container__field-text">Este campo es obligatorio.</p>
+        <p class="form-container__field-text">${message}</p>
+    </div>
+    `;
+    if (!regExp.test(e.target.value)) {
+        e.target.style.backgroundColor = "#e56972";
+        if (!e.target.nextElementSibling) {
+            e.target.insertAdjacentHTML("afterend", errorMessageBox);
+            setTimeout(() => {
+                e.target.nextElementSibling.remove();
+            }, 3000);
+        }
+    } else {
+        e.target.style.backgroundColor = "#a8c695";
+        if (e.target.nextElementSibling) {
+            e.target.nextElementSibling.remove();
+        }
+    }
+};
+
+document.addEventListener('change', () => {
+    if (document.querySelector('.form-container__form')) {
+        document.querySelector('.form-container__form').addEventListener('change', e => {
+            switch (e.target.name) {
+                case 'title':
+                    validateInputAndShowMessageBox(e, regExpProductName, 'El nombre debe tener entre 3 y 30 caracteres');
+                    break;
+                case 'header':
+                    validateInputAndShowMessageBox(e, regExpProductName, 'El nombre debe tener entre 3 y 30 caracteres');
+                    break;
+                case 'price':
+                    validateInputAndShowMessageBox(e, regExpProductPrice, 'El precio debe tener un máximo de 2 decimales');
+                    break;
+                case 'stock':
+                    validateInputAndShowMessageBox(e, regExpProductPrice, 'El precio debe tener un máximo de 2 decimales');
+                    break;
+                case 'brand':
+                    validateInputAndShowMessageBox(e, regExpProductBrand, 'La marca debe tener entre 3 y 40 caracteres');
+                    break;
+                case 'category':
+                    validateInputAndShowMessageBox(e, regExpProductCategory, 'La categoría debe tener entre 3 y 50 caracteres');
+                    break;
+                case 'shortDescription':
+                    validateInputAndShowMessageBox(e, regExpShortDescription, 'La descripción corta debe tener entre 0 y 79 caracteres');
+                    break;
+                case 'longDescription':
+                    validateInputAndShowMessageBox(e, regExpLongDescription, 'La descripción larga debe tener entre 0 y 1999 caracteres');
+                    break;
+                case 'minAge':
+                    validateInputAndShowMessageBox(e, regExpAge, 'La edad debe ser un número');
+                    break;
+                case 'maxAge':
+                    validateInputAndShowMessageBox(e, regExpAge, 'La edad debe ser un número');
+                    break;
+                default:
+                    break;
+            }
+        });
+    }
+});

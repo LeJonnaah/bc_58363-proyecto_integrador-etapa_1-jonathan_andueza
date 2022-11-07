@@ -34,3 +34,22 @@ body::-webkit-scrollbar-thumb {
         background-color: #b7788c;
     }
 }
+
+.products-table-container::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 16px;
+}
+
+.products-table-container::-webkit-scrollbar {
+    height: 12px;
+}
+
+.products-table-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #eb9ab3;
+    
+    &:hover {
+        background-color: #b7788c;
+    }
+}

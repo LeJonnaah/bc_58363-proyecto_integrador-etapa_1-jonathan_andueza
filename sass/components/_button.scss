@@ -9,12 +9,12 @@
     font-size: 1em;
     transition: 200ms;
     align-self: flex-end;
-    
+
     &:hover {
         background: #E5E5E5;
         color: #729F56;
     }
-    
+
     &:active {
         background: #ccc;
         box-shadow: none;
@@ -25,12 +25,29 @@
         border: 1px solid #B25158;
         padding: 10px 20px;
         font-size: 0.8em;
-        
+
+        &-table {
+            background: #E56972;
+            border: 1px solid #B25158;
+            padding: 10px 15px;
+            font-size: 0.8em;
+
+            &:hover {
+                background: #E5E5E5;
+                color: #b25158;
+            }
+
+            &:active {
+                background: #ccc;
+                box-shadow: none;
+            }
+        }
+
         &:hover {
             background: #E5E5E5;
             color: #b25158;
         }
-        
+
         &:active {
             background: #ccc;
             box-shadow: none;
@@ -42,12 +59,29 @@
         border: 1px solid #088aa4;
         padding: 10px 20px;
         font-size: 0.8em;
-        
+
+        &-table {
+            background: #0bb5d8;
+            border: 1px solid #088aa4;
+            padding: 10px 15px;
+            font-size: 0.8em;
+
+            &:hover {
+                background: #E5E5E5;
+                color: #088aa4;
+            }
+
+            &:active {
+                background: #ccc;
+                box-shadow: none;
+            }
+        }
+
         &:hover {
             background: #E5E5E5;
             color: #088aa4;
         }
-        
+
         &:active {
             background: #ccc;
             box-shadow: none;
