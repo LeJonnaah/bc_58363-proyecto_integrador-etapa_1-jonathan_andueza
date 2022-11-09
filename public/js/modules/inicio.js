@@ -218,25 +218,36 @@ const createDetailedProduct = product => {
     detailedProduct.classList.add("detailed-product");
     detailedProduct.innerHTML = `
         <div class="detailed-product__container">
-            <div class="detailed-product__img-container">
-                <img class="detailed-product__img" src="${product.image}" alt="Imagen del producto">
+            <p class="detailed-product__id">${product.id}</p>
+            <div class="detailed-product__image-container">
+                <img class="detailed-product__image" src="${product.image}" alt="Imagen del producto">
             </div>
             <div class="detailed-product__text-container">
                 <p class="detailed-product__title">${product.title}</p>
+                <p class="detailed-product__category">${product.category}</p>
+                <p class="detailed-product__brand">${product.brand}</p>
                 <p class="detailed-product__price">${product.price}</p>
-                <p class="detailed-product__description">${product.description}</p>
+                <i class="detailed-product__age-fa fa fa-pen"></i>
+                <span class="detailed-product__age">${product.age}</span>
+                <p class="detailed-product__description">${product.longDescription}</p>
                 <button class="detailed-product__xmark-container">
-                    <i class="fas fa-times detailed-product__xmark"></i>
+                    <i class="fa-solid fa-circle-xmark detailed-product__xmark"></i>
                 </button>
+                <div class="detailed-product__footer">
+                    <div class="detailed-product__action">
+                        <button class="button button--card-detailed">Agregar al carrito</button>
+                    </div>
+                </div>
             </div>
         </div>
     `;
     document.body.insertAdjacentElement("afterbegin", detailedProduct);
-    const background = document.querySelector(".cart__background");
-    background.classList.add("cart__background--visible");
+    const background = document.querySelector(".background");
+    background.classList.add("background--visible");
     document.addEventListener("click", e => {
         if (e.target.classList.contains("detailed-product__xmark")) {
             e.target.closest(".detailed-product").remove();
+            background.classList.remove("background--visible");
         }
     });
 };
@@ -244,15 +255,28 @@ const createDetailedProduct = product => {
 // 3. Event listeners //
 
 document.addEventListener("click", e => {
-    if (e.target.closest(".card")) {
+    if (e.target.closest(".card") && !e.target.classList.contains("button--card")) {
         const product = {
-            // id: e.target.closest(".card").querySelector(".card__id").textContent,
+            id: e.target.closest(".card").querySelector(".card__id").textContent,
             image: e.target.closest(".card").querySelector(".card__image").src,
             title: e.target.closest(".card").querySelector(".card__title").textContent,
-            price: e.target.closest(".card").querySelector(".card__price").textContent
+            brand: e.target.closest(".card").querySelector(".card__brand").textContent,
+            price: e.target.closest(".card").querySelector(".card__price").textContent,
+            category: e.target.closest(".card").querySelector(".card__category").textContent,
+            age: e.target.closest(".card").querySelector(".card__age").textContent,
+            longDescription: e.target.closest(".card").querySelector(".card__long-description").textContent
         };
         console.log(product);
         createDetailedProduct(product);
+    }
+});
+
+document.addEventListener("keydown", e => {
+    if (e.key === "Escape") {
+        const detailedProduct = document.querySelector(".detailed-product");
+        if (detailedProduct) {
+            detailedProduct.remove();
+        }
     }
 });
 
@@ -265,7 +289,23 @@ document.addEventListener("click", async e => {
             id: e.target.closest(".card").querySelector(".card__id").textContent
         };
         addToCart(product);
-        
+    }
+});
+
+document.addEventListener("click", async e => {
+    if (e.target.closest(".button--card-detailed")) {
+        const product = {
+            image: e.target.closest(".detailed-product").querySelector(".detailed-product__image").src,
+            title: e.target.closest(".detailed-product").querySelector(".detailed-product__title").textContent,
+            price: e.target.closest(".detailed-product").querySelector(".detailed-product__price").textContent,
+            id: e.target.closest(".detailed-product").querySelector(".detailed-product__id").textContent
+        };
+        console.log(product);
+        addToCart(product);
+        const detailedProduct = document.querySelector(".detailed-product");
+        detailedProduct.remove();
+        const background = document.querySelector(".background");
+        background.classList.remove("background--visible");
     }
 });
 

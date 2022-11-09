@@ -30,7 +30,7 @@ class DBMongoDB {
     static async connectDB() {
         try {
             if (mongoose.connection.readyState === DBMongoDB.READY_STATE_CONNECTED) {
-                console.log('Conexión con MongoDB exitosa.');
+                // console.log('Conexión con MongoDB exitosa.');
                 return true;
             }
             await mongoose.connect(config.MONGODB_CONNECTION_STR, {

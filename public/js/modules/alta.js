@@ -15,6 +15,7 @@ class PageAlta {
         'price': /^\d+(\.\d{1,2})?$/,
         'stock': /^\d+(\.\d{1,2})?$/,
         'header': /^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,30}$/,
+        'category': /^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,30}$/,
         'shortDescription': /^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,79}/,
         'longDescription': /^^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,1999}$/,
         'minAge': /^\d+(\.\d{1,2})?$/,
@@ -180,6 +181,7 @@ class PageAlta {
         if (!allValidated) {
             return false;
         }
+        console.log('productToSave:', productToSave);
         return productToSave;
     }
 
@@ -189,6 +191,7 @@ class PageAlta {
     }
 
     static async updateProduct(product) {
+        product.id = PageAlta.productForm.querySelector('[name="id"]').value;
         const updatedProduct = await productController.updateProduct(product.id, product);
         return updatedProduct;
     }
@@ -270,7 +273,7 @@ class PageAlta {
         console.log('PageAlta.init()');
         
         await PageAlta.prepareTable();
-        await PageAlta.prepareForm();
+        PageAlta.prepareForm();
     };
 };
 

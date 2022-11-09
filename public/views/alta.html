@@ -4,12 +4,12 @@
         <div class="form-container__separator"></div>
         <div class="form-container__group">
             <div class="group-container">
-                <label class="group-container__label" for="id">Id:</label>
+                <label class="group-container__label" for="id">Id</label>
                 <input class="group-container__input" id="id" name="id" disabled>
             </div>
             <div class="group-container">
-                <label class="group-container__label" for="name">Nombre</label>
-                <input class="group-container__input" id="name" name="name" type="text" />
+                <label class="group-container__label" for="title">Nombre</label>
+                <input class="group-container__input" id="title" name="title" type="text" />
             </div>
         </div>
         <div class="form-container__group">
@@ -19,7 +19,7 @@
             </div>
             <div class="group-container">
                 <label class="group-container__label" for="price">Precio</label>
-                <input class="group-container__input" id="price" name="price" type="text" />
+                <input class="group-container__input" id="price" name="price" type="number" />
             </div>
         </div>
         <div class="form-container__group">
@@ -30,6 +30,16 @@
             <div class="group-container">
                 <label class="group-container__label" for="stock">Stock</label>
                 <input class="group-container__input" id="stock" name="stock" type="number" />
+            </div>
+        </div>
+        <div class="form-container__group">
+            <div class="group-container">
+                <label class="group-container__label" for="image">Imagen</label>
+                <input class="group-container__input" id="image" name="image" type="text" />
+            </div>
+            <div class="group-container">
+                <label class="group-container__label" for="category">Categoría</label>
+                <input class="group-container__input" id="category" name="category" type="text" />
             </div>
         </div>
         <div class="form-container__group form-container__group--short">
@@ -43,10 +53,6 @@
             </div>
         </div>
         <div class="form-container__group">
-            <div class="group-container group-container--fb50">
-                <label class="group-container__label" for="image">Imagen</label>
-                <input class="group-container__input" id="image" name="image" type="text" />
-            </div>
             <div class="group-container">
                 <p class="group-container__label"><span class="form-container__optional-span">*</span> Envío sin cargo</p>
                 <div class="group-container__radio-group">
@@ -68,8 +74,8 @@
             <textarea class="group-container__textarea group-container__textarea--alta" name="longDescription" id="longDescription" cols="30" rows="10"></textarea>
         </div>
         <p class="form-container__optional"><span class="form-container__optional-span">*</span> Campo opcional.</p>
-        <button class="button button--delete" disabled>Cancelar</button>
-        <button class="button button--modify" disabled>Modificar</button>
+        <button class="button button--delete" type="button" disabled>Cancelar</button>
+        <button class="button button--modify" type="button" disabled>Modificar</button>
         <button type="button" class="button button--float-right">Dar de alta</button>
     </form>
 </div>

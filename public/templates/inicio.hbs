@@ -2,6 +2,7 @@
     {{#each products}}
                 <div class="card">
                 <div class="card__id">{{id}}</div>
+                <div class="card__category">{{category}}</div>
                 <div class="card__header">
                     <div class="card__separator"></div>
                     <h4 class="card__header-text">{{header}}</h4>
@@ -21,12 +22,11 @@
                     </div>
                     <div class="card__half">
                         <div class="card__description">
-                            <p>
-                                {{description}}
-                            </p>
+                            <p>{{shortDescription}}</p>
+                            <p class="card__long-description">{{longDescription}}</p>
                         </div>
-                        <i class="card__stock-fa fa fa-pen"></i>
-                        <span class="card__stock">¡De {{minAge}} a {{maxAge}} años!</span>
+                        <i class="card__age-fa fa fa-pen"></i>
+                        <span class="card__age">¡De {{minAge}} a {{maxAge}} años!</span>
                     </div>
                 </div>
                 <div class="card__footer">

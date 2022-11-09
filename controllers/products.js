@@ -32,7 +32,7 @@ const postProduct = async (req, res) => {
 const putProduct = async (req, res) => {
     const id = req.params.id;
     const product = req.body;
-
+    console.log(req.params);
     const updatedProduct = await api.updateProduct(id, product);
     res.json(updatedProduct);
 };

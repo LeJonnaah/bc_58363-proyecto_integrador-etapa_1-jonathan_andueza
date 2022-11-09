@@ -4,11 +4,12 @@
     margin-bottom: 16px;
     border-radius: 10px;
     transition: all .2s;
+    cursor: pointer;
 
     &__id {
         display: none;
     }
-    
+
     &__header {
         display: flex;
         align-items: center;
@@ -21,7 +22,7 @@
         border-radius: 2px;
         padding: 16px 33%;
     }
-    
+
     &__title {
         font-family: 'Poppins', sans-serif;
         letter-spacing: 2px;
@@ -45,7 +46,7 @@
         font-size: 0.7em;
         text-transform: uppercase;
 
-            @media (min-width: 480px) {
+        @media (min-width: 480px) {
             font-size: 1em;
         }
     }
@@ -66,7 +67,7 @@
         font-weight: 300;
         font-size: 0.7em;
         color: black;
-        
+
         @media (min-width: 480px) {
             font-size: 1em;
         }
@@ -95,7 +96,7 @@
         padding-top: 15px;
         min-width: 50%;
     }
-    
+
     &__image {
         margin-top: 15px;
         display: block;
@@ -107,25 +108,25 @@
         margin-bottom: 25px;
     }
 
-    &__stock {
+    &__long-description {
+        display: none;
+    }
+
+    &__category {
+        display: none;
+    }
+
+    &__age {
         font-family: 'Amatic SC', cursive;
         font-weight: 600;
         color: #a8c695;
-        
+
         @media (min-width: 480px) {
             font-size: 1.5em;
         }
-        
-        &--empty {
-            color: #d396a2;
-        }
-        
+
         &-fa {
             color: #a8c695;
-
-            &--empty {
-                color: #d396a2;
-            }
         }
     }
 
@@ -153,8 +154,7 @@
         transform-origin: bottom;
     }
 
-        @media (min-width: 480px) {
+    @media (min-width: 480px) {
         max-width: 400px;
     }
 }
-

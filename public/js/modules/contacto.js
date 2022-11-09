@@ -16,10 +16,6 @@ export default PageContacto;
 
 // 1. Variables
 
-const mainForm = document.querySelector(".form-container__form");
-const inputName = document.getElementById("name");
-const inputMail = document.querySelector("#mail");
-
 // 2.regExp
 
 const regExpProductName = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]){3,30}$");

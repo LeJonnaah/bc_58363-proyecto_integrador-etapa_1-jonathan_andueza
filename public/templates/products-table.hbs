@@ -9,12 +9,14 @@
                 <th class="table-products__head" scope="column">Nombre</th>
                 <th class="table-products__head" scope="column">Marca</th>
                 <th class="table-products__head" scope="column">Precio</th>
+                <th class="table-products__head" scope="column">Categoría</th>
                 <th class="table-products__head" scope="column">Stock</th>
                 <th class="table-products__head" scope="column">Imagen</th>
                 <th class="table-products__head" scope="column">E.Min</th>
                 <th class="table-products__head" scope="column">E.Max</th>
                 <th class="table-products__head" scope="column">Envio Gratis</th>
                 <th class="table-products__head" scope="column">Descripción Corta</th>
+                <th class="table-products__head" scope="column">Descripción Larga</th>
                 <th class="table-products__head" scope="column">Acciones</th>
             </tr>
         </thead>
@@ -25,13 +27,15 @@
                     <td class="table-products__data" data-product-property="header">{{header}}</td>
                     <td class="table-products__data" data-product-property="name">{{title}}</td>
                     <td class="table-products__data" data-product-property="brand">{{brand}}</td>
-                    <td class="table-products__data" data-product-property="price">${{price}}</td>
+                    <td class="table-products__data" data-product-property="price">{{price}}</td>
+                    <td class="table-products__data" data-product-property="category">{{category}}</td>
                     <td class="table-products__data" data-product-property="stock">{{stock}}</td>
                     <td class="table-products__data" data-product-property="image">{{image}}</td>
                     <td class="table-products__data" data-product-property="minAge">{{minAge}}</td>
                     <td class="table-products__data" data-product-property="maxAge">{{maxAge}}</td>
                     <td class="table-products__data" data-product-property="ship">{{ship}}</td>
                     <td class="table-products__data" data-product-property="shortDescription">{{shortDescription}}</td>
+                    <td class="table-products__data" data-product-property="longDescription">{{longDescription}}</td>
                     <td class="table-products__data">
                         <button type="button" title="Editar producto" class="button button--modify-table fa-solid fa-pen"></button>
                         <button type="button" title="Eliminar producto" class="button button--delete-table fa-solid fa-trash"></button>
