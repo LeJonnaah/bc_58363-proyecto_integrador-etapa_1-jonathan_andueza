@@ -68,24 +68,17 @@
         }
     }
     
-    &__search {
-        cursor: pointer;
-
-        &:hover {
-            color: #E5E5E5;
-        }
-    }
-
-    &__search-form-input {
+    &__search-form {
         align-self: center;
         margin-left: 5px;
         padding: 5px;
+        color: hsla(0, 0%, 0%, .5);
         box-shadow: 0 6px 6px rgba(#000, 0.3);
         padding-left: 10px;
         border-radius: 20px;
         display: none;
         border: none;
-        
+
         @media (min-width: 480px) {
             display: block;
             width: 150px;
@@ -95,7 +88,78 @@
             width: 250px;
             display: block;
         }
+
+        &:hover {
+            background-color: #E5E5E5;
+            cursor: pointer;
+        }
     }   
+
+    &__search-icon-container {
+
+        @media (min-width: 480px) {
+            display: none;
+        }
+
+    }
+
+    &__search-form-input {
+        margin: auto;
+        padding: 5px;
+        margin-top: 20px;
+        box-shadow: 0 6px 6px rgba(#000, 0.3);
+        padding-left: 20px;
+        border-radius: 20px;
+        border: none;
+
+        @media (min-width: 480px) {
+            display: block;
+            width: 150px;
+        }
+        
+        @media (min-width: 768px) {
+            width: 250px;
+            display: block;
+        }
+
+        &:hover {
+            background-color: #E5E5E5;
+            cursor: pointer;
+        }
+    }   
+
+    &__search-section {
+        display: none;
+        border-radius: 10px;
+        overflow: auto;
+        position: fixed;
+        top: 10%;
+        left: 5%;
+        width: 90%;
+        max-height: 500px;
+        background-color: #fff;
+        z-index: 9999;
+
+
+        &--visible {
+            display: block;
+        }
+
+        @media (min-height: 768px) {
+            max-height: 700px;
+        }
+    }
+
+    &__render-search {
+            padding: 1em;
+        
+            @media (min-width: 480px) {
+                gap: 16px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
 
     &__cart-button-container {
         background-color: #8B89B1;

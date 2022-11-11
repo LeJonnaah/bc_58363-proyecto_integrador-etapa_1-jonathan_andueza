@@ -34,6 +34,24 @@ body::-webkit-scrollbar-thumb {
         background-color: #b7788c;
     }
 }
+.main-header__search-section::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.main-header__search-section::-webkit-scrollbar {
+    width: 12px;
+}
+
+
+.main-header__search-section::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #eb9ab3;
+
+    &:hover {
+        background-color: #b7788c;
+    }
+}
 
 .products-table-container::-webkit-scrollbar-track {
     border-radius: 10px;

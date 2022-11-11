@@ -81,6 +81,9 @@ const cartButton = document.querySelector(".main-header__cart");
 const background = document.querySelector(".background");
 const cartDropdown = document.querySelector(".cart__dropdown");
 const cartXMark = document.querySelector(".cart__xmark");
+const searchButton = document.querySelector(".main-header__search-form");
+const renderSearchSection = document.querySelector(".main-header__render-search");
+const searchSection = document.querySelector(".main-header__search-section");
 const mainFooter = document.querySelector(".main-footer");
 const currentYearFooter = document.querySelector("#current-year");
 currentYearFooter.innerHTML = new Date().getFullYear();
@@ -116,7 +119,6 @@ const closeCartDropdown = () => {
 }
 
 const sendData = e => {
-    const searchSection = document.querySelector(".main-header__search-section");
     // let match = (e.target.value).match(/^[a-zA-Z0-9\s]*/);
     // let match2 = (e.target.value).match(/\S*/);
     // if (match2[0] === e.target.value) {
@@ -133,18 +135,47 @@ const sendData = e => {
         let payload = data.payload;
         console.log(payload);
         if (payload.length === 0) {
-            searchSection.innerHTML = `<p class="main-header__search-section__no-results">No se encontraron resultados.</p>`;
+            renderSearchSection.innerHTML = `<p class="main-header__search-section__no-results">No se encontraron resultados.</p>`;
             return;
         }
-        searchSection.innerHTML = '';
+        renderSearchSection.innerHTML = '';
         payload.forEach(product => {
-            searchSection.innerHTML += `
-                <a href="/product/${product.id}" class="main-header__search-section__product">
-                    <img src="${product.image}" alt="${product.title}" class="main-header__search-section__product__image">
-                    <p class="main-header__search-section__product__name">${product.name}</p>
-                    <p class="main-header__search-section__product__price">$${product.price}</p>
-                </a>
-                `;
+            renderSearchSection.innerHTML +=  `
+            <div class="card">
+            <div class="card__id">${product.id}</div>
+            <div class="card__category">${product.category}</div>
+            <div class="card__header">
+                <div class="card__separator"></div>
+                <h4 class="card__header-text">${product.header}</h4>
+            </div>
+            <div class="card__body">
+                <div class="card__half card__half--fb">
+                    <div class="card__featured-text">
+                        <h3 class="card__title">${product.title}</h3>
+                        <p class="card__brand">${product.brand}</p>
+                        <p class="card__price">&#36; ${product.price}</p>
+                    </div>
+                    <div class="card__image-container">
+                        <img class="card__image"
+                            src="${product.image}"
+                            alt="Imagen del producto" />
+                    </div>
+                </div>
+                <div class="card__half">
+                    <div class="card__description">
+                        <p>${product.shortDescription}</p>
+                        <p class="card__long-description">${product.longDescription}</p>
+                    </div>
+                    <i class="card__age-fa fa fa-pen"></i>
+                    <span class="card__age">¡De ${product.minAge} a ${product.maxAge} años!</span>
+                </div>
+            </div>
+            <div class="card__footer">
+                <div class="card__action">
+                    <button class="button button--card">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>`;
         });
     }).catch(e => console.error(e));
 
@@ -152,10 +183,7 @@ const sendData = e => {
 }
 // }
 
-
-
 // 3. Event Listeners //
-
 
 scrollToTopButton.addEventListener("click", topFunction);
 
@@ -175,6 +203,9 @@ document.addEventListener("click", e => {
 document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
         closeCartDropdown();
+        if (searchSection.classList.contains("main-header__search-section--visible")) {
+            searchSection.classList.remove("main-header__search-section--visible");
+        }
     }
 });
 
@@ -188,7 +219,22 @@ document.addEventListener("click", e => {
 document.addEventListener("keydown", e => {
     if (e.target.classList.contains("main-header__search-form-input")) {
         if (e.key === "Enter") {
+            if (e.target.value === "") {
+                return;
+            }
             sendData(e.target);
         }
     }
 });
+
+document.addEventListener("click", e => {
+    if (e.target === searchButton) {
+        if (searchSection.classList.contains("main-header__search-section--visible")) {
+            background.classList.remove("background--visible");
+            searchSection.classList.remove("main-header__search-section--visible");
+        } else {
+            searchSection.classList.add("main-header__search-section--visible");
+            background.classList.add("background--visible");
+        }
+    }
+}); 
