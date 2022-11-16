@@ -12,8 +12,8 @@ class PageAlta {
     static validators = {
         'title': /^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,30}$/,
         'brand': /^[a-zA-Z0-9\s]{3,30}$/,
-        'price': /^\d+(\.\d{1,2})?$/,
-        'stock': /^\d+(\.\d{1,2})?$/,
+        'price': /^[0-9]+$/,
+        'stock': /^[0-9]+$/,
         'header': /^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,30}$/,
         'category': /^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,30}$/,
         'shortDescription': /^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,79}/,
@@ -25,9 +25,10 @@ class PageAlta {
     };
 
     static async confirmWindow() {
+        const confirmWindowBackground = document.querySelector('.background');
         const confirmWindow = document.createElement('div');
         confirmWindow.classList.add('confirm-window');
-        confirmWindow.innerHTML = `
+        confirmWindow.innerHTML =`
             <div class="confirm-window__container">
                 <h2 class="confirm-window__title">¿Está seguro que desea eliminar el producto?</h2>
                 <div class="confirm-window__buttons">
@@ -38,6 +39,7 @@ class PageAlta {
             `;
             // <div class="confirm-window__background"></div>
         document.body.appendChild(confirmWindow);
+        confirmWindowBackground.classList.add('background--visible');
         const confirmWindowContainer = confirmWindow.querySelector('.confirm-window__container');
         confirmWindowContainer.classList.add('confirm-window__container--show');
         const btnYes = confirmWindow.querySelector('.confirm-window__button--yes');
@@ -47,6 +49,7 @@ class PageAlta {
                 confirmWindowContainer.classList.remove('confirm-window__container--show');
                 confirmWindowContainer.classList.add('confirm-window__container--hide');
                 setTimeout(() => {
+                    confirmWindowBackground.classList.remove('background--visible');
                     confirmWindow.remove();
                     resolve(true);
                 }, 200);
@@ -55,6 +58,7 @@ class PageAlta {
                 confirmWindowContainer.classList.remove('confirm-window__container--show');
                 confirmWindowContainer.classList.add('confirm-window__container--hide');
                 setTimeout(() => {
+                    confirmWindowBackground.classList.remove('background--visible');
                     confirmWindow.remove();
                     resolve(false);
                 }, 200);
@@ -280,7 +284,7 @@ class PageAlta {
 export default PageAlta;
 
 const regExpProductName = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,30}$");
-const regExpProductPrice = new RegExp("(.[0-9]{1,2})?");
+const regExpProductPrice = new RegExp("^[0-9]+$");
 const regExpProductBrand = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,40}$");
 const regExpProductCategory = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,50}$");
 const regExpShortDescription = new RegExp("^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,79}$");

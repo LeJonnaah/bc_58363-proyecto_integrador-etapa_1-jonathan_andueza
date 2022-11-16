@@ -58,6 +58,17 @@
         }
     }
 
+    &__text {
+        font-size: 1em;
+        text-align: center;
+        margin: 10px 0px;
+
+        @media (min-width: 768px) {
+            font-size: 1.2em;
+            text-align: left;
+        }
+    }
+
     &__separator {
         border-bottom: 1px solid #8B89B1;
         margin: 16px;

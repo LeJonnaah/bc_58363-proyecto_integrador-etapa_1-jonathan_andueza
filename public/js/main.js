@@ -67,6 +67,11 @@ class Main {
     async start() {
         await this.loadTemplates();
     }
+
+    async postCartItemsToDB() {
+        const cartItems = await this.ajax('http://localhost:8080/api/cartItems', 'post');
+        console.log(cartItems);
+    }
 }
 
 const main = new Main();
@@ -82,6 +87,9 @@ const background = document.querySelector(".background");
 const cartDropdown = document.querySelector(".cart__dropdown");
 const cartXMark = document.querySelector(".cart__xmark");
 const searchButton = document.querySelector(".main-header__search-form");
+const searchIcon = document.querySelector(".main-header__search-icon");
+const searchInput = document.querySelector(".main-header__search-form-input");
+const searchFormIcon = document.querySelector(".main-header__search-form-icon");
 const renderSearchSection = document.querySelector(".main-header__render-search");
 const searchSection = document.querySelector(".main-header__search-section");
 const mainFooter = document.querySelector(".main-footer");
@@ -118,6 +126,19 @@ const closeCartDropdown = () => {
     }, 300);
 }
 
+const closeSearchContainer = () => {
+    searchSection.classList.add("main-header__search-section--transform-out--bottom");
+    setTimeout(() => {
+        searchSection.classList.add("main-header__search-section--transform-out");
+    }, 200);
+    setTimeout(() => {
+        searchSection.classList.remove("main-header__search-section--transform-out--bottom");
+        background.classList.remove("background--visible");
+        searchSection.classList.remove("main-header__search-section--visible");
+        searchSection.classList.remove("main-header__search-section--transform-out");
+    }, 300);
+}
+
 const sendData = e => {
     // let match = (e.target.value).match(/^[a-zA-Z0-9\s]*/);
     // let match2 = (e.target.value).match(/\S*/);
@@ -140,7 +161,7 @@ const sendData = e => {
         }
         renderSearchSection.innerHTML = '';
         payload.forEach(product => {
-            renderSearchSection.innerHTML +=  `
+            renderSearchSection.innerHTML += `
             <div class="card">
             <div class="card__id">${product.id}</div>
             <div class="card__category">${product.category}</div>
@@ -178,7 +199,6 @@ const sendData = e => {
         </div>`;
         });
     }).catch(e => console.error(e));
-
     return;
 }
 // }
@@ -189,6 +209,9 @@ scrollToTopButton.addEventListener("click", topFunction);
 
 document.addEventListener("click", e => {
     if (e.target === cartButton) {
+        if (document.querySelector(".background--visible")) {
+            return
+        }
         background.classList.toggle("background--visible");
         cartDropdown.classList.toggle("cart__dropdown--visible");
     } else if (e.target === background || e.target === cartXMark) {
@@ -197,6 +220,12 @@ document.addEventListener("click", e => {
             detailedProduct.remove();
         }
         closeCartDropdown();
+    }
+});
+
+document.addEventListener("click", e => {
+    if (e.target === document.querySelector(".main-header__search-xmark")) {
+        closeSearchContainer();
     }
 });
 
@@ -216,6 +245,14 @@ document.addEventListener("click", e => {
     }
 });
 
+document.addEventListener("click", e => {
+    if (e.target === searchIcon) {
+        background.classList.toggle("background--visible");
+        searchSection.classList.toggle("main-header__search-section--visible");
+        searchInput.focus();
+    }
+});
+
 document.addEventListener("keydown", e => {
     if (e.target.classList.contains("main-header__search-form-input")) {
         if (e.key === "Enter") {
@@ -228,6 +265,15 @@ document.addEventListener("keydown", e => {
 });
 
 document.addEventListener("click", e => {
+    if (e.target.classList.contains("main-header__search-form-faicon")) {
+        if (e.target.value === "") {
+            return;
+        }
+        sendData(e.target.parentElement.parentElement.querySelector(".main-header__search-form-input"));
+    }
+});
+
+document.addEventListener("click", e => {
     if (e.target === searchButton) {
         if (searchSection.classList.contains("main-header__search-section--visible")) {
             background.classList.remove("background--visible");
@@ -235,6 +281,33 @@ document.addEventListener("click", e => {
         } else {
             searchSection.classList.add("main-header__search-section--visible");
             background.classList.add("background--visible");
+            searchInput.focus();
         }
     }
-}); 
+});
+
+document.addEventListener("click", e => {
+    if (e.target === document.querySelector(".button--float-right")) {
+        const cartItems = document.querySelectorAll(".cart-item");
+        const cartItemsArray = Array.from(cartItems);
+        cartItemsArray.forEach(item => {
+            const id = item.querySelector(".cart-item__id").textContent;
+            const quantity = item.querySelector(".cart-item__quantity-input").value;
+            const price = item.querySelector(".cart-item__price").textContent;
+            const data = {
+                id,
+                quantity,
+                price
+            };
+            fetch("http://localhost:8080/api/cartItems", {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            }).then(response => response.json())
+                .then(json => console.log(json));
+                cartItemsArray.forEach(item => item.remove());
+        });
+    }
+});

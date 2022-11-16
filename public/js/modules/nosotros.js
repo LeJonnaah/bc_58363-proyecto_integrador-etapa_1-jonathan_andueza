@@ -5,9 +5,6 @@ class PageNosotros {
 
     static async init () {
         console.log('PageNosotros.init()');
-        console.log('.');
-        console.log('..');
-        console.log('...');
     }
 }
 

@@ -1,7 +1,8 @@
 import express from 'express';
 import routerProducts from './routers/products.js';
-import config from   './config.js';
+import routerCartItems from './routers/cartItems.js';
 import Product from './models/liveSearch.js';
+import config from   './config.js';
 
 const app = express();
 
@@ -10,6 +11,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 app.use('/api/products', routerProducts);
+app.use('/api/cartItems', routerCartItems);
 
 app.get('*', (req, res) => {
     res.redirect('/');
