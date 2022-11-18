@@ -1,12 +1,3 @@
-// h2{
-//     text-align: center;
-//     font-size: 18px;
-//     text-transform: uppercase;
-//     letter-spacing: 1px;
-//     color: white;
-//     padding: 30px 0;
-// }
-
 .table-products {
     border-radius: 10px;
     font-size: 1em;
@@ -25,7 +16,7 @@
     }
 
     &__wrapper{
-        margin: 16px
+        margin: 0 16px
     }
     
 
@@ -61,14 +52,6 @@
 }
 
 @media (max-width: 768px) {
-    .table-products__wrapper:before{
-        content: "Scroll horizontally >";
-        display: block;
-        text-align: right;
-        font-size: 11px;
-        color: white;
-        padding: 0 0 10px;
-    }
     .table-products thead, .table-products tbody, .table-products thead th {
         display: block;
     }

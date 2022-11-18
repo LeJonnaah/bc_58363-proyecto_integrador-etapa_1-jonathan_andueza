@@ -10,18 +10,18 @@ class PageAlta {
     static btnUpdate;
     static btnCancel;
     static validators = {
+        'header': /^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\¡\ \!\"\-\_\/]){3,20}$/,
         'title': /^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,30}$/,
-        'brand': /^[a-zA-Z0-9\s]{3,30}$/,
+        'brand': /^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,40}$/,
+        'category': /^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,50}$/,
         'price': /^[0-9]+$/,
         'stock': /^[0-9]+$/,
-        'header': /^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,30}$/,
-        'category': /^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,30}$/,
         'shortDescription': /^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,79}/,
-        'longDescription': /^^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,1999}$/,
-        'minAge': /^\d+(\.\d{1,2})?$/,
-        'maxAge': /^\d+(\.\d{1,2})?$/,
-        'image': /^https?:\/\/\S+\.(jpg|jpeg|png|gif)$/,
-        // const regExpAge = new RegExp("\d+");
+        'longDescription': /^^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\:\'\"\-\_\/]{0,1999}$/,
+        'minAge': /[0-9]+$/,
+        'maxAge': /[0-9]+$/,
+        'image': /^.*\.(jpg|jpeg|png|gif)$/,
+        'ship': 'false',
     };
 
     static async confirmWindow() {
@@ -37,7 +37,6 @@ class PageAlta {
                 </div>
             </div>
             `;
-            // <div class="confirm-window__background"></div>
         document.body.appendChild(confirmWindow);
         confirmWindowBackground.classList.add('background--visible');
         const confirmWindowContainer = confirmWindow.querySelector('.confirm-window__container');
@@ -170,6 +169,10 @@ class PageAlta {
             if (!validators[field.name]) {
                 continue;
             }
+            if (field.type === 'checkbox') {
+                productToSave[field.name] = field.checked;
+                continue;
+            }
             const validated = PageAlta.validate(field.value, validators[field.name]);
             console.warn(field.name);
             console.log(`value: ${field.value}\nvalidator: ${validators[field.name]}\nvalidated: ${validated}`);
@@ -216,7 +219,6 @@ class PageAlta {
             const validators = {...PageAlta.validators};
             delete validators.id;
             const productToSave = PageAlta.validateForm(validators);
-            console.log('productToSave:', productToSave);
             if (productToSave) {
                 const savedProduct = await PageAlta.saveProduct(productToSave);
                 console.log('savedProduct:', savedProduct);
@@ -283,13 +285,14 @@ class PageAlta {
 
 export default PageAlta;
 
-const regExpProductName = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,30}$");
+const regExpProductHeader = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \!\¡\"\-\_\/]){3,30}$");
+const regExpProductTitle = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,30}$");
 const regExpProductPrice = new RegExp("^[0-9]+$");
 const regExpProductBrand = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,40}$");
 const regExpProductCategory = new RegExp("^([0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\ \"\-\_\/]){3,50}$");
 const regExpShortDescription = new RegExp("^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,79}$");
 const regExpLongDescription = new RegExp("^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s\,\.\'\"\-\_\/]{0,1999}$");
-const regExpAge = new RegExp("\d+");
+const regExpAge = new RegExp("^[0-9]+$");
 
 const validateInputAndShowMessageBox = (e, regExp, message) => {
     const errorMessageBox = `
@@ -319,10 +322,10 @@ document.addEventListener('change', () => {
         document.querySelector('.form-container__form').addEventListener('change', e => {
             switch (e.target.name) {
                 case 'title':
-                    validateInputAndShowMessageBox(e, regExpProductName, 'El nombre debe tener entre 3 y 30 caracteres');
+                    validateInputAndShowMessageBox(e, regExpProductTitle, 'El nombre debe tener entre 3 y 30 caracteres');
                     break;
                 case 'header':
-                    validateInputAndShowMessageBox(e, regExpProductName, 'El nombre debe tener entre 3 y 30 caracteres');
+                    validateInputAndShowMessageBox(e, regExpProductHeader, 'El nombre debe tener entre 3 y 30 caracteres');
                     break;
                 case 'price':
                     validateInputAndShowMessageBox(e, regExpProductPrice, 'El precio debe tener un máximo de 2 decimales');

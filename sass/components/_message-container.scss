@@ -4,12 +4,11 @@
     border-radius: 10px;
     color: white;
     z-index: 100;
-    
+
     @media (min-width: 1024px) {
-        // top: 50%;
         min-width: 100%;
     }
-    
+
     &--success {
         top: 15%;
         background-color: #a8c695;

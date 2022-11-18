@@ -8,6 +8,7 @@ const postCartItem = async (req, res) => {
     const cartItem = req.body;
     const newCartItem = await api.createCartItems(cartItem);
     res.json(newCartItem);
+    console.log(newCartItem);
 };
 
 export default {

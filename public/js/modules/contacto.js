@@ -13,7 +13,6 @@ class PageContacto {
 
 export default PageContacto;
 
-
 // 1. Variables
 
 // 2.regExp

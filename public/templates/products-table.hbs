@@ -1,7 +1,6 @@
 {{#if products.length }}
 <div class="table-products__wrapper">
     <table class="table-products">
-        <caption class="table-products__caption">Productos</caption>
         <thead class="table-products__header">
             <tr class="table-products__row">
                 <th class="table-products__head" scope="column">Id</th>
@@ -22,25 +21,27 @@
         </thead>
         <tbody class="table-products__body">
             {{#each products}}
-                <tr class="table-products__row">
-                    <td class="table-products__data" data-product-property="id">{{id}}</td>
-                    <td class="table-products__data" data-product-property="header">{{header}}</td>
-                    <td class="table-products__data" data-product-property="name">{{title}}</td>
-                    <td class="table-products__data" data-product-property="brand">{{brand}}</td>
-                    <td class="table-products__data" data-product-property="price">{{price}}</td>
-                    <td class="table-products__data" data-product-property="category">{{category}}</td>
-                    <td class="table-products__data" data-product-property="stock">{{stock}}</td>
-                    <td class="table-products__data" data-product-property="image">{{image}}</td>
-                    <td class="table-products__data" data-product-property="minAge">{{minAge}}</td>
-                    <td class="table-products__data" data-product-property="maxAge">{{maxAge}}</td>
-                    <td class="table-products__data" data-product-property="ship">{{ship}}</td>
-                    <td class="table-products__data" data-product-property="shortDescription">{{shortDescription}}</td>
-                    <td class="table-products__data" data-product-property="longDescription">{{longDescription}}</td>
-                    <td class="table-products__data">
-                        <button type="button" title="Editar producto" class="button button--modify-table fa-solid fa-pen"></button>
-                        <button type="button" title="Eliminar producto" class="button button--delete-table fa-solid fa-trash"></button>
-                    </td>
-                </tr>
+            <tr class="table-products__row">
+                <td class="table-products__data" data-product-property="id">{{id}}</td>
+                <td class="table-products__data" data-product-property="header">{{header}}</td>
+                <td class="table-products__data" data-product-property="title">{{title}}</td>
+                <td class="table-products__data" data-product-property="brand">{{brand}}</td>
+                <td class="table-products__data" data-product-property="price">{{price}}</td>
+                <td class="table-products__data" data-product-property="category">{{category}}</td>
+                <td class="table-products__data" data-product-property="stock">{{stock}}</td>
+                <td class="table-products__data" data-product-property="image">{{image}}</td>
+                <td class="table-products__data" data-product-property="minAge">{{minAge}}</td>
+                <td class="table-products__data" data-product-property="maxAge">{{maxAge}}</td>
+                <td class="table-products__data" data-product-property="ship">{{ship}}</td>
+                <td class="table-products__data" data-product-property="shortDescription">{{shortDescription}}</td>
+                <td class="table-products__data" data-product-property="longDescription">{{longDescription}}</td>
+                <td class="table-products__data">
+                    <button type="button" title="Editar producto"
+                        class="button button--modify-table fa-solid fa-pen"></button>
+                    <button type="button" title="Eliminar producto"
+                        class="button button--delete-table fa-solid fa-trash"></button>
+                </td>
+            </tr>
             {{/each}}
         </tbody>
         <tfoot class="table-products__footer">
@@ -51,5 +52,5 @@
     </table>
 </div>
 {{else}}
-    <p>No se encontraron productos</p>
+<p>No se encontraron productos</p>
 {{/if}}

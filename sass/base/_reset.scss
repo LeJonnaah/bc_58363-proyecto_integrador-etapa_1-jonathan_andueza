@@ -6,9 +6,16 @@
     padding: 0;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     position: relative;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 input::-webkit-outer-spin-button,

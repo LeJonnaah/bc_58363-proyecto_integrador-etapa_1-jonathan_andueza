@@ -1,6 +1,6 @@
 .main-nav {
     background-color: #8B89B1;
-    
+
     &__list {
         margin: 0;
         padding: 0;
@@ -8,17 +8,17 @@
         list-style-type: none;
         display: flex;
         flex-direction: column;
-        transition: all ;
-        transition: all 600ms cubic-bezier(.62,.04,.3,1.56);
+        transition: all;
+        transition: all 600ms cubic-bezier(.62, .04, .3, 1.56);
         transition-delay: 100ms;
-    
+
 
         @media (min-width: 768px) {
             flex-direction: row;
             align-items: center;
         }
     }
-    
+
     &__item {
         text-align: center;
     }
@@ -29,14 +29,14 @@
         padding: 1em .7em;
         color: #fff;
         text-decoration: none;
-        transition: all 200ms cubic-bezier(.62,.04,.3,1.56);
-        
+        transition: all 200ms cubic-bezier(.62, .04, .3, 1.56);
+
         &--active {
             font-size: 1.1em;
             color: #eb9ab3;
             font-weight: bold;
         }
-        
+
         &:hover {
             color: #E5E5E5;
             outline: none;

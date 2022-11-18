@@ -30,7 +30,7 @@
             font-size: 2.5em;
         }
     }
-    
+
     &__price {
         font-family: "Poppins", sans-serif;
         color: #252525;
@@ -64,11 +64,6 @@
 
         &--visible {
             display: block;
-        }
-
-        &--transform-in {
-            transform: translateY(110%);
-            transition: transform .5s ease-in-out;
         }
 
         &--transform-out--bottom {

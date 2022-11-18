@@ -3,7 +3,7 @@
     top: 5vh;
     left: 10%;
     z-index: 100000;
-    
+
     &__container {
         display: flex;
         background-color: #fff;
@@ -39,7 +39,7 @@
         max-width: 200px;
         height: auto;
     }
-    
+
     &__title {
         font-family: 'Poppins', sans-serif;
         letter-spacing: 2px;
@@ -62,13 +62,13 @@
         font-weight: 300;
         margin-bottom: 5px;
     }
-    
+
     &__price {
         font-family: 'Poppins', sans-serif;
         color: #252525;
         font-size: 1.5em;
     }
-    
+
     &__description {
         margin: 0.5rem 0;
         font-size: 1rem;
@@ -79,16 +79,16 @@
         font-family: 'Amatic SC', cursive;
         font-weight: 600;
         color: #a8c695;
-        
+
         @media (min-width: 480px) {
             font-size: 1.5em;
         }
-        
+
         &-fa {
             color: #a8c695;
         }
     }
-    
+
     &__xmark {
         position: absolute;
         top: 2px;

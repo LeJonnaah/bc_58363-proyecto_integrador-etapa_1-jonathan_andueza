@@ -140,14 +140,6 @@ const closeSearchContainer = () => {
 }
 
 const sendData = e => {
-    // let match = (e.target.value).match(/^[a-zA-Z0-9\s]*/);
-    // let match2 = (e.target.value).match(/\S*/);
-    // if (match2[0] === e.target.value) {
-    //     searchSection.innerHTML = '';
-    //     return
-    // }
-    // if (match[0] === e.target.value) {
-
     fetch("getProducts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -156,7 +148,7 @@ const sendData = e => {
         let payload = data.payload;
         console.log(payload);
         if (payload.length === 0) {
-            renderSearchSection.innerHTML = `<p class="main-header__search-section__no-results">No se encontraron resultados.</p>`;
+            renderSearchSection.innerHTML = `<p class="main-header__search-no-results">No se encontraron resultados.</p>`;
             return;
         }
         renderSearchSection.innerHTML = '';
@@ -201,7 +193,6 @@ const sendData = e => {
     }).catch(e => console.error(e));
     return;
 }
-// }
 
 // 3. Event Listeners //
 
@@ -215,6 +206,10 @@ document.addEventListener("click", e => {
         background.classList.toggle("background--visible");
         cartDropdown.classList.toggle("cart__dropdown--visible");
     } else if (e.target === background || e.target === cartXMark) {
+        if (searchSection.classList.contains("main-header__search-section--visible")) {
+            closeSearchContainer();
+            return
+        }
         const detailedProduct = document.querySelector(".detailed-product");
         if (detailedProduct) {
             detailedProduct.remove();
@@ -307,7 +302,9 @@ document.addEventListener("click", e => {
                 }
             }).then(response => response.json())
                 .then(json => console.log(json));
-                cartItemsArray.forEach(item => item.remove());
+            cartItemsArray.forEach(item => item.remove());
+            document.querySelector(".cart__price").textContent = "$ 0";
+            closeCartDropdown();
         });
     }
 });

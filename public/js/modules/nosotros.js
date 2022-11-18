@@ -1,4 +1,3 @@
-
 console.warn('🆗: Módulo PageNosotros cargado.');
 
 class PageNosotros {

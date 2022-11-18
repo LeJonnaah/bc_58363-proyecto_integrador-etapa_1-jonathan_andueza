@@ -1,7 +1,7 @@
 .cart-item {
     position: relative;
 
-    &__container{
+    &__container {
 
         @media (min-width: 768px) {
             display: flex;
@@ -11,7 +11,7 @@
             flex-wrap: wrap;
         }
     }
-    
+
     &__xmark {
         font-size: 2em;
         color: #e56972;
@@ -81,7 +81,7 @@
         &:hover {
             background-color: #62617d;
         }
-        
+
         &:active {
             background-color: #c7c4fd;
             transform: scale(0.9);

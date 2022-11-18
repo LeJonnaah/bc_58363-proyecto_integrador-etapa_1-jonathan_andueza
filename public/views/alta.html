@@ -49,29 +49,26 @@
             </div>
             <div class="group-container group-container--short">
                 <label class="group-container__label--short" for="maxAge">Edad hasta</label>
-                <input class="group-container__input--short" id="maxAge"  name="maxAge" type="number" />
+                <input class="group-container__input--short" id="maxAge" name="maxAge" type="number" />
             </div>
         </div>
         <div class="form-container__group">
             <div class="group-container">
-                <p class="group-container__label"><span class="form-container__optional-span">*</span> Envío sin cargo</p>
-                <div class="group-container__radio-group">
-                    <input type="radio" name="free-ship" name="ship" id="yes-free-ship" />
-                    <label for="yes-free-ship">Si</label>
-                </div>
-                <div class="group-container__radio-group">
-                    <input type="radio" name="free-ship" id="no-free-ship" />
-                    <label for="no-free-ship">No</label>
-                </div>
+                <label class="group-container__label" for="ship">Envio sin cargo</label>
+                <input class="group-container__input" type="checkbox" name="ship" id="ship">
             </div>
         </div>
         <div class="group-container">
-            <label class="group-container__label group-container__label--left" for="shortDescription">Descripción corta</label>
-            <textarea class="group-container__textarea group-container__textarea--alta" name="shortDescription" id="shortDescription" cols="30" rows="10"></textarea>
+            <label class="group-container__label group-container__label--left" for="shortDescription">Descripción
+                corta</label>
+            <textarea class="group-container__textarea group-container__textarea--alta" name="shortDescription"
+                id="shortDescription" cols="30" rows="10"></textarea>
         </div>
         <div class="group-container">
-            <label class="group-container__label group-container__label--left" for="longDescription">Descripción larga</label>
-            <textarea class="group-container__textarea group-container__textarea--alta" name="longDescription" id="longDescription" cols="30" rows="10"></textarea>
+            <label class="group-container__label group-container__label--left" for="longDescription">Descripción
+                larga</label>
+            <textarea class="group-container__textarea group-container__textarea--alta" name="longDescription"
+                id="longDescription" cols="30" rows="10"></textarea>
         </div>
         <p class="form-container__optional"><span class="form-container__optional-span">*</span> Campo opcional.</p>
         <button class="button button--delete" type="button" disabled>Cancelar</button>

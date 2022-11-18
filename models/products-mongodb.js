@@ -11,7 +11,9 @@ const productSchema = mongoose.Schema({
     category: String,
     minAge: Number,
     maxAge: Number,
-    ship: Boolean,
+    ship: {
+        type: Boolean,
+    },
     shortDescription: String,
     longDescription: String,
 });
@@ -24,7 +26,7 @@ class ProductModelMongoDB {
     //                              CRUD - C: Create                              //
     ////////////////////////////////////////////////////////////////////////////////`
 
-    async createProduct (product) {
+    async createProduct(product) {
         if (! await DBMongoDB.connectDB()) {
             return {};
         }
@@ -42,7 +44,7 @@ class ProductModelMongoDB {
     //                               CRUD - R: Read                               //
     ////////////////////////////////////////////////////////////////////////////////
 
-    async readProducts () {
+    async readProducts() {
         if (! await DBMongoDB.connectDB()) {
             return [];
         }
@@ -53,10 +55,10 @@ class ProductModelMongoDB {
             console.error('Error al intentar leer los productos:', error.message);
             return [];
         }
-        
+
     }
 
-    async readProduct (id) {
+    async readProduct(id) {
         if (! await DBMongoDB.connectDB()) {
             return {};
         }
@@ -74,12 +76,12 @@ class ProductModelMongoDB {
     //                              CRUD - U: Update                              //
     ////////////////////////////////////////////////////////////////////////////////`
 
-    async updateProduct (id, product) {
+    async updateProduct(id, product) {
         if (! await DBMongoDB.connectDB()) {
             return {};
         }
         try {
-            const updatedProduct = await ProductsModel.findByIdAndUpdate(id, {$set: product}, {
+            const updatedProduct = await ProductsModel.findByIdAndUpdate(id, { $set: product }, {
                 returnDocument: 'after'
             }).lean() || {};
             return DBMongoDB.getObjectWithId(updatedProduct);
@@ -93,7 +95,7 @@ class ProductModelMongoDB {
     //                              CRUD - D: Delete                              //
     ////////////////////////////////////////////////////////////////////////////////
 
-    async deleteProduct (id) {
+    async deleteProduct(id) {
         if (! await DBMongoDB.connectDB()) {
             return {};
         }

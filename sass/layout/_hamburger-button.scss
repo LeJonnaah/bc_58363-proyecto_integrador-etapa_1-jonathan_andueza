@@ -16,7 +16,7 @@
         transform: rotate(360deg);
         transition: transform 100ms;
     }
-    
+
     &__top-bread {
         display: block;
         position: absolute;
@@ -26,7 +26,7 @@
         top: 20%;
         background-color: #fff;
     }
-    
+
     &__meat {
         display: block;
         position: absolute;
@@ -37,7 +37,7 @@
         background-color: #fff;
         transform: translateY(-50%);
     }
-    
+
     &__bottom-bread {
         display: block;
         position: absolute;
@@ -47,5 +47,5 @@
         left: 10%;
         background-color: #fff;
     }
-    
+
 }
